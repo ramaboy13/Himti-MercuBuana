@@ -1,5 +1,9 @@
+import 'preline/preline'
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
+import router from './router' // Import router
+import './style.css'
 
-createApp(App).mount('#app')
+createApp(App)
+  .use(router) // Gunakan router
+  .mount('#app')
