@@ -3,7 +3,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <div class="container mx-auto flex justify-center items-center space-x-8">
+  <div class="flex justify-center">
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
