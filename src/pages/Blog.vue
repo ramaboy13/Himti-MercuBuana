@@ -1,6 +1,6 @@
 <template>
   <section class="container mx-auto py-10">
-    <h2 class="text-center text-3xl font-bold text-blue-600">Blog</h2>
+    <h2 class="mt-12 text-center text-3xl font-bold text-blue-600">Blog</h2>
     <div class="mt-6">
       <article
         v-for="post in posts"

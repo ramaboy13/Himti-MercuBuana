@@ -2,7 +2,7 @@
   <section
     id="home"
     class="flex h-screen items-center justify-center bg-cover bg-center"
-    style="background-image: url('/path-to-your-image.jpg')"
+    style="background-image: url('/public/img/gradient.svg')"
   >
     <div class="text-center text-white">
       <h2 class="text-4xl font-bold">Welcome to HimTi Mercu Buana</h2>
