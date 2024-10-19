@@ -13,6 +13,9 @@ export default {
         'text-main-1': '#7B4399',
         'accent-7': '#333',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'], // Add Poppins font family
+      },
     },
   },
   plugins: [require('preline/plugin')],

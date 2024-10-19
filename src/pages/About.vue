@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto py-10">
+  <section class="container mx-auto py-10" id="about">
     <h2 class="text-center text-3xl font-bold text-blue-600">About Us</h2>
     <p class="mx-auto mt-6 max-w-2xl text-center text-gray-700">
       HimTi Mercu Buana is a student organization aimed at fostering IT skills
