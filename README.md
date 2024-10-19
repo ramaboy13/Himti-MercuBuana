@@ -1,11 +1,17 @@
 # 🚀 **HiMTI Website**
 
-A modern and responsive website for **HiMTI**, built with Vue 3 to deliver the best digital experience for members and visitors.
+Welcome to the digital world of **HiMTI**! We are proud to present a modern and responsive website designed specifically to provide the best digital experience for members and visitors. Get ready to explore innovative features and engaging content, all in one easy-to-access platform. Let's build a stronger and more connected community together!
 
-<div>
+<div >
+Build with:
   <a margin-right="20px" target="_blank" href="https://vuejs.org/">
     <img height="20" src="https://cdn.simpleicons.org/vue.js?viewbox=auto" />
-    <text>VueJS</text>
+  </a> + 
+  <a margin-right="20px" target="_blank" href="https://vite.dev/">
+    <img height="20" src="https://cdn.simpleicons.org/vite?viewbox=auto" />
+  </a>+
+  <a margin-right="20px" target="_blank" href="https://tailwindcss.com/">
+    <img height="20" src="https://cdn.simpleicons.org/tailwindcss?viewbox=auto" />
   </a>
 </div>
 
