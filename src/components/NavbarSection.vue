@@ -1,16 +1,52 @@
+<script>
+import { onMounted, onUnmounted, ref } from 'vue'
+import logoHimti from '../assets/img/Logo_HiMTI.jpg'
+
+export default {
+  name: 'NavbarSection',
+  setup() {
+    const isScrolled = ref(false)
+    const isOpen = ref(false)
+
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 50
+    }
+
+    const toggleMenu = () => {
+      isOpen.value = !isOpen.value
+    }
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll)
+    })
+
+    return {
+      isScrolled,
+      isOpen,
+      toggleMenu,
+      logoHimti,
+    }
+  },
+}
+</script>
+
 <template>
   <nav
     :class="[
-      'fixed top-0 z-50 w-full p-1 shadow-md transition-colors duration-300',
+      'fixed top-0 z-10 w-full p-1 shadow-md transition-colors duration-300',
       isScrolled ? 'bg-main-1' : 'bg-transparent',
     ]"
   >
     <div class="container mx-auto flex items-center justify-between p-2">
       <!-- Logo HimTi -->
       <div class="flex items-center">
-        <img src="/img/Logo HiMTI.jpg" alt="Logo HimTi" class="h-13 w-12" />
+        <img :src="logoHimti" alt="Logo HimTi" class="h-13 w-12" />
         <h1
-          class="font-poppins title ml-3 text-2xl font-bold text-white md:text-lg"
+          class="title ml-3 hidden font-poppins text-2xl font-bold text-white md:inline md:text-lg"
         >
           HIMTI MERCU BUANA
         </h1>
@@ -68,40 +104,6 @@
     </div>
   </nav>
 </template>
-
-<script>
-import { onMounted, onUnmounted, ref } from 'vue'
-
-export default {
-  name: 'NavbarSection',
-  setup() {
-    const isScrolled = ref(false)
-    const isOpen = ref(false)
-
-    const handleScroll = () => {
-      isScrolled.value = window.scrollY > 50
-    }
-
-    const toggleMenu = () => {
-      isOpen.value = !isOpen.value
-    }
-
-    onMounted(() => {
-      window.addEventListener('scroll', handleScroll)
-    })
-
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll)
-    })
-
-    return {
-      isScrolled,
-      isOpen,
-      toggleMenu,
-    }
-  },
-}
-</script>
 
 <style scoped>
 @media (max-width: 780px) {
