@@ -13,6 +13,7 @@ export default {
         secondary: '#7E3874',
         accent: '#7B4399',
         'main-1': '#180D2A',
+        'main-2': '#512B90',
         'text-main-1': '#7B4399',
         'accent-7': '#333',
       },

@@ -1,12 +1,10 @@
 <script>
 import logoHimti from '../assets/img/Logo_HiMTI.jpg'
-import heroBg from '../assets/img/hero-bg2.jpg'
 export default {
   name: 'HeroSection',
   data() {
     return {
-      logoHimti,
-      heroBg, // Menyimpan URL gambar dalam data
+      logoHimti, // Menyimpan URL gambar dalam data
     }
   },
 }
@@ -19,7 +17,7 @@ export default {
     :style="`background-image: url(${heroBg})`"
   >
     <div
-      class="flex-xl z-[1] flex w-full max-w-full flex-col-reverse items-center justify-between p-4 md:flex-row md:space-x-12"
+      class="flex-xl z-[1] flex w-full max-w-full flex-col-reverse items-center justify-between p-4 pl-12 pr-14 md:flex-row md:space-x-12"
     >
       <!-- Text Section -->
       <div class="mt-6 text-white md:mt-0 md:w-2/3">
@@ -34,7 +32,7 @@ export default {
           Tahun 2024 - 2025
         </h1>
         <!-- Line that follows the h1 width -->
-        <div class="bg-accent mb-6 mt-5 inline-block h-1 w-48"></div>
+        <div class="mb-6 mt-5 inline-block h-1 w-48 bg-accent"></div>
 
         <p class="text-sm leading-relaxed text-gray-400 md:mb-4 md:text-base">
           Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan

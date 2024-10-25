@@ -12,9 +12,7 @@
           aria-label="Brand"
           >Brand</a
         >
-        <p class="mt-3 text-xs text-gray-600 sm:text-sm dark:text-neutral-400">
-          © 2024 Preline Labs.
-        </p>
+        <p></p>
       </div>
       <!-- End Col -->
 
@@ -267,7 +265,7 @@
               </svg>
               English (US)
               <svg
-                class="hs-dropdown-open:rotate-180 size-4 shrink-0 text-gray-500 dark:text-neutral-500"
+                class="size-4 shrink-0 text-gray-500 hs-dropdown-open:rotate-180 dark:text-neutral-500"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -283,7 +281,7 @@
             </button>
 
             <div
-              class="hs-dropdown-menu duration hs-dropdown-open:opacity-100 z-10 hidden w-40 rounded-lg bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+              class="hs-dropdown-menu duration z-10 hidden w-40 rounded-lg bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="hs-footer-language-dropdown"
@@ -459,7 +457,7 @@
               >Brand</a
             >
             <p
-              class="mt-1 text-xs text-gray-600 sm:text-sm dark:text-neutral-400"
+              class="mt-1 text-xs text-gray-600 dark:text-neutral-400 sm:text-sm"
             >
               © 2024 Preline Labs.
             </p>
