@@ -7,7 +7,7 @@ import NavbarSection from './components/NavbarSection.vue'
   <NavbarSection />
   <!-- router-view akan menggantikan komponen dinamis sesuai dengan route -->
   <router-view />
-  <FooterSection />
+  <!-- <FooterSection /> -->
 </template>
 
 <style scoped></style>
