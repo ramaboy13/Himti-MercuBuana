@@ -1,6 +1,6 @@
 <script>
 import { onMounted, onUnmounted, ref } from 'vue'
-import logoHimti from '../assets/img/Logo_HiMTI.jpg'
+import logoHimti from '../assets/img/Logo_HiMTI.webp'
 
 export default {
   name: 'NavbarSection',
@@ -41,7 +41,7 @@ export default {
       isScrolled ? 'bg-main-1' : 'bg-transparent',
     ]"
   >
-    <div class="container mx-auto flex items-center justify-between p-2">
+    <div class="mx-auto flex items-center justify-between px-5 py-3">
       <!-- Logo HimTi -->
       <div class="flex items-center">
         <img :src="logoHimti" alt="Logo HimTi" class="h-13 w-12" />

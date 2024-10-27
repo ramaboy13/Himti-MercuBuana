@@ -1,3 +1,7 @@
+<script setup>
+import { Icon } from '@iconify/vue/dist/iconify.js'
+</script>
+
 <template>
   <section class="relative mx-auto" id="about">
     <!-- SVG Waves at the top -->
@@ -73,109 +77,83 @@
 
     <!-- Main Container -->
     <div
-      class="relative px-4 pt-40 text-white sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
+      class="z-[1] h-full px-5 pt-24 text-white sm:z-0 sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
     >
       <!-- Two Columns Layout -->
+
       <div
         class="mb-52 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row md:px-20"
       >
         <!-- Left Side (Tentang HIMTI + Description) -->
-        <div class="md:w-1/2">
-          <h1 class="text-3xl font-bold">Tentang HIMTI</h1>
+        <div class="w-full">
+          <h1 class="text-4xl font-bold">Tentang HIMTI</h1>
           <div class="mt-2 h-1 w-52 bg-purple-600"></div>
           <p class="my-6 text-justify leading-relaxed">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
-            Universitas Mercu Buana. Didirikan pada tahun 2005, kami telah
-            tumbuh menjadi komunitas yang dinamis dan inklusif, menyatukan
-            mahasiswa, akademisi, profesional, dan penggemar teknologi dari
-            berbagai latar belakang.
+            universitas mercubuana. Didirikan pada tahun 2005, kami telah tumbuh
+            menjadi komunitas yang dinamis dan inklusif, menyatukan mahasiswa,
+            akademisi, profesional, dan penggemar teknologi dari berbagai latar
+            belakang.
           </p>
           <button
-            class="rounded-lg bg-[#6A1B9A] px-4 py-2 text-white shadow-xl transition-colors hover:bg-[#7B1FA2]"
+            class="rounded-lg bg-main-2 px-4 py-2 text-white shadow-xl transition-colors hover:bg-accent"
           >
             Selengkapnya
           </button>
         </div>
 
         <!-- Right Side (Visi & Misi) -->
-        <div class="md:w-1/2">
-          <!-- Visi Section -->
-          <div class="mb-8">
-            <div class="mb-4 flex items-center">
-              <i
-                class="fas fa-arrow-right rounded-full bg-[#9C27B0] p-2 text-3xl"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-eye"
-                >
-                  <path
-                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
-                  />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </i>
-              <h2 class="ml-4 text-2xl font-bold">Visi</h2>
+        <div class="w-full">
+          <!-- Visi -->
+          <div class="mb-8 flex flex-row-reverse gap-6 md:flex-row">
+            <div
+              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+            >
+              <Icon icon="mdi:eye-outline" color="white" width="50" />
             </div>
-            <p class="mb-2 mt-8 text-justify leading-relaxed">
-              Menjadikan HIMTI (Himpunan Teknik Informatika) sebagai wadah
-              kreatif, inovatif, dan Aspiratif Mahasiswa Teknik Informatika
-              dalam mengembangkan minat dan bakatnya, serta membentuk lulusan
-              yang profesional yang mampu memenuhi kebutuhan industri dan
-              masyarakat dalam persaingan global di dunia kerja.
-            </p>
+            <div class="">
+              <h1 class="mb-1 text-right text-4xl font-bold md:text-start">
+                Visi
+              </h1>
+              <div class="flex w-full justify-end md:justify-start">
+                <div class="md mb-4 h-1 w-11 bg-purple-600 text-right"></div>
+              </div>
+              <div class="text-justify">
+                Menjadikan HIMTI (Himpunan Mahasiswa Teknik Informatika) sebagai
+                wadah yang kreatif, inovatif, dan aspiratif bagi mahasiswa
+                Teknik Informatika dalam mengembangkan minat dan bakat, guna
+                menghasilkan tenaga profesional yang memenuhi kebutuhan industri
+                dan masyarakat dalam persaingan global di dunia kerja.
+              </div>
+            </div>
           </div>
 
-          <!-- Misi Section -->
-          <div>
-            <div class="mb-4 flex items-center">
-              <i
-                class="fas fa-arrow-right rounded-full bg-[#9C27B0] p-2 text-3xl"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-target"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" />
-                </svg>
-              </i>
-              <h2 class="ml-4 text-2xl font-bold">Misi</h2>
-            </div>
-            <ul
-              class="mt-8 list-inside list-disc space-y-2 text-justify md:text-justify"
+          <!-- Misi -->
+          <div class="rtl flex gap-6 text-left">
+            <div
+              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
             >
-              <li>
-                Memfasilitasi Mahasiswa dan Mahasiswi Teknik Informatika dalam
-                akademisi, dengan menyelenggarakan penelitian, pendidikan, dan
-                pengabdian diri di dunia IT.
-              </li>
-              <li>
-                Mewadahi ide dan aspirasi-aspirasi Mahasiswa Teknik Informatika.
-              </li>
-              <li>
-                Bekerjasama dengan berbagai pihak industri untuk pengembangan
-                sumber daya manusia.
-              </li>
-            </ul>
+              <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
+            </div>
+            <div class="">
+              <h1 class="mb-1 text-4xl font-bold">Misi</h1>
+              <div class="mb-4 h-1 w-11 bg-purple-600"></div>
+              <div class="text-justify sm:text-start">
+                <li>
+                  Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
+                  bidang akademis melalui penyelenggaraan penelitian,
+                  pendidikan, dan pengabdian dalam dunia IT.
+                </li>
+                <li>
+                  Mewadahi kreasi dan aspirasi mahasiswa Teknik Informatika.
+                </li>
+                <li>
+                  Bekerja sama dengan berbagai pihak untuk menunjang
+                  pengembangan bakat mahasiswa Teknik Informatika.
+                </li>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -183,10 +161,4 @@
   </section>
 </template>
 
-<style scoped>
-@media (max-width: 640px) {
-  .relative.px-4.pt-40 {
-    padding-top: 8rem;
-  }
-}
-</style>
+<style scoped></style>
