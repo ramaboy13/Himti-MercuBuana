@@ -14,8 +14,7 @@ export default {
         accent: '#7B4399',
         'main-1': '#180D2A',
         'main-2': '#512B90',
-        'text-main-1': '#7B4399',
-        'accent-7': '#333',
+        'bg-2': '#2C2B31',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Add Poppins font family
