@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <div class="rounded-2xl bg-gray-900 p-6">
+        <div class="content-center justify-center rounded-2xl bg-gray-900 p-6">
           <div class="mb-4 flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl"
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -67,7 +67,7 @@
               <span class="ml-2">UI/UX</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -86,7 +86,7 @@
               <span class="ml-2">HTML, CSS, JavaScript</span>
             </li>
             <li class="flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -105,27 +105,29 @@
               <span class="ml-2">Responsive Web</span>
             </li>
           </ul>
-          <button
-            class="bg-main-2 flex items-center rounded-full px-4 py-2 text-white"
-          >
-            <span class="mr-2">Daftar</span>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-move-right"
+          <div class="flex justify-center">
+            <button
+              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
             >
-              <path d="M18 8L22 12L18 16" />
-              <path d="M2 12H22" />
-            </svg>
-          </button>
+              <span class="mr-2">Daftar</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-move-right"
+              >
+                <path d="M18 8L22 12L18 16" />
+                <path d="M2 12H22" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="rounded-2xl bg-gray-900 p-6">
           <div class="mb-4 flex items-center">
@@ -149,7 +151,7 @@
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -168,7 +170,7 @@
               <span class="ml-2">Pembelajaran Tentang IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -187,7 +189,7 @@
               <span class="ml-2">Network Engineer</span>
             </li>
             <li class="flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -207,7 +209,7 @@
             </li>
           </ul>
           <button
-            class="bg-main-2 flex items-center rounded-full px-4 py-2 text-white"
+            class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
           >
             <span class="mr-2">Daftar</span>
             <svg
@@ -250,7 +252,7 @@
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl"
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -269,7 +271,7 @@
               <span class="ml-2">Keakraban Mahasiswa IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -288,7 +290,7 @@
               <span class="ml-2">Knowledge</span>
             </li>
             <li class="flex items-center">
-              <i class="fas fa-arrow-right bg-main-2 rounded-full p-2 text-3xl">
+              <i class="fas fa-arrow-right rounded-full bg-main-2 p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -308,7 +310,7 @@
             </li>
           </ul>
           <button
-            class="bg-main-2 flex items-center rounded-full px-4 py-2 text-white"
+            class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
           >
             <span class="mr-2">Daftar</span>
             <svg

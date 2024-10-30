@@ -73,7 +73,7 @@
 
     <!-- Main Container -->
     <div
-      class="relative px-4 pt-40 text-white sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
+      class="relative px-4 pt-40 text-white sm:px-8 sm:pt-32 lg:px-32 lg:pt-60"
     >
       <!-- Two Columns Layout -->
       <div
@@ -82,7 +82,7 @@
         <!-- Left Side (Tentang HIMTI + Description) -->
         <div class="md:w-1/2">
           <h1 class="text-3xl font-bold">Tentang HIMTI</h1>
-          <div class="mt-2 h-1 w-52 bg-purple-600"></div>
+          <div class="mt-2 h-1 w-52 bg-accent"></div>
           <p class="my-6 text-justify leading-relaxed">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
@@ -92,7 +92,7 @@
             berbagai latar belakang.
           </p>
           <button
-            class="rounded-lg bg-[#6A1B9A] px-4 py-2 text-white shadow-xl transition-colors hover:bg-[#7B1FA2]"
+            class="rounded-lg bg-accent px-4 py-2 text-white shadow-xl transition-colors hover:bg-[#7B1FA2]"
           >
             Selengkapnya
           </button>
@@ -103,9 +103,7 @@
           <!-- Visi Section -->
           <div class="mb-8">
             <div class="mb-4 flex items-center">
-              <i
-                class="fas fa-arrow-right rounded-full bg-[#9C27B0] p-2 text-3xl"
-              >
+              <i class="fas fa-arrow-right rounded-full bg-accent p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -138,9 +136,7 @@
           <!-- Misi Section -->
           <div>
             <div class="mb-4 flex items-center">
-              <i
-                class="fas fa-arrow-right rounded-full bg-[#9C27B0] p-2 text-3xl"
-              >
+              <i class="fas fa-arrow-right rounded-full bg-accent p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

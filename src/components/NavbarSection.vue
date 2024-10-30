@@ -83,21 +83,39 @@ export default {
         class="lg:static lg:flex lg:items-center lg:space-x-5"
       >
         <li>
-          <router-link to="/" class="block px-3 py-2 hover:text-gray-200"
+          <router-link
+            to="/"
+            class="block px-3 py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
             >Home</router-link
           >
         </li>
         <li>
-          <a href="#about" class="block px-3 py-2 hover:text-gray-200">About</a>
-        </li>
-        <li>
-          <a href="#member" class="block px-3 py-2 hover:text-gray-200"
-            >Member</a
+          <a
+            href="#about"
+            class="block px-3 py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            >About</a
           >
         </li>
         <li>
-          <router-link to="/blog" class="block px-3 py-2 hover:text-gray-200"
+          <a
+            href="#team"
+            class="block px-3 py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            >Our Team</a
+          >
+        </li>
+        <li>
+          <router-link
+            to="/blog"
+            class="block px-3 py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
             >Blog</router-link
+          >
+        </li>
+
+        <li>
+          <a
+            href="#contact"
+            class="block rounded-lg bg-white px-4 py-2 font-semibold text-main-1 transition duration-200 hover:bg-accent hover:text-white"
+            >Contact Us</a
           >
         </li>
       </ul>
