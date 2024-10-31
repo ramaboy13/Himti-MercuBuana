@@ -10,7 +10,7 @@
       </p>
 
       <button
-        class="mx-auto mb-6 block rounded-full bg-purple-600 px-4 py-2 text-white"
+        class="mx-auto mb-6 block rounded-full bg-main-2 px-4 py-2 text-white hover:bg-purple-900"
       >
         Lihat Selengkapnya
       </button>

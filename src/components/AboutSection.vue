@@ -103,7 +103,7 @@
           <!-- Visi Section -->
           <div class="mb-8">
             <div class="mb-4 flex items-center">
-              <i class="fas fa-arrow-right rounded-full bg-accent p-2 text-3xl">
+              <i class="rounded-full bg-accent p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,7 +136,7 @@
           <!-- Misi Section -->
           <div>
             <div class="mb-4 flex items-center">
-              <i class="fas fa-arrow-right rounded-full bg-accent p-2 text-3xl">
+              <i class="rounded-full bg-accent p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
