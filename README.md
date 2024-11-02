@@ -111,9 +111,10 @@ We welcome contributions from anyone who wishes to help improve this website. To
 
 ## 👨‍💻 **Development Team**
 
-- **Project Lead**: -
-- **UI/UX Designer**: -
-- **Frontend Developer**: -
+- **Project Lead**: Erlangga Daffa
+- **UI/UX Designer**: Bimo Saputro
+- **Frontend Developer**: Barito Surya Ramadhani
+- **Frontend Developer**: Husein Yarid Zidane
 
 ## 📝 **License**
 
