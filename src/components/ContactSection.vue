@@ -260,10 +260,10 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border bg-gray-300 p-4 dark:border-neutral-700 dark:bg-neutral-800 sm:p-6 lg:p-8"
+          class="flex flex-col rounded-2xl border bg-gray-800 p-4 dark:border-neutral-700 dark:bg-neutral-800 sm:p-6 lg:p-8"
         >
           <h2
-            class="mb-8 text-center text-xl font-semibold text-gray-800 dark:text-neutral-200"
+            class="mb-8 text-center text-xl font-semibold text-white shadow-slate-50 dark:text-neutral-200"
           >
             Hubungi kami kapan saja melalui Whatsapp
           </h2>
@@ -282,7 +282,7 @@
                       type="text"
                       name="hs-firstname-contacts-1"
                       id="hs-firstname-contacts-1"
-                      class="block w-full rounded-lg border border-gray-300 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       placeholder="First Name"
                     />
                   </div>
@@ -298,7 +298,7 @@
                       type="text"
                       name="hs-lastname-contacts-1"
                       id="hs-lastname-contacts-1"
-                      class="block w-full rounded-lg border border-gray-300 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       placeholder="Last Name"
                     />
                   </div>
@@ -315,7 +315,7 @@
                     name="hs-email-contacts-1"
                     id="hs-email-contacts-1"
                     autocomplete="email"
-                    class="block w-full rounded-lg border border-gray-300 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Email"
                   />
                 </div>
@@ -331,7 +331,7 @@
                     type="text"
                     name="hs-phone-number-1"
                     id="hs-phone-number-1"
-                    class="block w-full rounded-lg border border-gray-300 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -347,7 +347,7 @@
                     name="hs-about-contacts-1"
                     id="hs-about-contacts-1"
                     rows="4"
-                    class="block w-full rounded-lg border border-gray-300 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Message"
                   ></textarea>
                 </div>
