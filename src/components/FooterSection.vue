@@ -1,6 +1,6 @@
 <template>
   <!-- Foooter -->
-  <section class="bg-gray-900">
+  <section class="bg-main-3">
     <div
       class="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-12 sm:px-6 lg:px-8"
     >

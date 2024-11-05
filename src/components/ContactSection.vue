@@ -118,7 +118,7 @@
               </p>
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                href="#"
+                href="https://www.instagram.com/himti_mercubuana/"
               >
                 Selengkapnya
               </a>
@@ -150,7 +150,7 @@
               </p>
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                href="#"
+                href="https://www.linkedin.com/company/himti/"
               >
                 Selengkapnya
               </a>
@@ -260,7 +260,7 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border bg-gray-800 p-4 dark:border-neutral-700 dark:bg-neutral-800 sm:p-6 lg:p-8"
+          class="bg-main-3 flex flex-col rounded-2xl border p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
         >
           <h2
             class="mb-8 text-center text-xl font-semibold text-white shadow-slate-50 dark:text-neutral-200"

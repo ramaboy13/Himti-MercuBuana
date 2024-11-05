@@ -9,11 +9,12 @@
         luas yang siap menghadirkan terobosan baru dalam kegiatan kemahasiswaan.
       </p>
 
-      <button
-        class="mx-auto mb-6 block rounded-full bg-main-2 px-4 py-2 text-white hover:bg-purple-900"
+      <router-link
+        to="/team"
+        class="mx-auto mb-6 block w-44 rounded-full bg-main-2 px-4 py-2 text-center text-white hover:bg-purple-900"
       >
-        Lihat Selengkapnya
-      </button>
+        <span>Lihat Selengkapnya</span>
+      </router-link>
 
       <div
         data-hs-carousel='{
@@ -35,12 +36,12 @@
               <div
                 v-for="member in slide"
                 :key="member.id"
-                class="mx-auto w-full max-w-xs rounded-lg bg-gray-900 p-1 text-center text-white shadow-lg sm:w-1/2 lg:w-1/3"
+                class="bg-main-3 mx-auto w-full max-w-xs rounded-lg text-center text-white shadow-lg sm:w-1/2 lg:w-1/3"
               >
                 <img
                   :src="member.image"
                   alt="member photo"
-                  class="mx-auto mb-4 h-72 w-full rounded-lg"
+                  class="mx-auto mb-4 h-72 w-full rounded-t-md"
                 />
                 <h3 class="font-bold">{{ member.name }}</h3>
                 <p class="">{{ member.role }}</p>
@@ -49,6 +50,11 @@
             <!-- End responsive slide -->
           </div>
         </div>
+
+        <!-- Pagination dots positioned below the cards inside the main carousel div -->
+        <div
+          class="hs-carousel-pagination mt-4 flex justify-center space-x-2"
+        ></div>
 
         <button
           type="button"
@@ -68,6 +74,7 @@
             <path d="m15 18-6-6 6-6"></path>
           </svg>
         </button>
+
         <button
           type="button"
           class="hs-carousel-next absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300"
@@ -86,61 +93,37 @@
             <path d="m9 18 6-6-6-6"></path>
           </svg>
         </button>
-
-        <div
-          class="hs-carousel-pagination absolute bottom-3 end-0 start-0 flex justify-center space-x-2"
-        ></div>
       </div>
     </div>
   </section>
 </template>
 
+<style scoped>
+.hs-carousel-prev,
+.hs-carousel-next {
+  transition: background-color 0.3s ease;
+}
+.hs-carousel-prev:hover,
+.hs-carousel-next:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.hs-carousel-pagination {
+  position: relative;
+  bottom: -10px; /* Adjust this value as needed */
+  z-index: 10;
+}
+</style>
+
 <script>
+import members from '../assets/data/dataTeam.json'
+
 export default {
   data() {
     return {
-      members: [
-        {
-          id: 1,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=1',
-        },
-        {
-          id: 2,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=2',
-        },
-        {
-          id: 3,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=3',
-        },
-        {
-          id: 4,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=4',
-        },
-        {
-          id: 5,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=5',
-        },
-        {
-          id: 6,
-          name: 'Bimo Saputro',
-          role: 'Divisi Riset Teknologi',
-          image: 'https://picsum.photos/200?random=6',
-        },
-      ],
+      members,
     }
   },
   computed: {
-    // Chunk the members array into groups of 3 for each slide on desktop, 2 on tablet, and 1 on mobile
     chunkedMembers() {
       const chunkSize =
         window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1
@@ -163,14 +146,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.hs-carousel-prev,
-.hs-carousel-next {
-  transition: background-color 0.3s ease;
-}
-.hs-carousel-prev:hover,
-.hs-carousel-next:hover {
-  background-color: rgba(128, 128, 128, 0.2);
-}
-</style>
