@@ -1,7 +1,3 @@
-<script setup>
-import { Icon } from '@iconify/vue/dist/iconify.js'
-</script>
-
 <template>
   <section class="relative mx-auto" id="about">
     <!-- SVG Waves at the top -->
@@ -77,28 +73,25 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
     <!-- Main Container -->
     <div
-
-      class="z-[1] h-full px-5 pt-24 text-white sm:z-0 sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
-
+      class="relative px-4 pt-40 text-white sm:px-8 sm:pt-32 lg:px-32 lg:pt-60"
     >
       <!-- Two Columns Layout -->
-      <div class="mb-10 mt-8 grid items-start gap-8 md:mt-0 md:grid-cols-2">
+      <div
+        class="mb-52 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row"
+      >
         <!-- Left Side (Tentang HIMTI + Description) -->
-
         <div class="md:w-1/2">
           <h1 class="text-3xl font-bold">Tentang HIMTI</h1>
           <div class="mt-2 h-1 w-52 bg-accent"></div>
-
           <p class="my-6 text-justify leading-relaxed">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
-            universitas mercubuana. Didirikan pada tahun 2005, kami telah tumbuh
-            menjadi komunitas yang dinamis dan inklusif, menyatukan mahasiswa,
-            akademisi, profesional, dan penggemar teknologi dari berbagai latar
-            belakang.
+            Universitas Mercu Buana. Didirikan pada tahun 2005, kami telah
+            tumbuh menjadi komunitas yang dinamis dan inklusif, menyatukan
+            mahasiswa, akademisi, profesional, dan penggemar teknologi dari
+            berbagai latar belakang.
           </p>
           <button
-
             class="rounded-lg bg-accent px-4 py-2 text-white shadow-xl transition-colors hover:bg-[#7B1FA2]"
           >
             Selengkapnya
@@ -106,7 +99,6 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
         </div>
 
         <!-- Right Side (Visi & Misi) -->
-
         <div class="md:w-1/2">
           <!-- Visi Section -->
           <div class="mb-8">
@@ -131,10 +123,15 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
                 </svg>
               </i>
               <h2 class="ml-4 text-2xl font-bold">Visi</h2>
-
             </div>
+            <p class="mb-2 mt-8 text-justify leading-relaxed">
+              Menjadikan HIMTI (Himpunan Teknik Informatika) sebagai wadah
+              kreatif, inovatif, dan Aspiratif Mahasiswa Teknik Informatika
+              dalam mengembangkan minat dan bakatnya, serta membentuk lulusan
+              yang profesional yang mampu memenuhi kebutuhan industri dan
+              masyarakat dalam persaingan global di dunia kerja.
+            </p>
           </div>
-
 
           <!-- Misi Section -->
           <div>
@@ -161,28 +158,20 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
             </div>
             <ul
               class="mt-8 list-inside list-disc space-y-2 text-justify md:text-justify"
-
             >
-              <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
-            </div>
-            <div class="">
-              <h1 class="mb-1 text-4xl font-bold">Misi</h1>
-              <div class="mb-4 h-1 w-11 bg-purple-600"></div>
-              <div class="text-justify sm:text-start">
-                <li>
-                  Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
-                  bidang akademis melalui penyelenggaraan penelitian,
-                  pendidikan, dan pengabdian dalam dunia IT.
-                </li>
-                <li>
-                  Mewadahi kreasi dan aspirasi mahasiswa Teknik Informatika.
-                </li>
-                <li>
-                  Bekerja sama dengan berbagai pihak untuk menunjang
-                  pengembangan bakat mahasiswa Teknik Informatika.
-                </li>
-              </div>
-            </div>
+              <li>
+                Memfasilitasi Mahasiswa dan Mahasiswi Teknik Informatika dalam
+                akademisi, dengan menyelenggarakan penelitian, pendidikan, dan
+                pengabdian diri di dunia IT.
+              </li>
+              <li>
+                Mewadahi ide dan aspirasi-aspirasi Mahasiswa Teknik Informatika.
+              </li>
+              <li>
+                Bekerjasama dengan berbagai pihak industri untuk pengembangan
+                sumber daya manusia.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -190,4 +179,10 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 640px) {
+  .relative.px-4.pt-40 {
+    padding-top: 8rem;
+  }
+}
+</style>

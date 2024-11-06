@@ -14,12 +14,12 @@
       </p>
     </div>
     <div
-      class="mx-auto grid grid-cols-2 gap-3 sm:gap-6 lg:max-w-screen-lg lg:grid-cols-4 lg:gap-10"
+      class="mx-auto grid grid-cols-2 gap-3 sm:gap-6 lg:max-w-screen-lg lg:grid-cols-4 lg:gap-5"
     >
       <div
         v-for="member in members"
         :key="member.id"
-        class="bg-main-3 rounded-lg"
+        class="rounded-lg bg-main-3"
       >
         <div class="relative mb-4 rounded pb-56 shadow lg:pb-64">
           <!-- Badge with even smaller padding and font size -->
