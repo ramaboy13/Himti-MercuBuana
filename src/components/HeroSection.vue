@@ -1,5 +1,7 @@
 <script>
+
 import logoHimti from '../assets/img/maskot.png'
+
 export default {
   name: 'HeroSection',
   data() {
@@ -13,6 +15,7 @@ export default {
 <template>
   <section
     id="home"
+
     class="relative flex h-screen items-center justify-center bg-cover bg-center md:px-8"
     :style="`background-image: url(${heroBg})`"
   >
@@ -47,6 +50,7 @@ export default {
 
       <!-- Logo Section with Pink Shadow -->
       <div class="mb-6 md:mb-0 md:ml-6">
+
         <img
           :src="logoHimti"
           alt="HiMTI UMB"
