@@ -77,14 +77,18 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
     <!-- Main Container -->
     <div
+
       class="z-[1] h-full px-5 pt-24 text-white sm:z-0 sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
+
     >
       <!-- Two Columns Layout -->
       <div class="mb-10 mt-8 grid items-start gap-8 md:mt-0 md:grid-cols-2">
         <!-- Left Side (Tentang HIMTI + Description) -->
-        <div class="w-full">
-          <h1 class="text-4xl font-bold">Tentang HIMTI</h1>
-          <div class="mt-2 h-1 w-52 bg-purple-600"></div>
+
+        <div class="md:w-1/2">
+          <h1 class="text-3xl font-bold">Tentang HIMTI</h1>
+          <div class="mt-2 h-1 w-52 bg-accent"></div>
+
           <p class="my-6 text-justify leading-relaxed">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
@@ -94,42 +98,70 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
             belakang.
           </p>
           <button
-            class="rounded-lg bg-main-2 px-4 py-2 text-white shadow-xl transition-colors hover:bg-accent"
+
+            class="rounded-lg bg-accent px-4 py-2 text-white shadow-xl transition-colors hover:bg-[#7B1FA2]"
           >
             Selengkapnya
           </button>
         </div>
 
         <!-- Right Side (Visi & Misi) -->
-        <div class="w-full">
-          <!-- Visi -->
-          <div class="mb-8 flex flex-row-reverse gap-6 md:flex-row">
-            <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
-            >
-              <Icon icon="mdi:eye-outline" color="white" width="50" />
-            </div>
-            <div class="">
-              <h1 class="mb-1 text-right text-4xl font-bold md:text-start">
-                Visi
-              </h1>
-              <div class="flex w-full justify-end md:justify-start">
-                <div class="md mb-4 h-1 w-11 bg-purple-600 text-right"></div>
-              </div>
-              <div class="text-justify">
-                Menjadikan HIMTI (Himpunan Mahasiswa Teknik Informatika) sebagai
-                wadah yang kreatif, inovatif, dan aspiratif bagi mahasiswa
-                Teknik Informatika dalam mengembangkan minat dan bakat, guna
-                menghasilkan tenaga profesional yang memenuhi kebutuhan industri
-                dan masyarakat dalam persaingan global di dunia kerja.
-              </div>
+
+        <div class="md:w-1/2">
+          <!-- Visi Section -->
+          <div class="mb-8">
+            <div class="mb-4 flex items-center">
+              <i class="rounded-full bg-accent p-2 text-3xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-eye"
+                >
+                  <path
+                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                  />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </i>
+              <h2 class="ml-4 text-2xl font-bold">Visi</h2>
+
             </div>
           </div>
 
-          <!-- Misi -->
-          <div class="rtl flex gap-6 text-left">
-            <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+
+          <!-- Misi Section -->
+          <div>
+            <div class="mb-4 flex items-center">
+              <i class="rounded-full bg-accent p-2 text-3xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-target"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </i>
+              <h2 class="ml-4 text-2xl font-bold">Misi</h2>
+            </div>
+            <ul
+              class="mt-8 list-inside list-disc space-y-2 text-justify md:text-justify"
+
             >
               <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
             </div>

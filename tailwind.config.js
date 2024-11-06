@@ -12,6 +12,7 @@ export default {
         primary: '#180D2A',
         secondary: '#7E3874',
         accent: '#7B4399',
+        'main-3': '#2C2B31',
         'main-1': '#180D2A',
         'main-2': '#512B90',
         'bg-2': '#2C2B31',

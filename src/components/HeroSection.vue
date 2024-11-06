@@ -1,5 +1,7 @@
 <script>
-import logoHimti from '../assets/img/Logo_HiMTI.webp'
+
+import logoHimti from '../assets/img/maskot.png'
+
 export default {
   name: 'HeroSection',
   data() {
@@ -13,40 +15,31 @@ export default {
 <template>
   <section
     id="home"
-    class="relative flex h-screen items-center justify-center bg-cover bg-center px-2 md:px-8"
+
+    class="relative flex h-screen items-center justify-center bg-cover bg-center md:px-8"
     :style="`background-image: url(${heroBg})`"
   >
     <div
-      class="flex-xl p z-[1] flex w-full max-w-full flex-col-reverse items-center justify-between px-5 md:flex-row md:space-x-12"
+      class="flex-xl z-[1] flex w-full max-w-full flex-col-reverse items-center justify-between px-20 md:flex-row md:space-x-12"
     >
       <!-- Text Section -->
-      <div class="text-white md:w-2/3">
-        <div class="text-center md:text-left">
-          <h1 class="text-lg font-semibold text-white md:text-2xl">
-            HIMTI Universitas Mercu Buana
-          </h1>
-          <h1 class="mb-2 text-3xl font-bold md:text-5xl">
-            Himpunan <span class="text-accent">Teknik Informatika</span>
-          </h1>
-          <div class="mb-6 flex justify-center md:mb-0 md:ml-6">
-            <div
-              class="card-logo w-fit rounded-lg bg-gradient-to-b from-violet-400 to-violet-700 p-6 shadow-[10px_10px_20px_rgba(231,72,176,0.7)] md:hidden"
-            >
-              <img
-                :src="logoHimti"
-                alt="Logo HiMTI UMB"
-                class="h-36 w-36 object-contain md:h-72 md:w-72"
-              />
-            </div>
-          </div>
-          <h1 class="text-xl font-semibold text-gray-300 md:text-xl">
-            Tahun 2024 - 2025
-          </h1>
-        </div>
+      <div class="max-w-3xl text-white md:mt-0 md:w-2/3">
+        <h5 class="text-lg font-semibold text-white md:text-2xl">
+          HIMTI Universitas Mercu Buana
+        </h5>
+        <h1 class="mb-2 text-3xl font-bold md:text-5xl">
+          Himpunan <span class="text-accent">Teknik Informatika</span>
+        </h1>
+
+        <h1 class="text-2xl font-semibold text-gray-300 md:text-xl">
+          Tahun 2024 - 2025
+        </h1>
         <!-- Line that follows the h1 width -->
         <div class="mb-6 mt-5 inline-block h-1 w-48 bg-accent"></div>
 
-        <p class="text-sm leading-relaxed text-gray-400 md:mb-4 md:text-base">
+        <p
+          class="text-justify text-sm leading-relaxed text-gray-400 md:mb-4 md:text-base"
+        >
           Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan
           informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami
           lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan
@@ -57,15 +50,13 @@ export default {
 
       <!-- Logo Section with Pink Shadow -->
       <div class="mb-6 md:mb-0 md:ml-6">
-        <div
-          class="card-logo hidden w-fit rounded-lg bg-gradient-to-b from-violet-400 to-violet-700 p-6 shadow-[10px_10px_20px_rgba(231,72,176,0.7)] md:block"
-        >
-          <img
-            :src="logoHimti"
-            alt="HiMTI UMB"
-            class="h-36 w-36 object-contain md:h-72 md:w-72"
-          />
-        </div>
+
+        <img
+          :src="logoHimti"
+          alt="HiMTI UMB"
+          class="mr-20 h-full w-full md:h-72 md:w-72"
+          style="filter: drop-shadow(2px 2px 20px purple)"
+        />
       </div>
     </div>
     <!-- Waves  -->
