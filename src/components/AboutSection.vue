@@ -82,7 +82,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
       <!-- Two Columns Layout -->
       <div class="mb-10 mt-8 grid items-start gap-8 md:mt-0 md:grid-cols-2">
         <!-- Left Side (Tentang HIMTI + Description) -->
-        <div class="w-full">
+        <div class="w-full" data-aos="fade-right">
           <h1 class="text-4xl font-bold">Tentang HIMTI</h1>
           <div class="mt-2 h-1 w-52 bg-purple-600"></div>
           <p class="my-6 text-justify leading-relaxed">
@@ -103,7 +103,10 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
         <!-- Right Side (Visi & Misi) -->
         <div class="w-full">
           <!-- Visi -->
-          <div class="mb-8 flex flex-row-reverse gap-6 md:flex-row">
+          <div
+            class="mb-8 flex flex-row-reverse gap-6 md:flex-row"
+            data-aos="fade-left"
+          >
             <div
               class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
             >
@@ -127,7 +130,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           </div>
 
           <!-- Misi -->
-          <div class="rtl flex gap-6 text-left">
+          <div class="rtl flex gap-6 text-left" data-aos="fade-up">
             <div
               class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
             >
