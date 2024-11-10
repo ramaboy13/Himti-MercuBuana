@@ -5,8 +5,34 @@ export default {
   name: 'HeroSection',
   data() {
     return {
-      logoHimti, // Menyimpan URL gambar dalam data
+      logoHimti,
+      text: 'HIMPUNAN TEKNIK INFORMATIKA',
+      displayText: '',
+      currentIndex: 0,
+      isExpanded: false,
+      fullText:
+        'Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan kami untuk mencapai tujuan bersama.',
     }
+  },
+  computed: {
+    truncatedText() {
+      return this.fullText.slice(0, 100) + '...'
+    },
+  },
+  methods: {
+    typeText() {
+      if (this.currentIndex < this.text.length) {
+        this.displayText += this.text.charAt(this.currentIndex)
+        this.currentIndex++
+        setTimeout(this.typeText, 100)
+      }
+    },
+    toggleText() {
+      this.isExpanded = !this.isExpanded
+    },
+  },
+  mounted() {
+    this.typeText()
   },
 }
 </script>
@@ -14,41 +40,67 @@ export default {
 <template>
   <section
     id="home"
-    class="relative flex h-screen items-center justify-center bg-cover bg-center md:px-8"
+    class="relative flex min-h-screen items-center justify-center bg-cover bg-center px-4 md:px-8"
     :style="`background-image: url(${heroBg})`"
   >
     <div
-      class="flex-xl z-[1] flex w-full max-w-full flex-col-reverse items-center justify-between px-20 md:flex-row md:space-x-12"
+      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12"
     >
       <!-- Text Section -->
-      <div class="max-w-3xl text-white md:mt-0 md:w-2/3">
+      <div class="w-full text-center text-white md:w-2/3 md:text-left">
         <h5 class="text-lg font-semibold text-white md:text-2xl">
           HIMTI Universitas Mercu Buana
         </h5>
-        <h1 class="mb-2 text-3xl font-bold md:text-5xl">
-          Himpunan <span class="text-accent">Teknik Informatika</span>
+        <h1 class="mb-2 text-2xl font-bold md:text-5xl">
+          <span class="typing-text text-purple-600">{{ displayText }}</span>
         </h1>
 
-        <h1 class="text-2xl font-semibold text-gray-300 md:text-xl">
+        <h1 class="text-xl font-semibold text-gray-300 md:text-2xl">
           Tahun 2024 - 2025
         </h1>
-        <!-- Line that follows the h1 width -->
-        <div class="mb-6 mt-5 inline-block h-1 w-48 bg-accent"></div>
 
-        <p
-          class="text-justify text-sm leading-relaxed text-gray-400 md:mb-4 md:text-base"
+        <!-- Logo Section for Mobile (between year and line) -->
+        <div
+          class="mx-auto my-6 w-48 md:hidden"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
         >
-          Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan
-          informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami
-          lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan
-          bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan
-          kami untuk mencapai tujuan bersama.
-        </p>
+          <img
+            :src="logoHimti"
+            alt="HiMTI UMB"
+            class="h-auto w-full"
+            style="filter: drop-shadow(2px 2px 20px purple)"
+          />
+        </div>
+
+        <!-- Centered line on mobile, left-aligned on desktop -->
+        <div class="mx-auto mb-6 mt-5 h-1 w-48 bg-accent md:mx-0"></div>
+
+        <!-- Mobile: Truncated text with read more -->
+        <div class="text-center md:hidden">
+          <p class="mb-2 text-sm leading-relaxed text-gray-400">
+            {{ isExpanded ? fullText : truncatedText }}
+          </p>
+          <button
+            @click="toggleText"
+            class="hover:text-accent-light text-sm text-accent"
+          >
+            {{ isExpanded ? 'Lihat lebih sedikit' : 'Selengkapnya' }}
+          </button>
+        </div>
+
+        <!-- Desktop: Full text -->
+        <div class="hidden md:block">
+          <p class="mb-4 text-base leading-relaxed text-gray-400">
+            {{ fullText }}
+          </p>
+        </div>
       </div>
 
-      <!-- Logo Section with Pink Shadow -->
+      <!-- Logo Section for Desktop -->
       <div
-        class="mb-6 md:mb-0 md:ml-6"
+        class="hidden w-72 md:block"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -56,12 +108,13 @@ export default {
         <img
           :src="logoHimti"
           alt="HiMTI UMB"
-          class="mr-20 h-full w-full md:h-72 md:w-72"
+          class="h-auto w-full"
           style="filter: drop-shadow(2px 2px 20px purple)"
         />
       </div>
     </div>
-    <!-- Waves  -->
+
+    <!-- Waves -->
     <div class="absolute bottom-0 w-full">
       <!-- Mobile -->
       <svg
@@ -120,32 +173,40 @@ export default {
         ></path>
       </svg>
     </div>
-
-    <!-- Waves Mobile -->
   </section>
 </template>
 
 <style scoped>
-#id {
-  height: 100dvh;
+#home {
+  min-height: 100dvh;
 }
 
-/* .heroku {
-  background-image: url('../assets/img/hero-bg2.jpg');
-} */
+.typing-text {
+  border-right: 2px solid white;
+  animation: blink 0.75s step-end infinite;
+}
 
-@media (max-width: 780px) {
-  /* Center the line under the text */
-  .heroku .line {
-    margin: 1rem auto; /* Center the line with auto margins */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
   }
+  50% {
+    border-color: white;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   .logo-himti {
-    width: 100px;
-    height: 100px;
-    box-shadow: 0;
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
   }
-  .card-logo {
-    box-shadow: 0 10px 20px rgba(231, 72, 176, 0.7);
-  }
+}
+
+/* Transition for text expansion */
+p {
+  transition: all 0.3s ease-in-out;
 }
 </style>

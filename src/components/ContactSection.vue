@@ -1,7 +1,7 @@
 <template>
   <!-- Contact Us Section -->
   <section
-    class="mx-auto w-full px-4 py-10 sm:px-6 lg:px-8 lg:py-14 lg:pt-32"
+    class="mx-auto w-full px-5 py-10 sm:px-6 lg:px-8 lg:py-14 lg:pt-32"
     id="contact"
   >
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
@@ -260,7 +260,7 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="bg-main-3 flex flex-col rounded-2xl border p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
+          class="flex flex-col rounded-2xl border bg-main-3 p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
         >
           <h2
             class="mb-8 text-center text-xl font-semibold text-white shadow-slate-50 dark:text-neutral-200"

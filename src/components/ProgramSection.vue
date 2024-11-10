@@ -1,5 +1,5 @@
 <template>
-  <section id="app" class="p-8 text-white">
+  <section id="program" class="px-5 pt-20 text-white lg:pt-32">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
@@ -138,7 +138,8 @@
             </li>
           </ul>
           <div class="flex justify-center">
-            <button
+            <router-link
+              to="/kelascore"
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
@@ -158,7 +159,7 @@
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </button>
+            </router-link>
           </div>
         </div>
 
@@ -245,7 +246,8 @@
             </li>
           </ul>
           <div class="flex justify-center">
-            <button
+            <router-link
+              to="/seminarit"
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
@@ -264,7 +266,7 @@
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </button>
+            </router-link>
           </div>
         </div>
 
@@ -352,7 +354,8 @@
             </li>
           </ul>
           <div class="flex justify-center">
-            <button
+            <router-link
+              to="/fkti"
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
@@ -371,7 +374,7 @@
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
