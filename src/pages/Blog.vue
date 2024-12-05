@@ -1,6 +1,10 @@
 <template>
   <section class="container mx-auto py-10">
-    <h2 class="mt-12 text-center text-3xl font-bold text-blue-600">Blog</h2>
+    <!-- Maintenance Content   -->
+    <maintenance />
+
+    <!-- Main content -->
+    <!-- <h2 class="mt-12 text-center text-3xl font-bold text-blue-600">Blog</h2>
     <div class="mt-6">
       <article
         v-for="post in posts"
@@ -15,35 +19,37 @@
           Read More
         </button>
       </article>
-    </div>
+    </div> -->
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Blog',
-  data() {
-    return {
-      posts: [
-        {
-          id: 1,
-          title: 'Post 1',
-          excerpt: 'This is a short description of post 1.',
-        },
-        {
-          id: 2,
-          title: 'Post 2',
-          excerpt: 'This is a short description of post 2.',
-        },
-        {
-          id: 3,
-          title: 'Post 3',
-          excerpt: 'This is a short description of post 3.',
-        },
-      ],
-    }
-  },
-}
+<script setup>
+import maintenance from '../components/state/MaintenanceState.vue'
+
+// export default {
+//   name: 'Blog',
+//   data() {
+//     return {
+//       posts: [
+//         {
+//           id: 1,
+//           title: 'Post 1',
+//           excerpt: 'This is a short description of post 1.',
+//         },
+//         {
+//           id: 2,
+//           title: 'Post 2',
+//           excerpt: 'This is a short description of post 2.',
+//         },
+//         {
+//           id: 3,
+//           title: 'Post 3',
+//           excerpt: 'This is a short description of post 3.',
+//         },
+//       ],
+//     }
+//   },
+// }
 </script>
 
 <style scoped></style>

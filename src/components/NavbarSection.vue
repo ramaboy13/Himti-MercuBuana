@@ -16,12 +16,29 @@ export default {
       isOpen.value = !isOpen.value
     }
 
+    // Handle click outside navbar
+    const handleClickOutside = (event) => {
+      const navbar = document.getElementById('mobile-nav')
+      const hamburger = document.getElementById('hamburger-button')
+
+      if (
+        isOpen.value &&
+        navbar &&
+        !navbar.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        isOpen.value = false
+      }
+    }
+
     onMounted(() => {
       window.addEventListener('scroll', handleScroll)
+      document.addEventListener('click', handleClickOutside)
     })
 
     onUnmounted(() => {
       window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('click', handleClickOutside)
     })
 
     return {
@@ -54,6 +71,7 @@ export default {
 
       <!-- Hamburger Icon (mobile) -->
       <button
+        id="hamburger-button"
         @click="toggleMenu"
         class="text-white focus:outline-none lg:hidden"
       >
@@ -73,31 +91,80 @@ export default {
         </svg>
       </button>
 
+      <!-- Mobile Menu Overlay -->
+      <div
+        v-if="isOpen"
+        class="fixed inset-0 bg-black bg-opacity-50 lg:hidden"
+        @click="isOpen = false"
+      ></div>
+
       <!-- Navbar Links -->
       <ul
+        id="mobile-nav"
         :class="[
-          isOpen ? 'block' : 'hidden',
-          'text-white lg:flex lg:items-center lg:space-x-5 lg:bg-transparent',
-          'absolute right-4 top-16 rounded-lg bg-main-1 p-4 shadow-lg lg:static lg:flex lg:space-x-5 lg:rounded-none lg:p-0 lg:shadow-none',
+          'fixed bottom-0 right-0 top-0 z-50 w-64 transform transition-transform duration-300 ease-in-out lg:relative lg:right-auto lg:top-auto lg:z-auto lg:h-auto lg:w-auto lg:transform-none',
+          isOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0',
+          'bg-main-1 p-4 shadow-lg lg:flex lg:items-center lg:space-x-5 lg:bg-transparent lg:p-0 lg:shadow-none',
         ]"
-        class="lg:static lg:flex lg:items-center lg:space-x-5"
       >
-        <li>
-          <router-link to="/" class="block px-3 py-2 hover:text-gray-200"
+        <li class="py-2 lg:py-0">
+          <router-link
+            to="/"
+            class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
             >Home</router-link
           >
         </li>
-        <li>
-          <a href="#about" class="block px-3 py-2 hover:text-gray-200">About</a>
-        </li>
-        <li>
-          <a href="#member" class="block px-3 py-2 hover:text-gray-200"
-            >Member</a
+        <li class="py-2 lg:py-0">
+          <a
+            href="#about"
+            class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            >About</a
           >
         </li>
-        <li>
-          <router-link to="/blog" class="block px-3 py-2 hover:text-gray-200"
-            >Blog</router-link
+        <li class="py-2 lg:py-0">
+          <a
+            href="#program"
+            class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            >Program</a
+          >
+        </li>
+        <li class="py-2 lg:py-0">
+          <a
+            href="#team"
+            class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            >Our Team</a
+          >
+        </li>
+        <li class="group relative py-2 lg:py-0">
+          <button
+            class="peer block w-full px-3 py-2 text-left text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd] lg:hover:cursor-pointer"
+          >
+            More
+          </button>
+          <ul
+            class="invisible absolute space-y-2 bg-main-1 pl-4 opacity-0 transition-all duration-300 hover:visible hover:opacity-100 peer-hover:visible peer-hover:opacity-100 lg:right-0 lg:min-w-[120px] lg:space-y-0 lg:rounded-lg lg:p-2 lg:pl-2 lg:shadow-lg"
+          >
+            <li>
+              <router-link
+                to="/blog"
+                class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd]"
+                >Blog</router-link
+              >
+            </li>
+            <li>
+              <router-link
+                to="/event"
+                class="block px-3 py-2 text-white hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd]"
+                >Event</router-link
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="py-2 lg:py-0">
+          <a
+            href="#contact"
+            class="block rounded-lg bg-white px-4 py-2 font-semibold text-main-1 transition duration-200 hover:bg-accent hover:text-white"
+            >Contact Us</a
           >
         </li>
       </ul>
