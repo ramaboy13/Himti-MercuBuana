@@ -6,9 +6,11 @@ import Home from '../pages/Home.vue'
 import KelascorePages from '../pages/KelascorePages.vue'
 import Team from '../pages/MemberPages.vue'
 import SeminarITPages from '../pages/SeminarITPages.vue'
+import Test from '../pages/Test.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
+  { path: '/test', name: 'Test', component: Test },
   { path: '/blog', name: 'Blog', component: Blog }, // Blog di blog
   { path: '/event', name: 'Event', component: Event }, // Event di event
   { path: '/team', name: 'Team', component: Team },

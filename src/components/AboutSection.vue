@@ -1,9 +1,15 @@
-<script setup>
+<script>
 import { Icon } from '@iconify/vue/dist/iconify.js'
+
+export default {
+  components: {
+    Icon,
+  },
+}
 </script>
 
 <template>
-  <section class="relative mx-auto" id="about">
+  <section class="relative mx-auto overflow-hidden" id="about">
     <!-- SVG Waves at the top -->
     <div class="absolute left-0 right-0 top-0 w-full">
       <!-- Mobile -->
@@ -111,7 +117,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
             data-aos="fade-left"
           >
             <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+              class="flex size-14 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
             >
               <Icon icon="mdi:eye-outline" color="white" width="50" />
             </div>
@@ -135,14 +141,14 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <!-- Misi -->
           <div class="rtl flex gap-6 text-left" data-aos="fade-up">
             <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+              class="flex size-14 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
             >
               <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
             </div>
             <div class="">
               <h1 class="mb-1 text-4xl font-bold">Misi</h1>
               <div class="mb-4 h-1 w-11 bg-purple-600"></div>
-              <div class="text-justify sm:text-start">
+              <div class="text-start">
                 <li>
                   Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
                   bidang akademis melalui penyelenggaraan penelitian,
