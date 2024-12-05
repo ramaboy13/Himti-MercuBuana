@@ -41,7 +41,6 @@ export default {
   <section
     id="home"
     class="relative flex min-h-screen items-center justify-center bg-cover bg-center px-4 md:px-8"
-    :style="`background-image: url(${heroBg})`"
   >
     <div
       class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12"
