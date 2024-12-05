@@ -1,247 +1,249 @@
-[
-  {
-    "id": 1,
-    "name": "Bimo Saputro",
-    "role": "Ketua Himpunan",
-    "badge": "Ketua Himpunan",
-    "image": "https://picsum.photos/200?random=1"
-  },
-  {
-    "id": 2,
-    "name": "Putri Aditya",
-    "role": "Wakil Ketua Himpunan",
-    "badge": "Wakil Himpunan",
-    "image": "https://picsum.photos/200?random=2"
-  },
-  {
-    "id": 3,
-    "name": "Rina Kusuma",
-    "role": "Divisi Riset Teknologi",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=3"
-  },
-  {
-    "id": 4,
-    "name": "Ali Rahman",
-    "role": "Divisi Pengembangan SDM",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=4"
-  },
-  {
-    "id": 5,
-    "name": "Siti Lestari",
-    "role": "Divisi Riset Teknologi",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=5"
-  },
-  {
-    "id": 6,
-    "name": "Yusuf Hanafi",
-    "role": "Divisi Pengembangan SDM",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=6"
-  },
-  {
-    "id": 7,
-    "name": "Ahmad Ridwan",
-    "role": "Divisi Keuangan",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=7"
-  },
-  {
-    "id": 8,
-    "name": "Lia Utami",
-    "role": "Divisi Keuangan",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=8"
-  },
-  {
-    "id": 9,
-    "name": "Dewi Purnama",
-    "role": "Divisi Sosial",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=9"
-  },
-  {
-    "id": 10,
-    "name": "Iwan Setiawan",
-    "role": "Divisi Sosial",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=10"
-  },
-  {
-    "id": 11,
-    "name": "Agus Prasetyo",
-    "role": "Divisi Humas",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=11"
-  },
-  {
-    "id": 12,
-    "name": "Linda Wijaya",
-    "role": "Divisi Humas",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=12"
-  },
-  {
-    "id": 13,
-    "name": "Nurul Fauziah",
-    "role": "Divisi Acara",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=13"
-  },
-  {
-    "id": 14,
-    "name": "Budi Santoso",
-    "role": "Divisi Acara",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=14"
-  },
-  {
-    "id": 15,
-    "name": "Sari Yulianti",
-    "role": "Divisi Logistik",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=15"
-  },
-  {
-    "id": 16,
-    "name": "Firman Fadillah",
-    "role": "Divisi Logistik",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=16"
-  },
-  {
-    "id": 17,
-    "name": "Tina Susanti",
-    "role": "Divisi Dokumentasi",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=17"
-  },
-  {
-    "id": 18,
-    "name": "Rudi Hartono",
-    "role": "Divisi Dokumentasi",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=18"
-  },
-  {
-    "id": 19,
-    "name": "Wulan Permata",
-    "role": "Divisi Kreatif",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=19"
-  },
-  {
-    "id": 20,
-    "name": "Adi Sucipto",
-    "role": "Divisi Kreatif",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=20"
-  },
-  {
-    "id": 21,
-    "name": "Mega Rahayu",
-    "role": "Divisi Edukasi",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=21"
-  },
-  {
-    "id": 22,
-    "name": "Doni Susanto",
-    "role": "Divisi Edukasi",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=22"
-  },
-  {
-    "id": 23,
-    "name": "Arifin Saputra",
-    "role": "Divisi Pengabdian",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=23"
-  },
-  {
-    "id": 24,
-    "name": "Lina Marlina",
-    "role": "Divisi Pengabdian",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=24"
-  },
-  {
-    "id": 25,
-    "name": "Feri Supriyadi",
-    "role": "Divisi Kesekretariatan",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=25"
-  },
-  {
-    "id": 26,
-    "name": "Maya Triana",
-    "role": "Divisi Kesekretariatan",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=26"
-  },
-  {
-    "id": 27,
-    "name": "Diana Putri",
-    "role": "Divisi Kewirausahaan",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=27"
-  },
-  {
-    "id": 28,
-    "name": "Rizal Aditya",
-    "role": "Divisi Kewirausahaan",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=28"
-  },
-  {
-    "id": 29,
-    "name": "Nina Zulfikar",
-    "role": "Divisi Kesehatan",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=29"
-  },
-  {
-    "id": 30,
-    "name": "Heri Setiono",
-    "role": "Divisi Kesehatan",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=30"
-  },
-  {
-    "id": 31,
-    "name": "Dimas Anggara",
-    "role": "Divisi Lingkungan",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=31"
-  },
-  {
-    "id": 32,
-    "name": "Siska Andini",
-    "role": "Divisi Lingkungan",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=32"
-  },
-  {
-    "id": 33,
-    "name": "Farah Salsabila",
-    "role": "Divisi Seni Budaya",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=33"
-  },
-  {
-    "id": 34,
-    "name": "Bayu Saputra",
-    "role": "Divisi Seni Budaya",
-    "badge": "Anggota",
-    "image": "https://picsum.photos/200?random=34"
-  },
-  {
-    "id": 35,
-    "name": "Kiki Yulia",
-    "role": "Divisi Teknologi Informasi",
-    "badge": "Kadiv",
-    "image": "https://picsum.photos/200?random=35"
-  }
-]
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Kristizo",
+      "role": "Ketua Himpunan",
+      "badge": "Ketua Himpunan",
+      "image": "https://picsum.photos/200?random=1"
+    },
+    {
+      "id": 2,
+      "name": "Putri Aditya",
+      "role": "Wakil Ketua Himpunan",
+      "badge": "Wakil Himpunan",
+      "image": "https://picsum.photos/200?random=2"
+    },
+    {
+      "id": 3,
+      "name": "Rina Kusuma",
+      "role": "Divisi Riset Teknologi",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=3"
+    },
+    {
+      "id": 4,
+      "name": "Ali Rahman",
+      "role": "Divisi Pengembangan SDM",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=4"
+    },
+    {
+      "id": 5,
+      "name": "Siti Lestari",
+      "role": "Divisi Riset Teknologi",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=5"
+    },
+    {
+      "id": 6,
+      "name": "Yusuf Hanafi",
+      "role": "Divisi Pengembangan SDM",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=6"
+    },
+    {
+      "id": 7,
+      "name": "Ahmad Ridwan",
+      "role": "Divisi Keuangan",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=7"
+    },
+    {
+      "id": 8,
+      "name": "Lia Utami",
+      "role": "Divisi Keuangan",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=8"
+    },
+    {
+      "id": 9,
+      "name": "Dewi Purnama",
+      "role": "Divisi Sosial",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=9"
+    },
+    {
+      "id": 10,
+      "name": "Iwan Setiawan",
+      "role": "Divisi Sosial",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=10"
+    },
+    {
+      "id": 11,
+      "name": "Agus Prasetyo",
+      "role": "Divisi Humas",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=11"
+    },
+    {
+      "id": 12,
+      "name": "Linda Wijaya",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=12"
+    },
+    {
+      "id": 13,
+      "name": "Nurul Fauziah",
+      "role": "Divisi Acara",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=13"
+    },
+    {
+      "id": 14,
+      "name": "Budi Santoso",
+      "role": "Divisi Acara",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=14"
+    },
+    {
+      "id": 15,
+      "name": "Sari Yulianti",
+      "role": "Divisi Logistik",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=15"
+    },
+    {
+      "id": 16,
+      "name": "Firman Fadillah",
+      "role": "Divisi Logistik",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=16"
+    },
+    {
+      "id": 17,
+      "name": "Tina Susanti",
+      "role": "Divisi Dokumentasi",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=17"
+    },
+    {
+      "id": 18,
+      "name": "Rudi Hartono",
+      "role": "Divisi Dokumentasi",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=18"
+    },
+    {
+      "id": 19,
+      "name": "Wulan Permata",
+      "role": "Divisi Kreatif",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=19"
+    },
+    {
+      "id": 20,
+      "name": "Adi Sucipto",
+      "role": "Divisi Kreatif",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=20"
+    },
+    {
+      "id": 21,
+      "name": "Mega Rahayu",
+      "role": "Divisi Edukasi",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=21"
+    },
+    {
+      "id": 22,
+      "name": "Doni Susanto",
+      "role": "Divisi Edukasi",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=22"
+    },
+    {
+      "id": 23,
+      "name": "Arifin Saputra",
+      "role": "Divisi Pengabdian",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=23"
+    },
+    {
+      "id": 24,
+      "name": "Lina Marlina",
+      "role": "Divisi Pengabdian",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=24"
+    },
+    {
+      "id": 25,
+      "name": "Feri Supriyadi",
+      "role": "Divisi Kesekretariatan",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=25"
+    },
+    {
+      "id": 26,
+      "name": "Maya Triana",
+      "role": "Divisi Kesekretariatan",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=26"
+    },
+    {
+      "id": 27,
+      "name": "Diana Putri",
+      "role": "Divisi Kewirausahaan",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=27"
+    },
+    {
+      "id": 28,
+      "name": "Rizal Aditya",
+      "role": "Divisi Kewirausahaan",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=28"
+    },
+    {
+      "id": 29,
+      "name": "Nina Zulfikar",
+      "role": "Divisi Kesehatan",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=29"
+    },
+    {
+      "id": 30,
+      "name": "Heri Setiono",
+      "role": "Divisi Kesehatan",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=30"
+    },
+    {
+      "id": 31,
+      "name": "Dimas Anggara",
+      "role": "Divisi Lingkungan",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=31"
+    },
+    {
+      "id": 32,
+      "name": "Siska Andini",
+      "role": "Divisi Lingkungan",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=32"
+    },
+    {
+      "id": 33,
+      "name": "Farah Salsabila",
+      "role": "Divisi Seni Budaya",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=33"
+    },
+    {
+      "id": 34,
+      "name": "Bayu Saputra",
+      "role": "Divisi Seni Budaya",
+      "badge": "Anggota",
+      "image": "https://picsum.photos/200?random=34"
+    },
+    {
+      "id": 35,
+      "name": "Kiki Yulia",
+      "role": "Divisi Teknologi Informasi",
+      "badge": "Kadiv",
+      "image": "https://picsum.photos/200?random=35"
+    }
+  ]
+}
