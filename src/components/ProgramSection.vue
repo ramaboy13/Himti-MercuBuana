@@ -3,7 +3,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 </script>
 
 <template>
-  <section id="program" class="px-5 pt-20 text-white lg:pt-32">
+  <section id="program" class="px-5 pt-20 text-white lg:pt-5">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
@@ -33,7 +33,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               kemampuan kepemimpinan dan soft skill yang diperlukan di dunia
               kerja modern.
             </p>
-            <button
+            <!-- <button
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white transition hover:bg-accent"
             >
               <span>Lebih Lanjut </span>
@@ -52,7 +52,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </button>
+            </button> -->
           </div>
         </div>
       </fieldset>

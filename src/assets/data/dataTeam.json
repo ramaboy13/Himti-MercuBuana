@@ -2,248 +2,437 @@
   "data": [
     {
       "id": 1,
-      "name": "Kristizo",
+      "name": "Kristio Budi Prayoga",
       "role": "Ketua Himpunan",
       "badge": "Ketua Himpunan",
-      "image": "https://picsum.photos/200?random=1"
+      "image": "/img/BPH/Kristio_Budi_Prayoga.png"
     },
     {
       "id": 2,
-      "name": "Putri Aditya",
+      "name": "Muhammad Ardhan Darmawan",
       "role": "Wakil Ketua Himpunan",
-      "badge": "Wakil Himpunan",
-      "image": "https://picsum.photos/200?random=2"
+      "badge": "Wakil Ketua Himpunan",
+      "image": "/img/BPH/Muhammad_Ardhan_Darmawan.png"
     },
     {
       "id": 3,
-      "name": "Rina Kusuma",
-      "role": "Divisi Riset Teknologi",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=3"
+      "name": "Fikri Ramadhan",
+      "role": "Sekretaris",
+      "badge": "Sekretaris",
+      "image": "/img/BPH/Fikri_Ramadhan.png"
     },
     {
       "id": 4,
-      "name": "Ali Rahman",
-      "role": "Divisi Pengembangan SDM",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=4"
+      "name": "Ayaitulla Salsabilla Achmad",
+      "role": "Sekretaris",
+      "badge": "Sekretaris",
+      "image": "/img/BPH/Ayaitulla_Salsabilla_Achmad.png"
     },
     {
       "id": 5,
-      "name": "Siti Lestari",
-      "role": "Divisi Riset Teknologi",
-      "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=5"
+      "name": "Shahibul Amnar",
+      "role": "Bendahara",
+      "badge": "Bendahara",
+      "image": "/img/BPH/Shahibul_Amnar.png"
     },
     {
       "id": 6,
-      "name": "Yusuf Hanafi",
-      "role": "Divisi Pengembangan SDM",
-      "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=6"
+      "name": "Huda",
+      "role": "Bendahara",
+      "badge": "Bendahara",
+      "image": "/img/BPH/Huda.png"
     },
     {
       "id": 7,
-      "name": "Ahmad Ridwan",
-      "role": "Divisi Keuangan",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=7"
+      "name": "Rifky Andrean",
+      "role": "Ketua Divisi Humas",
+      "badge": "Ketua Divisi",
+      "image": "/img/HUMAS/Rifky_Andrean.png"
     },
     {
       "id": 8,
-      "name": "Lia Utami",
-      "role": "Divisi Keuangan",
+      "name": "Nadya Aurelia",
+      "role": "Divisi Humas",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=8"
+      "image": "/img/HUMAS/Nadya_Aurelia.png"
     },
     {
       "id": 9,
-      "name": "Dewi Purnama",
-      "role": "Divisi Sosial",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=9"
+      "name": "Fida Rizky Anindya",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Fida_Rizky_Anindya.png"
     },
     {
       "id": 10,
-      "name": "Iwan Setiawan",
-      "role": "Divisi Sosial",
+      "name": "Putri Nabila",
+      "role": "Divisi Humas",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=10"
+      "image": "/img/HUMAS/Putri_Nabila.png"
     },
     {
       "id": 11,
-      "name": "Agus Prasetyo",
+      "name": "Faiz Muhammad Ramadhan",
       "role": "Divisi Humas",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=11"
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Faiz_Muhammad_Ramadhan.png"
     },
     {
       "id": 12,
-      "name": "Linda Wijaya",
+      "name": "Khairunnisa Ramadhan",
       "role": "Divisi Humas",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=12"
+      "image": "/img/HUMAS/Khairunnisa_Ramadhan.png"
     },
     {
       "id": 13,
-      "name": "Nurul Fauziah",
-      "role": "Divisi Acara",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=13"
+      "name": "Faisal Ramadhan",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Faisal_Ramadhan.png"
     },
     {
       "id": 14,
-      "name": "Budi Santoso",
-      "role": "Divisi Acara",
+      "name": "Muhammad Rizky Samuel",
+      "role": "Divisi Humas",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=14"
+      "image": "/img/HUMAS/Muhammad_Rizky_Samuel.png"
     },
     {
       "id": 15,
-      "name": "Sari Yulianti",
-      "role": "Divisi Logistik",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=15"
+      "name": "Irsyad Harry Nugroho",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Irsyad_Harry_Nugroho.png"
     },
     {
       "id": 16,
-      "name": "Firman Fadillah",
-      "role": "Divisi Logistik",
+      "name": "Abdullah Al Manan",
+      "role": "Divisi Humas",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=16"
+      "image": "/img/HUMAS/Abdullah_Al_Manan.png"
     },
     {
       "id": 17,
-      "name": "Tina Susanti",
-      "role": "Divisi Dokumentasi",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=17"
+      "name": "Raden Ardhan Razatsa Setiamadenda",
+      "role": "Ketua Divisi PSDM",
+      "badge": "Ketua Divisi",
+      "image": "/img/PSDM/Raden_Ardhan_Razatsa_Setiamadenda.png"
     },
     {
       "id": 18,
-      "name": "Rudi Hartono",
-      "role": "Divisi Dokumentasi",
+      "name": "Freedan Rafii Syafiq",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=18"
+      "image": "/img/PSDM/Freedan_Rafii_Syafiq.png"
     },
     {
       "id": 19,
-      "name": "Wulan Permata",
-      "role": "Divisi Kreatif",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=19"
+      "name": "Hotman Jonathan Simanjuntak",
+      "role": "Divisi PSDM",
+      "badge": "Anggota",
+      "image": "/img/PSDM/Hotman_Jonathan_Simanjuntak.png"
     },
     {
       "id": 20,
-      "name": "Adi Sucipto",
-      "role": "Divisi Kreatif",
+      "name": "Syahwal Nurdin",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=20"
+      "image": "/img/PSDM/Syahwal_Nurdin.png"
     },
     {
       "id": 21,
-      "name": "Mega Rahayu",
-      "role": "Divisi Edukasi",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=21"
+      "name": "Yudha Wibisana",
+      "role": "Divisi PSDM",
+      "badge": "Anggota",
+      "image": "/img/PSDM/Yudha_Wibisana.png"
     },
     {
       "id": 22,
-      "name": "Doni Susanto",
-      "role": "Divisi Edukasi",
+      "name": "Muhammad Riski Purwanto",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=22"
+      "image": "/img/PSDM/Muhammad_Riski_Purwanto.png"
     },
     {
       "id": 23,
-      "name": "Arifin Saputra",
-      "role": "Divisi Pengabdian",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=23"
+      "name": "Kia Restu Nugraha",
+      "role": "Divisi PSDM",
+      "badge": "Anggota",
+      "image": "/img/PSDM/Kia_Restu_Nugraha.png"
     },
     {
       "id": 24,
-      "name": "Lina Marlina",
-      "role": "Divisi Pengabdian",
+      "name": "Nazwa Nurul Qurataaini",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=24"
+      "image": "/img/PSDM/Nazwa_Nurul_Qurataaini.png"
     },
     {
       "id": 25,
-      "name": "Feri Supriyadi",
-      "role": "Divisi Kesekretariatan",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=25"
+      "name": "Fitri Nur Fadiyah",
+      "role": "Divisi PSDM",
+      "badge": "Anggota",
+      "image": "/img/PSDM/Fitri_Nur_Fadiyah.png"
     },
     {
       "id": 26,
-      "name": "Maya Triana",
-      "role": "Divisi Kesekretariatan",
+      "name": "Luthfi Ardhika Akbar",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=26"
+      "image": "/img/PSDM/Luthfi_Ardhika_Akbar.png"
     },
     {
       "id": 27,
-      "name": "Diana Putri",
-      "role": "Divisi Kewirausahaan",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=27"
+      "name": "Bimo Bagas Riyanto",
+      "role": "Ketua Divisi DESMED",
+      "badge": "Ketua Divisi",
+      "image": "/img/DESMED/Bimo_Bagas_Riyanto.png"
     },
     {
       "id": 28,
-      "name": "Rizal Aditya",
-      "role": "Divisi Kewirausahaan",
+      "name": "Rizqi Alif Permana Putra",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=28"
+      "image": "/img/DESMED/Rizqi_Alif_Permana_Putra.png"
     },
     {
       "id": 29,
-      "name": "Nina Zulfikar",
-      "role": "Divisi Kesehatan",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=29"
+      "name": "Azka Faiq Suharyanto",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Azka_Faiq_Suharyanto.png"
     },
     {
       "id": 30,
-      "name": "Heri Setiono",
-      "role": "Divisi Kesehatan",
+      "name": "Mahesa Haryo Pamungkas",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=30"
+      "image": "/img/DESMED/Mahesa_Haryo_Pamungkas.png"
     },
     {
       "id": 31,
-      "name": "Dimas Anggara",
-      "role": "Divisi Lingkungan",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=31"
+      "name": "Bhakas Adhitya Anugrah Wibawa",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Bhakas_Adhitya_Anugrah_Wibawa.png"
     },
     {
       "id": 32,
-      "name": "Siska Andini",
-      "role": "Divisi Lingkungan",
+      "name": "Stefany Artana",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=32"
+      "image": "/img/DESMED/Stefany_Artana.png"
     },
     {
       "id": 33,
-      "name": "Farah Salsabila",
-      "role": "Divisi Seni Budaya",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=33"
+      "name": "Amrullah Valentino Caesar Putra",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Amrullah_Valentino_Caesar_Putra.png"
     },
     {
       "id": 34,
-      "name": "Bayu Saputra",
-      "role": "Divisi Seni Budaya",
+      "name": "Kaisyarani Zahra Adinomo",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "https://picsum.photos/200?random=34"
+      "image": "/img/DESMED/Kaisyarani_Zahra_Adinomo.png"
     },
     {
       "id": 35,
-      "name": "Kiki Yulia",
-      "role": "Divisi Teknologi Informasi",
-      "badge": "Kadiv",
-      "image": "https://picsum.photos/200?random=35"
+      "name": "Putri Amelia",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Putri_Amelia.png"
+    },
+    {
+      "id": 36,
+      "name": "Rahmat Saidi Amrullah",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Rahmat_Saidi_Amrullah.png"
+    },
+    {
+      "id": 37,
+      "name": "Laura Janisa Azahra",
+      "role": "Divisi DESMED",
+      "badge": "Anggota",
+      "image": "/img/DESMED/Laura_Janisa_Azahra.png"
+    },
+    {
+      "id": 38,
+      "name": "Erlangga Daffa",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Erlangga_Daffa.png"
+    },
+    {
+      "id": 39,
+      "name": "Rizal Nururrahman",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Rizal_Nururrahman.png"
+    },
+    {
+      "id": 40,
+      "name": "Muhammad Reza Al Fatah",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Reza_Al_Fatah.png"
+    },
+    {
+      "id": 41,
+      "name": "Barito Surya Ramadhani",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Barito_Surya_Ramadhani.png"
+    },
+    {
+      "id": 42,
+      "name": "Muhammad Raihan Zuffar Musyaffa",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Raihan_Zuffar_Musyaffa.png"
+    },
+    {
+      "id": 43,
+      "name": "Restu Afrizal",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Restu_Afrizal.png"
+    },
+    {
+      "id": 44,
+      "name": "Husein Yarid Zidane",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Husein_Yarid_Zidane.png"
+    },
+    {
+      "id": 45,
+      "name": "Nathanael Aurick Adventius Putra Hermawan",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Nathanael_Aurick_Adventius_Putra_Hermawan.png"
+    },
+    {
+      "id": 46,
+      "name": "Aqilah Zahra Nadia",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Aqilah_Zahra_Nadia.png"
+    },
+    {
+      "id": 47,
+      "name": "Muhammad Nurul Arsy",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Nurul_Arsy.png"
+    },
+    {
+      "id": 48,
+      "name": "Bimo Saputro",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Bimo_Saputro.png"
+    },
+    {
+      "id": 49,
+      "name": "Muhammad Latief Alamin",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Latief_Alamin.png"
+    },
+    {
+      "id": 50,
+      "name": "Raihan Nur Daffa",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Raihan_Nur_Daffa.png"
+    },
+    {
+      "id": 51,
+      "name": "Intan Puspitasari",
+      "role": "Ketua Divisi SOSMAS",
+      "badge": "Ketua Divisi",
+      "image": "/img/SOSMAS/Intan_Puspitasari.png"
+    },
+    {
+      "id": 52,
+      "name": "Rio Ichsan Wahdana",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Rio_Ichsan_Wahdana.png"
+    },
+    {
+      "id": 53,
+      "name": "Khansa A’afiyah Hutomo",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Khansa_Aafiyah_Hutomo.png"
+    },
+    {
+      "id": 54,
+      "name": "Feni Prastyani",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Feni_Prastyani.png"
+    },
+    {
+      "id": 55,
+      "name": "Nur Ghazali Santoso",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Nur_Ghazali_Santoso.png"
+    },
+    {
+      "id": 56,
+      "name": "Muhammad Reza Taufiq",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Muhammad_Reza_Taufiq.png"
+    },
+    {
+      "id": 57,
+      "name": "Gibran Mishbah Habibillah",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Gibran_Mishbah_Habibillah.png"
+    },
+    {
+      "id": 58,
+      "name": "Dessi Adelia Safira",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Dessi_Adelia_Safira.png"
+    },
+    {
+      "id": 59,
+      "name": "Faras Artika Nahbur",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Faras_Artika_Nahbur.png"
+    },
+    {
+      "id": 60,
+      "name": "Nadya Billa Pradani",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Nadya_Billa_Pradani.png"
+    },
+    {
+      "id": 61,
+      "name": "Vicky Ardiansyah",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Vicky_Ardiansyah.png"
+    },
+    {
+      "id": 62,
+      "name": "Della Ulvanti",
+      "role": "Divisi SOSMAS",
+      "badge": "Anggota",
+      "image": "/img/SOSMAS/Della_Ulvanti.png"
     }
   ]
 }

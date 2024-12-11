@@ -1,7 +1,7 @@
 <script>
-import MemberCard from './MemberCard.vue'
-import data from '../assets/data/dataTeam.json'
 import { Icon } from '@iconify/vue/dist/iconify.js'
+import data from '../assets/data/dataTeam.json'
+import MemberCard from './MemberCard.vue'
 
 export default {
   components: {
@@ -39,7 +39,7 @@ export default {
       "isInfiniteLoop": true,
       "isAutoplay": true,
   "loadingClasses": "opacity-0",
-  "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+  "dotsItemClasses": "hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
   "slidesQty": {
     "xs": 1,
     "md": 3,
@@ -49,7 +49,7 @@ export default {
       class="relative"
     >
       <!-- Slider -->
-      <div class="hs-carousel w-full overflow-hidden rounded-lg bg-slate-400">
+      <div class="hs-carousel w-full overflow-hidden rounded-lg bg-transparent">
         <div class="relative min-h-96">
           <!-- transition-transform duration-700 -->
           <div
@@ -97,9 +97,9 @@ export default {
         </span>
       </button>
 
-      <div
-        class="hs-carousel-pagination absolute bottom-3 end-0 start-0 hidden justify-center space-x-2 sm:flex"
-      ></div>
+      <!-- <div
+        class="hs-carousel-pagination absolute bottom-[-1.5rem] end-0 start-0 hidden justify-center space-x-2 sm:flex"
+      ></div> -->
     </div>
   </div>
   <!-- End Slider -->
