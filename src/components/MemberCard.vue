@@ -7,12 +7,28 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isHovered: false,
+    }
+  },
   computed: {
+    displayedName() {
+      return this.isHovered ? this.member.name : this.truncatedName
+    },
     truncatedName() {
       const maxLength = 15
       return this.member.name.length > maxLength
         ? this.member.name.substring(0, maxLength) + '...'
         : this.member.name
+    },
+    cardClasses() {
+      return [
+        'relative h-full overflow-hidden rounded-lg border border-purple-700 bg-gray-800 shadow-lg transition-all duration-300',
+        this.isHovered
+          ? 'hover:scale-105 hover:shadow-2xl dark:bg-neutral-900'
+          : 'scale-100 shadow-lg dark:bg-neutral-900',
+      ]
     },
   },
 }
@@ -20,36 +36,51 @@ export default {
 
 <template>
   <div
-    class="relative h-full overflow-hidden rounded-lg bg-main-2 shadow-lg dark:bg-neutral-900"
+    :class="cardClasses"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
   >
-    <!-- Badge -->
     <div
-      class="absolute bottom-24 left-2 rounded-md bg-purple-700 px-2 py-1 text-xs text-white"
+      class="relative h-full overflow-hidden rounded-lg border border-purple-700 bg-gray-800 shadow-lg transition-all duration-300"
     >
-      {{ member.badge }}
-    </div>
-
-    <!-- Gambar Anggota -->
-    <img
-      :src="member.image"
-      :alt="member.name"
-      class="h-72 w-full object-cover"
-    />
-
-    <!-- Konten Anggota -->
-    <div class="p-4">
-      <h3
-        class="mb-0 text-center text-lg font-semibold text-white dark:text-white"
+      <!-- Badge -->
+      <div
+        class="absolute left-4 top-4 z-10 rounded-md bg-purple-500 px-3 py-1 text-xs text-white"
       >
-        {{ truncatedName }}
-      </h3>
-      <p class="text-center text-sm text-gray-400 dark:text-gray-300">
-        {{ member.role }}
-      </p>
+        {{ member.badge }}
+      </div>
+
+      <!-- Gambar Anggota -->
+      <img
+        :src="member.image"
+        :alt="member.name"
+        class="h-72 w-full object-cover"
+      />
+
+      <!-- Konten Anggota -->
+      <div class="p-5">
+        <h3
+          class="mb-1 text-center text-lg font-semibold text-white dark:text-white"
+        >
+          {{ displayedName }}
+        </h3>
+        <p class="text-center text-sm text-gray-400 dark:text-gray-300">
+          {{ member.role }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Tambahkan padding jika perlu */
+.hover\:scale-105 {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+}
+
+.hover\:shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 </style>

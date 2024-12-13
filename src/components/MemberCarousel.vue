@@ -10,23 +10,8 @@ export default {
   },
   data() {
     return {
-      members: data.data, // Menyimpan data anggota
+      members: data.data,
     }
-  },
-  mounted() {
-    this.fetchMembers()
-  },
-  methods: {
-    async fetchMembers() {
-      try {
-        const response = await fetch(data.data)
-        console.log(response.json())
-        // const result = await response
-        this.members = result // Menyimpan data anggota dalam state
-      } catch (error) {
-        console.error('Error fetching members:', error)
-      }
-    },
   },
 }
 </script>
@@ -35,27 +20,24 @@ export default {
   <div class="h-full text-center">
     <div
       data-hs-carousel='{
-      "isDraggable": true,
-      "isInfiniteLoop": true,
-      "isAutoplay": true,
-  "loadingClasses": "opacity-0",
-  "dotsItemClasses": "hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
-  "slidesQty": {
-    "xs": 1,
-    "md": 3,
-    "lg": 4
-  }
-}'
+        "isDraggable": true,
+        "isInfiniteLoop": true,
+        "isAutoplay": true,
+        "loadingClasses": "opacity-0",
+        "dotsItemClasses": "hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+        "slidesQty": {
+          "xs": 1,
+          "md": 3,
+          "lg": 4
+        }
+      }'
       class="relative"
     >
-      <!-- Slider -->
       <div class="hs-carousel w-full overflow-hidden rounded-lg bg-transparent">
         <div class="relative min-h-96">
-          <!-- transition-transform duration-700 -->
           <div
             class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700"
           >
-            <!-- Menggunakan v-for untuk menampilkan MemberCard -->
             <div
               v-for="(member, index) in members"
               :key="index"
@@ -96,13 +78,8 @@ export default {
           </span>
         </span>
       </button>
-
-      <!-- <div
-        class="hs-carousel-pagination absolute bottom-[-1.5rem] end-0 start-0 hidden justify-center space-x-2 sm:flex"
-      ></div> -->
     </div>
   </div>
-  <!-- End Slider -->
 </template>
 
 <style scoped>

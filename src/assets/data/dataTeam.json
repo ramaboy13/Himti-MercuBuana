@@ -3,49 +3,49 @@
     {
       "id": 1,
       "name": "Kristio Budi Prayoga",
-      "role": "Ketua Himpunan",
+      "role": "BPH",
       "badge": "Ketua Himpunan",
       "image": "/img/BPH/Kristio_Budi_Prayoga.png"
     },
     {
       "id": 2,
       "name": "Muhammad Ardhan Darmawan",
-      "role": "Wakil Ketua Himpunan",
+      "role": "BPH",
       "badge": "Wakil Ketua Himpunan",
       "image": "/img/BPH/Muhammad_Ardhan_Darmawan.png"
     },
     {
       "id": 3,
       "name": "Fikri Ramadhan",
-      "role": "Sekretaris",
+      "role": "BPH",
       "badge": "Sekretaris",
       "image": "/img/BPH/Fikri_Ramadhan.png"
     },
     {
       "id": 4,
       "name": "Ayaitulla Salsabilla Achmad",
-      "role": "Sekretaris",
+      "role": "BPH",
       "badge": "Sekretaris",
       "image": "/img/BPH/Ayaitulla_Salsabilla_Achmad.png"
     },
     {
       "id": 5,
       "name": "Shahibul Amnar",
-      "role": "Bendahara",
+      "role": "BPH",
       "badge": "Bendahara",
       "image": "/img/BPH/Shahibul_Amnar.png"
     },
     {
       "id": 6,
       "name": "Huda",
-      "role": "Bendahara",
+      "role": "BPH",
       "badge": "Bendahara",
       "image": "/img/BPH/Huda.png"
     },
     {
       "id": 7,
       "name": "Rifky Andrean",
-      "role": "Ketua Divisi Humas",
+      "role": "Divisi Humas",
       "badge": "Ketua Divisi",
       "image": "/img/HUMAS/Rifky_Andrean.png"
     },
@@ -115,7 +115,7 @@
     {
       "id": 17,
       "name": "Raden Ardhan Razatsa Setiamadenda",
-      "role": "Ketua Divisi PSDM",
+      "role": "Divisi PSDM",
       "badge": "Ketua Divisi",
       "image": "/img/PSDM/Raden_Ardhan_Razatsa_Setiamadenda.png"
     },
@@ -185,7 +185,7 @@
     {
       "id": 27,
       "name": "Bimo Bagas Riyanto",
-      "role": "Ketua Divisi DESMED",
+      "role": "Divisi DESMED",
       "badge": "Ketua Divisi",
       "image": "/img/DESMED/Bimo_Bagas_Riyanto.png"
     },
@@ -263,7 +263,7 @@
       "id": 38,
       "name": "Erlangga Daffa",
       "role": "Divisi RISTEK",
-      "badge": "Anggota",
+      "badge": "Ketua Divisi",
       "image": "/img/RISTEK/Erlangga_Daffa.png"
     },
     {
@@ -353,7 +353,7 @@
     {
       "id": 51,
       "name": "Intan Puspitasari",
-      "role": "Ketua Divisi SOSMAS",
+      "role": "Divisi SOSMAS",
       "badge": "Ketua Divisi",
       "image": "/img/SOSMAS/Intan_Puspitasari.png"
     },

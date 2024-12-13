@@ -9,21 +9,35 @@ export default {
   data() {
     return {
       members: data.data, // Menyimpan data anggota
+      selectedRole: 'all', // State untuk menyimpan peran yang dipilih
     }
   },
-  mounted() {
-    this.fetchMembers()
+  computed: {
+    filteredMembers() {
+      if (this.selectedRole === 'all') {
+        return this.members
+      } else {
+        return this.members.filter(
+          (member) => member.role === this.selectedRole,
+        )
+      }
+    },
+    roles() {
+      return [...new Set(this.members.map((m) => m.role))]
+    },
   },
   methods: {
     async fetchMembers() {
       try {
         const response = await fetch(data.data)
-        console.log(response.json())
-        // const result = await response
+        const result = await response.json()
         this.members = result // Menyimpan data anggota dalam state
       } catch (error) {
         console.error('Error fetching members:', error)
       }
+    },
+    handleRoleChange(role) {
+      this.selectedRole = role
     },
   },
 }
@@ -43,12 +57,26 @@ export default {
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium.
       </p>
+      <!-- Tambahkan dropdown filter -->
+      <div class="mt-6">
+        <label for="role" class="mr-4 text-white">Filter by Role:</label>
+        <select
+          id="role"
+          v-model="selectedRole"
+          class="rounded-md bg-gray-800 px-4 py-2 text-white"
+        >
+          <option value="all">All</option>
+          <option v-for="role in roles" :key="role" :value="role">
+            {{ role }}
+          </option>
+        </select>
+      </div>
     </div>
     <div
       class="mx-auto grid grid-cols-2 gap-3 sm:gap-6 lg:max-w-screen-lg lg:grid-cols-4 lg:gap-5"
     >
       <div
-        v-for="member in members"
+        v-for="member in filteredMembers"
         :key="member.id"
         class="rounded-lg bg-main-3"
       >
