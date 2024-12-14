@@ -68,7 +68,7 @@ export default {
           <img
             :src="logoHimti"
             alt="HiMTI UMB"
-            class="h-auto w-full"
+            class="floating-image h-auto w-full"
             style="filter: drop-shadow(2px 2px 20px purple)"
           />
         </div>
@@ -107,7 +107,7 @@ export default {
         <img
           :src="logoHimti"
           alt="HiMTI UMB"
-          class="h-auto w-full"
+          class="floating-image h-auto w-full"
           style="filter: drop-shadow(2px 2px 20px purple)"
         />
       </div>
@@ -207,5 +207,21 @@ export default {
 /* Transition for text expansion */
 p {
   transition: all 0.3s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-image {
+  animation: float 3s ease-in-out infinite;
 }
 </style>
