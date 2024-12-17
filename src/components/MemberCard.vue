@@ -24,7 +24,7 @@ export default {
     },
     cardClasses() {
       return [
-        'relative h-full overflow-hidden rounded-lg border border-purple-700 bg-gray-800 shadow-lg transition-all duration-300',
+        'relative h-full overflow-hidden rounded-lg border border-main-4 bg-gray-800 shadow-lg transition-all duration-300',
         this.isHovered
           ? 'hover:scale-105 hover:shadow-2xl dark:bg-neutral-900'
           : 'scale-100 shadow-lg dark:bg-neutral-900',
@@ -41,11 +41,11 @@ export default {
     @mouseleave="isHovered = false"
   >
     <div
-      class="relative h-full overflow-hidden rounded-lg border border-purple-700 bg-gray-800 shadow-lg transition-all duration-300"
+      class="border-main-4 relative h-full overflow-hidden rounded-lg border bg-gray-800 shadow-lg transition-all duration-300"
     >
       <!-- Badge -->
       <div
-        class="absolute left-4 top-4 z-10 rounded-md bg-purple-500 px-3 py-1 text-xs text-white"
+        class="bg-main-4 absolute left-4 top-4 z-10 rounded-md px-3 py-1 text-xs text-white"
       >
         {{ member.badge }}
       </div>

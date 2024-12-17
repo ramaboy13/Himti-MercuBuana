@@ -8,16 +8,16 @@
       <!-- Title -->
       <div class="mb-12 text-center">
         <h1 class="text-3xl font-bold text-white dark:text-white sm:text-4xl">
-          Contact us
+          Kontak Kami
         </h1>
         <p class="mt-1 text-white dark:text-neutral-400">
-          We'd love to talk about how we can help you.
+          Kami sangat senang apabila kita saling berinteraksi.
         </p>
       </div>
 
       <div class="grid gap-6 lg:mt-20 lg:grid-cols-2 lg:gap-48">
         <!-- Contact Information Section (Left) -->
-        <div class="divide-y divide-gray-200 dark:divide-neutral-800">
+        <div class="divide-main-4 divide-y dark:divide-neutral-800">
           <!-- Instagram Block -->
           <div class="flex gap-x-7 py-6">
             <!-- Icon Instagram -->
@@ -260,7 +260,7 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border bg-gray-900 p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
+          class="border-main-4 flex flex-col rounded-2xl border bg-gray-900 p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
         >
           <h2
             class="mb-8 text-center text-xl font-semibold text-white shadow-slate-50 dark:text-neutral-200"
@@ -282,7 +282,7 @@
                       type="text"
                       name="hs-firstname-contacts-1"
                       id="hs-firstname-contacts-1"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      class="border-main-4 block w-full rounded-lg border bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       placeholder="First Name"
                     />
                   </div>
@@ -298,7 +298,7 @@
                       type="text"
                       name="hs-lastname-contacts-1"
                       id="hs-lastname-contacts-1"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      class="border-main-4 block w-full rounded-lg border bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       placeholder="Last Name"
                     />
                   </div>
@@ -315,7 +315,7 @@
                     name="hs-email-contacts-1"
                     id="hs-email-contacts-1"
                     autocomplete="email"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="border-main-4 block w-full rounded-lg border bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Email"
                   />
                 </div>
@@ -331,7 +331,7 @@
                     type="text"
                     name="hs-phone-number-1"
                     id="hs-phone-number-1"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="border-main-4 block w-full rounded-lg border bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -347,7 +347,7 @@
                     name="hs-about-contacts-1"
                     id="hs-about-contacts-1"
                     rows="4"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="border-main-4 block w-full rounded-lg border bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Message"
                   ></textarea>
                 </div>

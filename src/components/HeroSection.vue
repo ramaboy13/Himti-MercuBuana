@@ -51,7 +51,7 @@ export default {
           HIMTI Universitas Mercu Buana
         </h5>
         <h1 class="mb-2 text-2xl font-bold md:text-5xl">
-          <span class="typing-text text-purple-600">{{ displayText }}</span>
+          <span class="typing-text text-main-4">{{ displayText }}</span>
         </h1>
 
         <h1 class="text-xl font-semibold text-gray-300 md:text-2xl">
@@ -74,7 +74,7 @@ export default {
         </div>
 
         <!-- Centered line on mobile, left-aligned on desktop -->
-        <div class="mx-auto mb-6 mt-5 h-1 w-48 bg-accent md:mx-0"></div>
+        <div class="bg-main-4 mx-auto mb-6 mt-5 h-1 w-48 md:mx-0"></div>
 
         <!-- Mobile: Truncated text with read more -->
         <div class="text-center md:hidden">
