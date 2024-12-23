@@ -8,7 +8,7 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             About
           </a>
@@ -16,7 +16,7 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             Blog
           </a>
@@ -24,7 +24,7 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             Team
           </a>
@@ -32,7 +32,7 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             Pricing
           </a>
@@ -40,7 +40,7 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             Contact
           </a>
@@ -48,14 +48,14 @@
         <div class="px-5 py-2">
           <a
             href="#"
-            class="text-base leading-6 text-gray-500 hover:text-main-2"
+            class="text-base leading-6 text-gray-500 hover:text-main-4"
           >
             Terms
           </a>
         </div>
       </nav>
       <div class="mt-8 flex justify-center space-x-6">
-        <a href="#" class="text-gray-400 hover:text-main-2">
+        <a href="#" class="text-gray-400 hover:text-main-4">
           <span class="sr-only">Facebook</span>
           <svg
             class="h-6 w-6"
@@ -70,7 +70,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-main-2">
+        <a href="#" class="text-gray-400 hover:text-main-4">
           <span class="sr-only">Instagram</span>
           <svg
             class="h-6 w-6"
@@ -85,7 +85,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-main-2">
+        <a href="#" class="text-gray-400 hover:text-main-4">
           <span class="sr-only">Twitter</span>
           <svg
             class="h-6 w-6"
@@ -98,7 +98,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-main-2">
+        <a href="#" class="text-gray-400 hover:text-main-4">
           <span class="sr-only">GitHub</span>
           <svg
             class="h-6 w-6"
@@ -113,7 +113,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-main-2">
+        <a href="#" class="text-gray-400 hover:text-main-4">
           <span class="sr-only">Dribbble</span>
           <svg
             class="h-6 w-6"

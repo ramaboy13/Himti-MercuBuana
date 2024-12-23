@@ -54,7 +54,7 @@ export default {
           <span class="typing-text text-main-4">{{ displayText }}</span>
         </h1>
 
-        <h1 class="text-xl font-semibold text-gray-300 md:text-2xl">
+        <h1 class="text-xl font-semibold text-white md:text-2xl">
           Tahun 2024 - 2025
         </h1>
 
@@ -74,11 +74,11 @@ export default {
         </div>
 
         <!-- Centered line on mobile, left-aligned on desktop -->
-        <div class="bg-main-4 mx-auto mb-6 mt-5 h-1 w-48 md:mx-0"></div>
+        <div class="mx-auto mb-6 mt-5 h-1 w-56 bg-main-4 md:mx-0"></div>
 
         <!-- Mobile: Truncated text with read more -->
         <div class="text-center md:hidden">
-          <p class="mb-2 text-sm leading-relaxed text-gray-400">
+          <p class="mb-2 text-sm leading-relaxed text-white">
             {{ isExpanded ? fullText : truncatedText }}
           </p>
           <button
@@ -91,7 +91,7 @@ export default {
 
         <!-- Desktop: Full text -->
         <div class="hidden md:block">
-          <p class="mb-4 text-base leading-relaxed text-gray-400">
+          <p class="mb-4 text-base leading-relaxed text-white">
             {{ fullText }}
           </p>
         </div>
