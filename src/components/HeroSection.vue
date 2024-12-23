@@ -1,5 +1,5 @@
 <script>
-import logoHimti from '../assets/img/C-Tech 1.png'
+import logoHimti from '../assets/img/C-Tech 2.png'
 
 export default {
   name: 'HeroSection',
