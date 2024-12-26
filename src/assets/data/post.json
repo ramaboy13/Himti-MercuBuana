@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Memahami Dasar HTML: Panduan untuk Pemula",
+      "author": "Budi Santoso",
+      "date": "25 Des 2024",
+      "excerpt": "HTML (HyperText Markup Language) adalah bahasa standar untuk membuat dan merancang halaman web. Dalam artikel ini, kita akan membahas dasar-dasar HTML...",
+      "image": "/img/post/Html.jpg",
+      "tags": ["HTML", "Web Development"],
+      "content": "Artikel ini mencakup pengenalan tag HTML dasar, seperti <html>, <head>, <body>, serta elemen-elemen seperti <h1> hingga <h6>, <p>, <a>, <img>, dan lain-lain. Contoh praktis juga disertakan.",
+      "readTime": "7 min read"
+    },
+    {
+      "id": 2,
+      "title": "Menguasai CSS: Membuat Tampilan Web Menarik",
+      "author": "Rina Setiawan",
+      "date": "20 Des 2024",
+      "excerpt": "CSS (Cascading Style Sheets) adalah bahasa desain yang digunakan untuk mengatur tampilan dan layout halaman web. Dalam artikel ini, kita akan mempelajari cara membuat website terlihat menarik...",
+      "image": "/img/post/css.jpg",
+      "tags": ["CSS", "Frontend", "Design"],
+      "content": "Artikel ini menjelaskan konsep CSS dasar seperti selektor, properti, dan nilai. Disertai contoh bagaimana menggunakan class dan ID, serta membuat layout responsif.",
+      "readTime": "6 min read"
+    },
+    {
+      "id": 3,
+      "title": "PHP untuk Pemula: Membangun Website Dinamis",
+      "author": "Andi Wijaya",
+      "date": "15 Des 2024",
+      "excerpt": "PHP adalah bahasa pemrograman server-side yang banyak digunakan untuk membangun aplikasi web dinamis. Artikel ini akan membahas dasar-dasar sintaks dan cara membuat halaman web interaktif...",
+      "image": "/img/post/php.jpg",
+      "tags": ["PHP", "Backend", "Web Development"],
+      "content": "Pembahasan meliputi dasar PHP, seperti variabel, kondisi, loop, dan form handling. Contoh sederhana bagaimana membuat koneksi database dan menampilkan data juga dijelaskan.",
+      "readTime": "9 min read"
+    },
+    {
+      "id": 4,
+      "title": "Membuat Interaksi Dinamis dengan JavaScript",
+      "author": "Eka Saputra",
+      "date": "10 Des 2024",
+      "excerpt": "JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada situs web. Dalam artikel ini, kita akan belajar cara membuat fungsi dan event handler yang responsif...",
+      "image": "/img/post/js.jpg",
+      "tags": ["JavaScript", "Frontend", "Programming"],
+      "content": "Artikel ini mencakup dasar-dasar JavaScript seperti variabel, fungsi, DOM, dan event. Kita juga akan mempelajari cara membuat animasi sederhana dan manipulasi elemen HTML secara dinamis.",
+      "readTime": "8 min read"
+    },
+    {
+      "id": 5,
+      "title": "Implementasi Algoritma K-Nearest Neighbors (KNN) dalam Proyek Data Science",
+      "author": "Siti Aisyah",
+      "date": "5 Des 2024",
+      "excerpt": "KNN adalah salah satu algoritma machine learning yang digunakan untuk klasifikasi dan regresi. Artikel ini akan membahas cara kerja algoritma ini dan implementasinya dalam Python...",
+      "image": "/img/post/ml.jpg",
+      "tags": ["Machine Learning", "KNN", "Algorithm"],
+      "content": "Artikel ini menjelaskan prinsip dasar KNN, cara memilih nilai k yang tepat, serta implementasi menggunakan pustaka Python seperti scikit-learn. Studi kasus sederhana juga disertakan.",
+      "readTime": "10 min read"
+    }
+  ]
+}

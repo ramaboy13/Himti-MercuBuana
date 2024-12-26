@@ -7,11 +7,17 @@ import KelascorePages from '../pages/KelascorePages.vue'
 import Team from '../pages/MemberPages.vue'
 import SeminarITPages from '../pages/SeminarITPages.vue'
 import Test from '../pages/Test.vue'
+import PostDetail from '../pages/PostDetail.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/test', name: 'Test', component: Test },
   { path: '/blog', name: 'Blog', component: Blog }, // Blog di blog
+  {
+    path: '/post/:id',
+    name: 'PostDetail',
+    component: PostDetail,
+  },
   { path: '/event', name: 'Event', component: Event }, // Event di event
   { path: '/team', name: 'Team', component: Team },
   { path: '/fkti', name: 'FktiPages', component: FktiPages },
