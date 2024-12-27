@@ -13,6 +13,8 @@ import NavbarSection from './components/NavbarSection.vue'
 
 <style scoped>
 .wrapper {
-  cursor: url('./assets/img/cursor.png'), auto;
+  cursor:
+    url('./assets/img/cursor.png') 16 16,
+    auto;
 }
 </style>
