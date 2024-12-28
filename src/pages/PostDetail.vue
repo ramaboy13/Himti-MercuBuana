@@ -1,6 +1,6 @@
 <!-- src/views/PostDetail.vue -->
 <template>
-  <div class="mt-16 min-h-screen bg-main-4">
+  <div class="min-h-screen bg-main-1 pt-32">
     <!-- Navigation Breadcrumb -->
     <div class="container mx-auto px-4 py-4 text-sm text-gray-300">
       <div class="flex items-center gap-2">
@@ -34,7 +34,7 @@
               <span
                 v-for="tag in post?.tags"
                 :key="tag"
-                class="rounded-full bg-main-4 bg-opacity-20 px-3 py-1 text-main-4"
+                class="bg-main-4 text-main-4 rounded-full bg-opacity-20 px-3 py-1"
               >
                 {{ tag }}
               </span>
@@ -53,7 +53,7 @@
             <router-link
               v-if="previousPost"
               :to="{ name: 'PostDetail', params: { id: previousPost.id } }"
-              class="flex items-center gap-2 text-gray-400 hover:text-main-4"
+              class="hover:text-main-4 flex items-center gap-2 text-gray-400"
             >
               ← {{ previousPost.title }}
             </router-link>
@@ -62,7 +62,7 @@
             <router-link
               v-if="nextPost"
               :to="{ name: 'PostDetail', params: { id: nextPost.id } }"
-              class="flex items-center gap-2 text-gray-400 hover:text-main-4"
+              class="hover:text-main-4 flex items-center gap-2 text-gray-400"
             >
               {{ nextPost.title }} →
             </router-link>
@@ -77,28 +77,28 @@
               <textarea
                 placeholder="Your comment"
                 rows="4"
-                class="w-full rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:border-main-4 focus:outline-none"
+                class="focus:border-main-4 w-full rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
               ></textarea>
               <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <input
                   type="text"
                   placeholder="Your name"
-                  class="rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:border-main-4 focus:outline-none"
+                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
                 />
                 <input
                   type="email"
                   placeholder="Your email"
-                  class="rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:border-main-4 focus:outline-none"
+                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
                 />
                 <input
                   type="url"
                   placeholder="Your website"
-                  class="rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:border-main-4 focus:outline-none"
+                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
                 />
               </div>
               <button
                 type="submit"
-                class="rounded bg-main-4 px-6 py-2 text-white hover:bg-opacity-90"
+                class="bg-main-4 rounded px-6 py-2 text-white hover:bg-opacity-90"
               >
                 Submit
               </button>
@@ -115,12 +115,12 @@
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search..."
-                class="w-full rounded bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:border-main-4 focus:outline-none"
+                class="focus:border-main-4 w-full rounded bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:outline-none"
                 @keyup.enter="handleSearch"
               />
               <button
                 @click="handleSearch"
-                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-main-4"
+                class="hover:text-main-4 absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
               >
                 🔍
               </button>
@@ -135,7 +135,7 @@
                 v-for="tag in allTags"
                 :key="tag"
                 :to="{ name: 'Blog', query: { tag } }"
-                class="rounded-full bg-gray-700 px-3 py-1 text-sm text-gray-300 hover:bg-main-4 hover:text-white"
+                class="hover:bg-main-4 rounded-full bg-gray-700 px-3 py-1 text-sm text-gray-300 hover:text-white"
               >
                 {{ tag }}
               </router-link>
@@ -244,14 +244,20 @@ export default {
 
 <style>
 .prose {
-  @apply text-gray-300;
+  color: #6f7071;
 }
 
 .prose p {
-  @apply mb-4;
+  margin-bottom: 1rem;
 }
 
 .prose blockquote {
-  @apply my-6 border-l-4 border-gray-700 pl-4 italic text-gray-400;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left-width: 4px;
+  border-color: #4a5568;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #a0aec0;
 }
 </style>
