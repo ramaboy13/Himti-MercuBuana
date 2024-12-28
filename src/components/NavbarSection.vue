@@ -1,28 +1,32 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-import logoHimti from '../assets/img/logo-himti.webp'
 import { Icon } from '@iconify/vue/dist/iconify.js'
-import { useRoute } from 'vue-router'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import logoHimti from '../assets/img/logo-himti.webp'
 
-// State reactive untuk scroll dan menu toggle
 const isScrolled = ref(false)
 const isOpen = ref(false)
-const thisPage = useRoute()
+const isDropdownOpen = ref(false)
+const route = useRoute()
+const router = useRouter()
 
-// Fungsi menangani scroll
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
 }
 
-// Fungsi toggle menu
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
 
-// Fungsi menangani klik di luar navbar
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value
+}
+
 const handleClickOutside = (event) => {
   const navbar = document.getElementById('mobile-nav')
   const hamburger = document.getElementById('hamburger-button')
+  const dropdown = document.getElementById('nav-dropdown')
+  const dropdownButton = document.getElementById('dropdown-button')
 
   if (
     isOpen.value &&
@@ -32,29 +36,71 @@ const handleClickOutside = (event) => {
   ) {
     isOpen.value = false
   }
+
+  if (
+    isDropdownOpen.value &&
+    dropdown &&
+    !dropdown.contains(event.target) &&
+    !dropdownButton.contains(event.target)
+  ) {
+    isDropdownOpen.value = false
+  }
 }
 
-// Nav items with dynamic routing
+const handleNavigation = (item) => {
+  if (item.path.startsWith('#')) {
+    if (route.name !== 'Home') {
+      router.push('/').then(() => {
+        setTimeout(() => {
+          const element = document.querySelector(item.path)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      })
+    } else {
+      const element = document.querySelector(item.path)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  } else {
+    router.push(item.path)
+    isDropdownOpen.value = false
+    isOpen.value = false
+  }
+}
+
+// Main nav items
 const navItems = computed(() => {
-  if (thisPage.name === 'Home') {
-    return [
-      { name: 'Home', path: '#' },
+  const commonItems = [{ name: 'Home', path: '/' }]
+
+  const pageSpecificItems = {
+    Home: [
       { name: 'About', path: '#about' },
       { name: 'Program', path: '#program' },
       { name: 'Our Team', path: '#team' },
-    ]
-  } else if (thisPage.name === 'Blog') {
-    return [
-      { name: 'Home', path: '/' },
-      { name: 'Section 2', path: '/#section2' },
-      { name: 'Section 3', path: '/#section3' },
-    ]
+    ],
+    Blog: [
+      { name: 'About', path: '#about' },
+      { name: 'Program', path: '#program' },
+      { name: 'Our Team', path: '#team' },
+    ],
   }
-  console.log(thisPage.name)
-  return []
+
+  return [...commonItems, ...(pageSpecificItems[route.name] || [])]
 })
 
-// Setup lifecycle hooks
+// Dropdown menu items
+const dropdownItems = [
+  { name: 'Blog', path: '/blog' },
+  { name: 'Event', path: '/event' },
+  { name: 'Team', path: '/team' },
+  { name: 'FKTI', path: '/fkti' },
+  { name: 'Kelascore', path: '/kelascore' },
+  { name: 'Seminar IT', path: '/seminarit' },
+]
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   document.addEventListener('click', handleClickOutside)
@@ -75,7 +121,7 @@ onUnmounted(() => {
   >
     <div class="mx-auto flex items-center justify-between px-5 py-3">
       <!-- Logo HimTi -->
-      <a href="#" class="flex items-center">
+      <a @click="router.push('/')" class="flex cursor-pointer items-center">
         <img :src="logoHimti" alt="Logo HimTi" class="h-13 w-12" />
         <h1
           class="title ml-3 hidden font-poppins text-2xl font-bold text-white md:inline md:text-lg"
@@ -110,67 +156,53 @@ onUnmounted(() => {
         ]"
       >
         <ul class="block gap-4 text-white lg:flex lg:py-0">
+          <!-- Regular Nav Items -->
           <li
             v-for="(item, index) in navItems"
             :key="index"
             class="content-center py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
           >
-            <template v-if="thisPage !== 'Home'">
-              <router-link :to="item.path" class="block text-white">
-                {{ item.name }}
-              </router-link>
-            </template>
-            <template v-else>
-              <a
-                :href="item.path"
-                class="block rounded-lg bg-white px-4 py-2 font-semibold text-main-1 transition duration-200 hover:bg-accent hover:text-white"
-              >
-                {{ item.name }}
-              </a>
-            </template>
+            <a
+              @click="handleNavigation(item)"
+              class="block cursor-pointer rounded-lg bg-white px-4 py-2 font-semibold text-main-1 transition duration-200 hover:bg-accent hover:text-white"
+            >
+              {{ item.name }}
+            </a>
           </li>
 
-          <div
-            class="hs-dropdown content-center [--adaptive:none] [--strategy:static] sm:[--strategy:fixed]"
-          >
+          <!-- Dropdown Menu -->
+          <li class="relative">
             <button
-              id="hs-navbar-example-dropdown"
-              type="button"
-              class="hs-dropdown-toggle flex w-full items-center font-medium text-neutral-400 hover:text-neutral-500 focus:text-neutral-500 focus:outline-none"
-              aria-haspopup="menu"
-              aria-expanded="false"
-              aria-label="Mega Menu"
+              id="dropdown-button"
+              @click="toggleDropdown"
+              class="flex items-center rounded-lg px-4 py-2 font-semibold text-white transition duration-200 hover:bg-accent hover:text-white"
             >
               More
-              <Icon icon="bi:chevron-down" class="ms-1 text-sm" />
+              <Icon
+                icon="bi:chevron-down"
+                class="ml-2"
+                :class="{ 'rotate-180': isDropdownOpen }"
+              />
             </button>
 
+            <!-- Dropdown Content -->
             <div
-              class="hs-dropdown-menu top-full z-10 hidden space-y-1 rounded-lg bg-main-3 p-1 text-white opacity-0 transition-[opacity,margin] duration-[150ms] ease-in-out before:absolute before:-top-5 before:start-0 before:h-5 before:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 sm:w-48 sm:border-neutral-700 sm:shadow-md sm:dark:border"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="hs-navbar-example-dropdown"
+              id="nav-dropdown"
+              v-show="isDropdownOpen"
+              class="absolute right-0 mt-2 w-48 rounded-lg shadow-lg lg:right-0"
             >
-              <a
-                class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300 focus:bg-neutral-600 focus:text-neutral-300 focus:outline-none"
-                href="#"
-              >
-                About
-              </a>
-              <a
-                class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300 focus:bg-neutral-600 focus:text-neutral-300 focus:outline-none"
-                href="#"
-              >
-                Downloads
-              </a>
-              <a
-                class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300 focus:bg-neutral-600 focus:text-neutral-300 focus:outline-none"
-                href="#"
-              >
-                Team Account
-              </a>
+              <div class="py-1">
+                <a
+                  v-for="item in dropdownItems"
+                  :key="item.path"
+                  @click="handleNavigation(item)"
+                  class="block cursor-pointer px-4 py-2 text-white hover:bg-accent hover:text-white"
+                >
+                  {{ item.name }}
+                </a>
+              </div>
             </div>
-          </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -183,5 +215,9 @@ onUnmounted(() => {
     text-align: center;
     font-size: 1rem;
   }
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
 </style>

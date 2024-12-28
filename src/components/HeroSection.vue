@@ -1,5 +1,5 @@
 <script>
-import logoHimti from '../assets/img/maskot.png'
+import logoHimti from '../assets/img/C-Tech 2.png'
 
 export default {
   name: 'HeroSection',
@@ -43,7 +43,7 @@ export default {
     class="relative flex min-h-screen items-center justify-center bg-cover bg-center px-4 md:px-8"
   >
     <div
-      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12"
+      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12 lg:mb-28"
     >
       <!-- Text Section -->
       <div class="w-full text-center text-white md:w-2/3 md:text-left">
@@ -51,10 +51,10 @@ export default {
           HIMTI Universitas Mercu Buana
         </h5>
         <h1 class="mb-2 text-2xl font-bold md:text-5xl">
-          <span class="typing-text text-purple-600">{{ displayText }}</span>
+          <span class="typing-text text-main-4">{{ displayText }}</span>
         </h1>
 
-        <h1 class="text-xl font-semibold text-gray-300 md:text-2xl">
+        <h1 class="text-xl font-semibold text-white md:text-2xl">
           Tahun 2024 - 2025
         </h1>
 
@@ -68,17 +68,17 @@ export default {
           <img
             :src="logoHimti"
             alt="HiMTI UMB"
-            class="h-auto w-full"
+            class="floating-image h-auto w-full"
             style="filter: drop-shadow(2px 2px 20px purple)"
           />
         </div>
 
         <!-- Centered line on mobile, left-aligned on desktop -->
-        <div class="mx-auto mb-6 mt-5 h-1 w-48 bg-accent md:mx-0"></div>
+        <div class="mx-auto mb-6 mt-5 h-1 w-56 bg-main-4 md:mx-0"></div>
 
         <!-- Mobile: Truncated text with read more -->
         <div class="text-center md:hidden">
-          <p class="mb-2 text-sm leading-relaxed text-gray-400">
+          <p class="mb-2 text-sm leading-relaxed text-white">
             {{ isExpanded ? fullText : truncatedText }}
           </p>
           <button
@@ -91,7 +91,7 @@ export default {
 
         <!-- Desktop: Full text -->
         <div class="hidden md:block">
-          <p class="mb-4 text-base leading-relaxed text-gray-400">
+          <p class="mb-4 text-base leading-relaxed text-white">
             {{ fullText }}
           </p>
         </div>
@@ -107,7 +107,7 @@ export default {
         <img
           :src="logoHimti"
           alt="HiMTI UMB"
-          class="h-auto w-full"
+          class="floating-image h-auto w-full"
           style="filter: drop-shadow(2px 2px 20px purple)"
         />
       </div>
@@ -207,5 +207,21 @@ export default {
 /* Transition for text expansion */
 p {
   transition: all 0.3s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-image {
+  animation: float 3s ease-in-out infinite;
 }
 </style>

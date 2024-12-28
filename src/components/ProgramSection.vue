@@ -3,15 +3,15 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 </script>
 
 <template>
-  <section id="program" class="px-5 pt-20 text-white lg:pt-32">
+  <section id="program" class="px-5 pt-20 text-white lg:pt-5">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
       <fieldset
-        class="mb-8 rounded-2xl bg-gradient-to-r from-purple-800 to-pink-300 p-8 text-white"
+        class="from-main-4 mb-8 rounded-2xl bg-gradient-to-r to-pink-300 p-8 text-white"
       >
         <legend
-          class="w-60 rounded-full border-8 border-main-1 bg-purple-900 px-4 py-2 text-lg font-semibold text-white"
+          class="bg-main-4 w-60 rounded-full border-8 border-main-1 px-4 py-2 text-lg font-semibold text-white"
         >
           <p class="text-center text-3xl font-bold">Program</p>
         </legend>
@@ -33,7 +33,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               kemampuan kepemimpinan dan soft skill yang diperlukan di dunia
               kerja modern.
             </p>
-            <button
+            <!-- <button
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white transition hover:bg-accent"
             >
               <span>Lebih Lanjut </span>
@@ -52,7 +52,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </button>
+            </button> -->
           </div>
         </div>
       </fieldset>
@@ -61,7 +61,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         <!-- Card Kelas Core  -->
         <div
-          class="content-center justify-center rounded-2xl border border-violet-800 bg-gray-900 p-6 shadow-2xl"
+          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
             <svg
@@ -85,7 +85,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl"
+              <i class="bg-main-4 rounded-full p-2 text-3xl"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -103,7 +103,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">UI/UX</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -122,7 +122,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">HTML, CSS, JavaScript</span>
             </li>
             <li class="flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -144,7 +144,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/kelascore"
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
+              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
 
@@ -169,7 +169,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
         <!-- Card Seminar IT -->
         <div
-          class="content-center justify-center rounded-2xl border border-violet-800 bg-gray-900 p-6 shadow-2xl"
+          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
             <svg
@@ -192,7 +192,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -211,7 +211,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">Pembelajaran Tentang IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -230,7 +230,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">Network Engineer</span>
             </li>
             <li class="flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -252,7 +252,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/seminarit"
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
+              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
               <svg
@@ -276,7 +276,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
         <!-- Card FKTI -->
         <div
-          class="content-center justify-center rounded-2xl border border-violet-800 bg-gray-900 p-6 shadow-2xl"
+          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
             <svg
@@ -300,7 +300,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl"
+              <i class="bg-main-4 rounded-full p-2 text-3xl"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -319,7 +319,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">Keakraban Mahasiswa IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -338,7 +338,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               <span class="ml-2">Knowledge</span>
             </li>
             <li class="flex items-center">
-              <i class="rounded-full bg-main-2 p-2 text-3xl">
+              <i class="bg-main-4 rounded-full p-2 text-3xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -360,7 +360,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/fkti"
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
+              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />
