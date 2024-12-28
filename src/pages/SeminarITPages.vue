@@ -1,7 +1,3 @@
-<script setup>
-import comingsoon from '../components/state/ComingsoonState.vue'
-</script>
+<script setup></script>
 
-<template>
-  <comingsoon />
-</template>
+<template></template>

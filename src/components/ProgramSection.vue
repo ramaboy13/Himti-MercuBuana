@@ -1,17 +1,15 @@
-<script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/iconify.js'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <section id="program" class="px-5 pt-20 text-white lg:pt-5">
+  <section id="program" class="lg:pt-30 px-5 pt-20 text-white">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
       <fieldset
-        class="from-main-4 mb-8 rounded-2xl bg-gradient-to-r to-pink-300 p-8 text-white"
+        class="mb-8 rounded-2xl bg-gradient-to-r from-main-4 to-pink-300 p-8 text-white"
       >
         <legend
-          class="bg-main-4 w-60 rounded-full border-8 border-main-1 px-4 py-2 text-lg font-semibold text-white"
+          class="w-60 rounded-full border-8 border-main-1 bg-main-4 px-4 py-2 text-lg font-semibold text-white"
         >
           <p class="text-center text-3xl font-bold">Program</p>
         </legend>
@@ -33,26 +31,6 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
               kemampuan kepemimpinan dan soft skill yang diperlukan di dunia
               kerja modern.
             </p>
-            <!-- <button
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white transition hover:bg-accent"
-            >
-              <span>Lebih Lanjut </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-move-right ml-2"
-              >
-                <path d="M18 8L22 12L18 16" />
-                <path d="M2 12H22" />
-              </svg>
-            </button> -->
           </div>
         </div>
       </fieldset>
@@ -61,82 +39,28 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         <!-- Card Kelas Core  -->
         <div
-          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
+          class="content-center justify-center rounded-2xl border border-main-4 bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="44"
-              height="44"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-file-code-2"
-            >
-              <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
-              <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-              <path d="m5 12-3 3 3 3" />
-              <path d="m9 18 3-3-3-3" />
-            </svg>
+            <Icon icon="lucide:file-code-2" width="44" />
             <h2 class="ml-4 text-xl font-bold">Kelas Core</h2>
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" /></svg
-              ></i>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
+              </i>
               <span class="ml-2">UI/UX</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">HTML, CSS, JavaScript</span>
             </li>
             <li class="flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Responsive Web</span>
             </li>
@@ -144,107 +68,39 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/kelascore"
-              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
+              class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-move-right"
-              >
-                <path d="M18 8L22 12L18 16" />
-                <path d="M2 12H22" />
-              </svg>
+              <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
           </div>
         </div>
 
         <!-- Card Seminar IT -->
         <div
-          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
+          class="content-center justify-center rounded-2xl border border-main-4 bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="44"
-              height="44"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-presentation"
-            >
-              <path d="M2 3h20" />
-              <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-              <path d="m7 21 5-5 5 5" />
-            </svg>
+            <Icon icon="lucide:presentation" width="44" />
             <h2 class="ml-4 text-xl font-bold">Seminar IT</h2>
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Pembelajaran Tentang IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Network Engineer</span>
             </li>
             <li class="flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Software Engineer</span>
             </li>
@@ -252,107 +108,38 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/seminarit"
-              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
+              class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-move-right"
-              >
-                <path d="M18 8L22 12L18 16" />
-                <path d="M2 12H22" />
-              </svg>
+              <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
           </div>
         </div>
 
         <!-- Card FKTI -->
         <div
-          class="border-main-4 content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl"
+          class="content-center justify-center rounded-2xl border border-main-4 bg-gray-900 p-6 shadow-2xl"
         >
           <div class="mb-4 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="44"
-              height="44"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-users"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+            <Icon icon="lucide:users" width="44" />
             <h2 class="ml-4 text-xl font-bold">FKTI</h2>
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Keakraban Mahasiswa IT</span>
             </li>
             <li class="mb-2 flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Knowledge</span>
             </li>
             <li class="flex items-center">
-              <i class="bg-main-4 rounded-full p-2 text-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <i class="rounded-full bg-main-4 p-2 text-3xl">
+                <Icon icon="mdi:check" color="white" width="20" />
               </i>
               <span class="ml-2">Kepemimpinan</span>
             </li>
@@ -360,7 +147,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <div class="flex justify-center">
             <router-link
               to="/fkti"
-              class="bg-main-4 flex items-center rounded-full px-4 py-2 text-white"
+              class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
               <span class="mr-2">Daftar</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />

@@ -1,12 +1,4 @@
-<script>
-import { Icon } from '@iconify/vue/dist/iconify.js'
-
-export default {
-  components: {
-    Icon,
-  },
-}
-</script>
+<script></script>
 
 <template>
   <section class="relative mx-auto overflow-hidden" id="about">
@@ -88,7 +80,7 @@ export default {
       <!-- Two Columns Layout -->
 
       <div
-        class="mb-52 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row md:px-20"
+        class="mb-10 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row md:px-20"
       >
         <!-- Left Side (Tentang HIMTI + Description) -->
         <div class="w-full" data-aos="fade-right">
