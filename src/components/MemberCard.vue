@@ -59,12 +59,12 @@ export default {
     @mouseleave="onMouseLeave"
   >
     <div
-      class="relative h-full overflow-hidden rounded-lg border border-main-4 bg-gray-800 shadow-lg transition-all duration-300"
+      class="border-main-4 relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300"
     >
       <!-- Badge -->
       <div
         v-if="member.badge"
-        class="absolute left-4 top-4 z-10 rounded-md bg-main-4 px-3 py-1 text-xs text-white"
+        class="bg-main-4 absolute left-4 top-4 z-10 rounded-md px-3 py-1 text-xs text-white"
       >
         {{ member.badge }}
       </div>
