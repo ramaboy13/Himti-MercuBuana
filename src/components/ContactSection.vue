@@ -1,20 +1,18 @@
-<script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/iconify.js'
-</script>
+<script setup></script>
 
 <template>
   <!-- Contact Us Section -->
   <section
-    class="mx-auto w-full px-5 py-5 sm:px-6 lg:px-8 lg:py-6"
+    class="mx-auto w-full px-5 pb-9 pt-20 sm:px-6 lg:px-8 lg:pt-20"
     id="contact"
   >
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
       <!-- Title -->
-      <div class="mb-12 text-center">
+      <div class="mb-10 pt-6 text-center">
         <h1 class="text-3xl font-bold text-white dark:text-white sm:text-4xl">
           Kontak Kami
         </h1>
-        <p class="mt-1 text-white dark:text-neutral-400">
+        <p class="mt-3 text-white dark:text-neutral-400">
           Kami sangat senang apabila kita saling berinteraksi.
         </p>
       </div>
@@ -31,10 +29,11 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
             <div>
               <h3 class="font-semibold text-white dark:text-neutral-200">
-                Instagram HIMTI
+                Instagram
               </h3>
-              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                Follow juga instagram kami untuk lebih update kegiatan kami.
+              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
+                Follow Instagram kami untuk tetap terhubung dan mendapatkan
+                informasi terbaru.
               </p>
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
@@ -60,9 +59,9 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
             <div>
               <h3 class="font-semibold text-white dark:text-neutral-200">
-                Linkedin HIMTI
+                Linkedin
               </h3>
-              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
                 Ayo terkoneksi bersama kami di Linkedin
               </p>
               <a
@@ -84,10 +83,11 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
             <div>
               <h3 class="font-semibold text-white dark:text-neutral-200">
-                Hubungi kami melalui email
+                Email
               </h3>
-              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                If you wish to write us an email instead please use
+              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
+                Jika Anda ingin mengirim email kepada kami, silakan hubungi kami
+                di sini.
               </p>
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"

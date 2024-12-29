@@ -47,48 +47,68 @@ const handleClickOutside = (event) => {
   }
 }
 
-const handleNavigation = (item) => {
-  if (item.path.startsWith('#')) {
-    if (route.name !== 'Home') {
-      router.push('/').then(() => {
-        setTimeout(() => {
-          const element = document.querySelector(item.path)
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-          }
-        }, 100)
-      })
+const handleNavigation = async (item) => {
+  const scrollToElement = (selector) => {
+    const element = document.querySelector(selector)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     } else {
-      const element = document.querySelector(item.path)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+      console.warn(`Element with selector '${selector}' not found.`)
+    }
+  }
+
+  if (item.path.startsWith('#')) {
+    if (route.name !== 'home') {
+      // Jika bukan di halaman Home, navigasi ke Home terlebih dahulu
+      await router.push('/')
+      setTimeout(() => {
+        if (item.path === '#') {
+          // Gulir ke atas jika path adalah '#'
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+          // Gulir ke elemen target
+          scrollToElement(item.path)
+        }
+      }, 100)
+    } else {
+      // Jika sudah di halaman Home
+      if (item.path === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        scrollToElement(item.path)
       }
     }
   } else {
-    router.push(item.path)
-    isDropdownOpen.value = false
-    isOpen.value = false
+    // Navigasi ke path lain
+    await router.push(item.path)
   }
+
+  // Tutup dropdown dan menu dinamis setelah navigasi
+  isDropdownOpen.value = false
+  isOpen.value = false
 }
 
 // Main nav items
 const navItems = computed(() => {
-  const commonItems = [{ name: 'Home', path: '/' }]
-
   const pageSpecificItems = {
     Home: [
+      { name: 'Home', path: '#' }, // Path diubah menjadi '#' untuk halaman Home
       { name: 'About', path: '#about' },
       { name: 'Program', path: '#program' },
-      { name: 'Our Team', path: '#team' },
+      { name: 'Members', path: '#team' },
+      { name: 'Contact us', path: '#contact' },
     ],
     Blog: [
+      { name: 'Home', path: '/' }, // Path tetap '/' untuk halaman selain Home
       { name: 'About', path: '#about' },
       { name: 'Program', path: '#program' },
-      { name: 'Our Team', path: '#team' },
+      { name: 'Members', path: '#team' },
+      { name: 'Contact us', path: '#contact' },
     ],
   }
 
-  return [...commonItems, ...(pageSpecificItems[route.name] || [])]
+  // Kembalikan item spesifik untuk halaman aktif, fallback ke item umum jika tidak ditemukan
+  return pageSpecificItems[route.name] || [{ name: 'Home', path: '/' }]
 })
 
 // Dropdown menu items
@@ -104,11 +124,25 @@ const dropdownItems = [
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   document.addEventListener('click', handleClickOutside)
+
+  // Inisialisasi otomatis dropdown
+  const dropdown = document.querySelector('#hs-dropdown-to-destroy')
+  if (dropdown) {
+    HSDropdown.autoInit() // Auto-initialize semua elemen dropdown
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
   document.removeEventListener('click', handleClickOutside)
+
+  const dropdown = document.querySelector('#hs-dropdown-to-destroy')
+  if (dropdown) {
+    const instance = HSDropdown.getInstance(dropdown, true)
+    if (instance) {
+      instance.destroy()
+    }
+  }
 })
 </script>
 
@@ -116,7 +150,7 @@ onUnmounted(() => {
   <nav
     :class="[
       'fixed top-0 z-10 w-full shadow-md transition-colors duration-300',
-      isScrolled && !isOpen ? 'bg-transparent backdrop-blur' : 'bg-main-1',
+      isScrolled && !isOpen ? 'bg-slate-800/[.1] backdrop-blur' : 'bg-main-1',
     ]"
   >
     <div class="mx-auto flex items-center justify-between px-5 py-3">
@@ -155,54 +189,60 @@ onUnmounted(() => {
           'bg-main-1 p-4 shadow-lg lg:flex lg:items-center lg:space-x-5 lg:bg-transparent lg:p-0 lg:shadow-none',
         ]"
       >
-        <ul class="block gap-4 text-white lg:flex lg:py-0">
+        <ul class="block items-center gap-0 text-slate-100 lg:flex lg:py-0">
           <!-- Regular Nav Items -->
           <li
             v-for="(item, index) in navItems"
             :key="index"
-            class="content-center py-2 hover:text-accent hover:[text-shadow:0px_0px_10px_#b100cd,0px_0px_20px_#b100cd,0px_0px_30px_#b100cd]"
+            class="relative content-center py-2"
           >
             <a
               @click="handleNavigation(item)"
-              class="block cursor-pointer rounded-lg bg-white px-4 py-2 font-semibold text-main-1 transition duration-200 hover:bg-accent hover:text-white"
+              class="nav-link block cursor-pointer px-4 font-semibold transition duration-200 focus:text-slate-400"
             >
               {{ item.name }}
             </a>
           </li>
-
           <!-- Dropdown Menu -->
-          <li class="relative">
+          <div
+            id="hs-dropdown-to-destroy"
+            class="hs-dropdown relative inline-flex h-full [--gpu-acceleration:true]"
+          >
             <button
-              id="dropdown-button"
-              @click="toggleDropdown"
-              class="flex items-center rounded-lg px-4 py-2 font-semibold text-white transition duration-200 hover:bg-accent hover:text-white"
+              id="hs-dropdown-scale-animation"
+              type="button"
+              class="hs-dropdown-toggle text-md inline-flex items-center rounded-lg bg-white px-4 py-3 text-slate-800 shadow-sm hover:bg-accent focus:text-slate-800 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 lg:bg-transparent lg:px-4 lg:text-slate-200 focus:lg:bg-transparent focus:lg:text-slate-200"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="Dropdown"
             >
               More
               <Icon
-                icon="bi:chevron-down"
-                class="ml-2"
-                :class="{ 'rotate-180': isDropdownOpen }"
+                icon="fe:arrow-down"
+                class="ml-1 transition-transform duration-300 ease-in-out hs-dropdown-open:rotate-180"
               />
             </button>
 
-            <!-- Dropdown Content -->
             <div
-              id="nav-dropdown"
-              v-show="isDropdownOpen"
-              class="absolute right-0 mt-2 w-48 rounded-lg shadow-lg lg:right-0"
+              class="hs-dropdown-menu absolute z-50 hidden min-w-60 scale-95 rounded-lg bg-slate-800/[.7] opacity-0 shadow-sm shadow-slate-700 backdrop-blur-lg transition-[transform,opacity] duration-200 ease-in-out hs-dropdown-open:scale-100 hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+              style="backdrop-filter: blur(16px)"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="hs-dropdown-scale-animation"
             >
-              <div class="py-1">
+              <div class="space-y-0.5 p-1">
                 <a
                   v-for="item in dropdownItems"
                   :key="item.path"
                   @click="handleNavigation(item)"
-                  class="block cursor-pointer px-4 py-2 text-white hover:bg-accent hover:text-white"
+                  class="hover flex cursor-pointer items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-200 hover:bg-purple-900 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0"
                 >
                   {{ item.name }}
                 </a>
               </div>
             </div>
-          </li>
+          </div>
+          <!-- End Dropdown Menu -->
         </ul>
       </div>
     </div>
@@ -215,6 +255,25 @@ onUnmounted(() => {
     text-align: center;
     font-size: 1rem;
   }
+}
+
+/* .hs-dropdown-menu {
+  background: rgba(66, 5, 90, 0.486);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+} */
+
+.nav-link:after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px #581c87;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.nav-link:hover:after {
+  transform: scaleX(1);
 }
 
 .rotate-180 {

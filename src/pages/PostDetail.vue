@@ -1,3 +1,89 @@
+<script>
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import posts from '../assets/data/post.json'
+
+export default {
+  name: 'PostDetail',
+  props: {
+    id: {
+      type: Number,
+      required: true,
+    },
+  },
+  setup() {
+    const route = useRoute()
+    const router = useRouter()
+    const post = ref(null)
+    const searchQuery = ref('')
+
+    // Get all unique tags from posts
+    const allTags = computed(() => {
+      const tags = new Set()
+      posts.posts.forEach((post) => {
+        post.tags.forEach((tag) => tags.add(tag))
+      })
+      return Array.from(tags)
+    })
+
+    // Get top 5 posts by ID
+    const topPosts = computed(() => {
+      return posts.posts.slice(0, 5).map((post) => ({
+        id: post.id,
+        title: post.title,
+      }))
+    })
+
+    // Get previous and next posts
+    const previousPost = computed(() => {
+      if (!post.value) return null
+      const currentIndex = posts.posts.findIndex((p) => p.id === post.value.id)
+      return currentIndex > 0 ? posts.posts[currentIndex - 1] : null
+    })
+
+    const nextPost = computed(() => {
+      if (!post.value) return null
+      const currentIndex = posts.posts.findIndex((p) => p.id === post.value.id)
+      return currentIndex < posts.posts.length - 1
+        ? posts.posts[currentIndex + 1]
+        : null
+    })
+
+    // Load post data when route changes
+    const loadPost = () => {
+      const postId = parseInt(route.params.id)
+      post.value = posts.posts.find((p) => p.id === postId)
+      if (!post.value) {
+        router.push({ name: 'NotFound' })
+      }
+    }
+
+    // Handle search
+    const handleSearch = () => {
+      if (searchQuery.value.trim()) {
+        router.push({
+          name: 'Blog',
+          query: { search: searchQuery.value },
+        })
+      }
+    }
+
+    onMounted(loadPost)
+    watch(() => route.params.id, loadPost)
+
+    return {
+      post,
+      searchQuery,
+      allTags,
+      topPosts,
+      previousPost,
+      nextPost,
+      handleSearch,
+    }
+  },
+}
+</script>
+
 <!-- src/views/PostDetail.vue -->
 <template>
   <div class="mt-16 min-h-screen bg-main-4">
@@ -161,86 +247,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import { computed, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import posts from '../assets/data/post.json'
-
-export default {
-  name: 'PostDetail',
-  setup() {
-    const route = useRoute()
-    const router = useRouter()
-    const post = ref(null)
-    const searchQuery = ref('')
-
-    // Get all unique tags from posts
-    const allTags = computed(() => {
-      const tags = new Set()
-      posts.posts.forEach((post) => {
-        post.tags.forEach((tag) => tags.add(tag))
-      })
-      return Array.from(tags)
-    })
-
-    // Get top 5 posts by ID
-    const topPosts = computed(() => {
-      return posts.posts.slice(0, 5).map((post) => ({
-        id: post.id,
-        title: post.title,
-      }))
-    })
-
-    // Get previous and next posts
-    const previousPost = computed(() => {
-      if (!post.value) return null
-      const currentIndex = posts.posts.findIndex((p) => p.id === post.value.id)
-      return currentIndex > 0 ? posts.posts[currentIndex - 1] : null
-    })
-
-    const nextPost = computed(() => {
-      if (!post.value) return null
-      const currentIndex = posts.posts.findIndex((p) => p.id === post.value.id)
-      return currentIndex < posts.posts.length - 1
-        ? posts.posts[currentIndex + 1]
-        : null
-    })
-
-    // Load post data when route changes
-    const loadPost = () => {
-      const postId = parseInt(route.params.id)
-      post.value = posts.posts.find((p) => p.id === postId)
-      if (!post.value) {
-        router.push({ name: 'NotFound' })
-      }
-    }
-
-    // Handle search
-    const handleSearch = () => {
-      if (searchQuery.value.trim()) {
-        router.push({
-          name: 'Blog',
-          query: { search: searchQuery.value },
-        })
-      }
-    }
-
-    onMounted(loadPost)
-    watch(() => route.params.id, loadPost)
-
-    return {
-      post,
-      searchQuery,
-      allTags,
-      topPosts,
-      previousPost,
-      nextPost,
-      handleSearch,
-    }
-  },
-}
-</script>
 
 <style>
 .prose {

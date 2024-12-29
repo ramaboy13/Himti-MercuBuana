@@ -1,4 +1,20 @@
-Enhanced Blog List Component // src/components/BlogCard.vue
+<script>
+export default {
+  name: 'BlogCard',
+  props: {
+    post: {
+      type: Object,
+      required: true,
+    },
+  },
+  methods: {
+    truncateText(text, length) {
+      return text.length > length ? text.slice(0, length) + '...' : text
+    },
+  },
+}
+</script>
+
 <template>
   <router-link
     :to="{ name: 'PostDetail', params: { id: post.id } }"
@@ -33,20 +49,3 @@ Enhanced Blog List Component // src/components/BlogCard.vue
     </div>
   </router-link>
 </template>
-
-<script>
-export default {
-  name: 'BlogCard',
-  props: {
-    post: {
-      type: Object,
-      required: true,
-    },
-  },
-  methods: {
-    truncateText(text, length) {
-      return text.length > length ? text.slice(0, length) + '...' : text
-    },
-  },
-}
-</script>
