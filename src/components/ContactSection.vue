@@ -1,4 +1,40 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+const showModal = ref(false)
+
+const MessageToWhatsapp = () => {
+  const name = document.getElementById('namalengkap').value
+  const institusi = document.getElementById('institusi').value
+  const email = document.getElementById('email').value
+  const pesan = document.getElementById('pesan-anda').value
+  const kode = document.getElementById('kode').value
+
+  if (!name || !institusi) {
+    alert('Mohon isi nama dan institusi')
+    return false
+  }
+
+  const text = `Halo Kak,\n\nNama saya: *${name}*\nSaya Dari: *${institusi}*\n\nPesan :\n${pesan}\n\nEmail: *${email}*\n*${kode}*`
+
+  const phoneNumber = '+6287771662002'
+
+  // Tampilkan modal
+  showModal.value = true
+
+  // Beri jeda sebelum membuka WhatsApp
+  setTimeout(() => {
+    const urlToWhatsapp = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
+    window.open(urlToWhatsapp, '_blank')
+    // Tutup modal setelah WhatsApp dibuka
+    setTimeout(() => {
+      showModal.value = false
+    }, 3000)
+  }, 3000)
+
+  return false
+}
+</script>
 
 <template>
   <!-- Contact Us Section -->
@@ -22,7 +58,6 @@
         <div class="divide-y divide-main-4 dark:divide-neutral-800">
           <!-- Instagram Block -->
           <div class="flex gap-x-7 py-6">
-            <!-- Icon Instagram -->
             <span class="text-accent">
               <Icon icon="simple-icons:instagram" width="48" height="48" />
             </span>
@@ -38,23 +73,18 @@
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                 href="https://www.instagram.com/himti_mercubuana/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Selengkapnya
               </a>
             </div>
           </div>
-          <!-- End Instagram Block -->
 
           <!-- Linkedin Block -->
           <div class="flex gap-x-7 py-6">
-            <!-- Icon Linkedin -->
             <span>
-              <Icon
-                icon="logos:linkedin-icon"
-                color=""
-                width="48"
-                height="48"
-              />
+              <Icon icon="logos:linkedin-icon" width="48" height="48" />
             </span>
 
             <div>
@@ -67,18 +97,18 @@
               <a
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                 href="https://www.linkedin.com/company/himti/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Selengkapnya
               </a>
             </div>
           </div>
-          <!-- End Linkedin Block -->
 
           <!-- Email Block -->
           <div class="flex gap-x-7 py-6">
-            <!-- SVG Icon EMAIL -->
             <span>
-              <Icon icon="logos:google-gmail" color="" width="48" height="48" />
+              <Icon icon="logos:google-gmail" width="48" height="48" />
             </span>
 
             <div>
@@ -89,17 +119,14 @@
                 Jika Anda ingin mengirim email kepada kami, silakan hubungi kami
                 di sini.
               </p>
-              <a
+              <p
                 class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                href="#"
               >
-                example@site.com
-              </a>
+                himti.mercubuana@gmail.com
+              </p>
             </div>
           </div>
-          <!-- End Email Block -->
         </div>
-        <!-- End Contact Information Section -->
 
         <!-- Form Section (Right) -->
         <div
@@ -111,53 +138,45 @@
             Hubungi kami kapan saja melalui Whatsapp
           </h2>
 
-          <form>
+          <form @submit.prevent="MessageToWhatsapp">
             <div class="grid gap-4">
-              <!-- Grid -->
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div class="relative">
-                  <label for="hs-firstname-contacts-1" class="sr-only"
-                    >First Name</label
-                  >
-                  <div class="flex items-center">
-                    <i class="fas fa-user absolute left-3 text-gray-400"></i>
-                    <input
-                      type="text"
-                      name="hs-firstname-contacts-1"
-                      id="hs-firstname-contacts-1"
-                      class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                      placeholder="First Name"
-                    />
-                  </div>
-                </div>
-
-                <div class="relative">
-                  <label for="hs-lastname-contacts-1" class="sr-only"
-                    >Last Name</label
-                  >
-                  <div class="flex items-center">
-                    <i class="fas fa-user absolute left-3 text-gray-400"></i>
-                    <input
-                      type="text"
-                      name="hs-lastname-contacts-1"
-                      id="hs-lastname-contacts-1"
-                      class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                      placeholder="Last Name"
-                    />
-                  </div>
+              <div class="relative">
+                <label for="namalengkap" class="sr-only">Nama Lengkap</label>
+                <div class="flex items-center">
+                  <i class="fas fa-user absolute left-3 text-gray-400"></i>
+                  <input
+                    type="text"
+                    id="namalengkap"
+                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    placeholder="Nama Lengkap"
+                    required
+                  />
                 </div>
               </div>
-              <!-- End Grid -->
 
               <div class="relative">
-                <label for="hs-email-contacts-1" class="sr-only">Email</label>
+                <label for="institusi" class="sr-only"
+                  >Institusi atau Organisasi</label
+                >
+                <div class="flex items-center">
+                  <i class="fas fa-user absolute left-3 text-gray-400"></i>
+                  <input
+                    type="text"
+                    id="institusi"
+                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    placeholder="Institusi / Organisasi"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="relative">
+                <label for="email" class="sr-only">Email</label>
                 <div class="flex items-center">
                   <i class="fas fa-envelope absolute left-3 text-gray-400"></i>
                   <input
                     type="email"
-                    name="hs-email-contacts-1"
-                    id="hs-email-contacts-1"
-                    autocomplete="email"
+                    id="email"
                     class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Email"
                   />
@@ -165,30 +184,13 @@
               </div>
 
               <div class="relative">
-                <label for="hs-phone-number-1" class="sr-only"
-                  >Phone Number</label
-                >
-                <div class="flex items-center">
-                  <i class="fas fa-phone absolute left-3 text-gray-400"></i>
-                  <input
-                    type="text"
-                    name="hs-phone-number-1"
-                    id="hs-phone-number-1"
-                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="Phone Number"
-                  />
-                </div>
-              </div>
-
-              <div class="relative">
-                <label for="hs-about-contacts-1" class="sr-only">Message</label>
+                <label for="pesan-anda" class="sr-only">Pesan Anda</label>
                 <div class="flex items-start">
                   <i
                     class="fas fa-comment-alt absolute left-3 mt-3 text-gray-400"
                   ></i>
                   <textarea
-                    name="hs-about-contacts-1"
-                    id="hs-about-contacts-1"
+                    id="pesan-anda"
                     rows="4"
                     class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Message"
@@ -196,8 +198,12 @@
                 </div>
               </div>
             </div>
+            <input
+              type="hidden"
+              id="kode"
+              value="Saya menghubungi anda melalui Web Himti"
+            />
 
-            <!-- End Grid -->
             <div class="mt-4 grid">
               <button
                 type="submit"
@@ -209,9 +215,75 @@
             </div>
           </form>
         </div>
-        <!-- End Form Section -->
       </div>
     </div>
   </section>
-  <!-- End Contact Us Section -->
+
+  <!-- Modal -->
+  <div
+    v-if="showModal"
+    class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-0"
+  >
+    <!-- Backdrop dengan efek blur -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div
+      class="relative z-50 w-full max-w-md transform overflow-hidden rounded-2xl bg-main-1 p-6 text-center shadow-xl transition-all"
+    >
+      <!-- Icon Checkmark -->
+      <div
+        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100"
+      >
+        <svg
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Title -->
+      <h3 class="mb-2 text-2xl font-bold text-gray-300">Terima Kasih!</h3>
+
+      <!-- Message -->
+      <div class="mb-6">
+        <p class="text-gray-300">
+          Pesan Anda akan diteruskan ke WhatsApp kami.
+        </p>
+        <p class="mt-2 text-sm text-red-500">
+          Mohon untuk tidak menghubungi nomor ini jika tidak ada kepentingan
+          yang jelas.
+        </p>
+      </div>
+
+      <!-- Note -->
+      <div class="rounded-lg bg-blue-50 p-4">
+        <p class="text-sm text-blue-800">
+          Anda akan segera dialihkan ke WhatsApp...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sisanya tetap sama seperti template sebelumnya -->
 </template>
+
+<style scoped>
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+</style>
