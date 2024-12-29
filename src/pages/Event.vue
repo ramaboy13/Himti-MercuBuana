@@ -1,7 +1,13 @@
+<script setup>
+import maintenance from '../components/state/MaintenanceState.vue'
+</script>
+
 <template>
-  <section class="container mx-auto py-10">
+  <section class="">
     <!-- Maintenance Content -->
-    <maintenance />
+    <div class="flex h-screen items-center justify-center">
+      <maintenance />
+    </div>
 
     <!-- Main content -->
 
@@ -23,34 +29,5 @@
     </div>  -->
   </section>
 </template>
-
-<script setup>
-import maintenance from '../components/state/MaintenanceState.vue'
-
-// export default {
-//   name: 'Blog',
-//   data() {
-//     return {
-//       posts: [
-//         {
-//           id: 1,
-//           title: 'Post 1',
-//           excerpt: 'This is a short description of post 1.',
-//         },
-//         {
-//           id: 2,
-//           title: 'Post 2',
-//           excerpt: 'This is a short description of post 2.',
-//         },
-//         {
-//           id: 3,
-//           title: 'Post 3',
-//           excerpt: 'This is a short description of post 3.',
-//         },
-//       ],
-//     }
-//   },
-// }
-</script>
 
 <style scoped></style>

@@ -1,3 +1,48 @@
+<script>
+import data from '../assets/data/dataTeam.json'
+import MemberCard from '../components/MemberCard.vue'
+
+export default {
+  components: {
+    MemberCard,
+  },
+  data() {
+    return {
+      members: data.data, // Menyimpan data anggota
+      selectedRole: 'all', // State untuk menyimpan peran yang dipilih
+    }
+  },
+  computed: {
+    filteredMembers() {
+      if (this.selectedRole === 'all') {
+        return this.members
+      } else {
+        return this.members.filter(
+          (member) => member.role === this.selectedRole,
+        )
+      }
+    },
+    roles() {
+      return [...new Set(this.members.map((m) => m.role))]
+    },
+  },
+  methods: {
+    async fetchMembers() {
+      try {
+        const response = await fetch(data.data)
+        const result = await response.json()
+        this.members = result // Menyimpan data anggota dalam state
+      } catch (error) {
+        console.error('Error fetching members:', error)
+      }
+    },
+    handleRoleChange(role) {
+      this.selectedRole = role
+    },
+  },
+}
+</script>
+
 <template>
   <div
     class="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
@@ -6,54 +51,76 @@
       <p
         class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-semibold uppercase tracking-wider text-white"
       >
-        Discover Our Team
+        Temui Tim Hebat Kami
       </p>
       <p class="text-base text-white md:text-lg">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium.
+        Kami adalah sekelompok individu penuh semangat yang berdedikasi untuk
+        kemajuan dan inovasi dalam dunia Teknik Informatika. Bersama, kami
+        mewujudkan visi untuk menciptakan solusi teknologi yang berdampak.
       </p>
+
+      <div class="hs-dropdown relative inline-flex">
+        <div
+          class="hs-dropdown-menu duration mt-2 hidden min-w-60 rounded-lg bg-white opacity-0 shadow-md transition-[opacity,margin] before:absolute before:-top-4 before:start-0 before:h-4 before:w-full after:absolute after:-bottom-4 after:start-0 after:h-4 after:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="hs-dropdown-default"
+        >
+          <div class="space-y-0.5 p-1">
+            <a
+              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+              href="#"
+            >
+              Newsletter
+            </a>
+            <a
+              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+              href="#"
+            >
+              Purchases
+            </a>
+            <a
+              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+              href="#"
+            >
+              Downloads
+            </a>
+            <a
+              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+              href="#"
+            >
+              Team Account
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tambahkan dropdown filter -->
+      <div class="mt-6">
+        <label for="role" class="mr-4 text-white">Filter by Role:</label>
+
+        <select
+          id="role"
+          v-model="selectedRole"
+          class="rounded-md bg-gray-800 px-4 py-2 text-white"
+        >
+          <option value="all">All</option>
+          <option v-for="role in roles" :key="role" :value="role">
+            {{ role }}
+          </option>
+        </select>
+      </div>
     </div>
     <div
       class="mx-auto grid grid-cols-2 gap-3 sm:gap-6 lg:max-w-screen-lg lg:grid-cols-4 lg:gap-5"
     >
       <div
-        v-for="member in members"
+        v-for="member in filteredMembers"
         :key="member.id"
         class="rounded-lg bg-main-3"
       >
-        <div class="relative mb-4 rounded pb-56 shadow lg:pb-64">
-          <!-- Badge with even smaller padding and font size -->
-          <div
-            class="absolute bottom-2 left-2 z-[4] inline-flex items-center gap-x-1 rounded-full border bg-main-2 px-1.5 py-0.5 text-[9px] font-semibold text-white"
-            v-if="member.badge"
-          >
-            {{ member.badge }}
-          </div>
-
-          <img
-            class="absolute z-0 h-full w-full rounded-t-lg object-cover"
-            :src="member.image"
-            :alt="member.name"
-          />
-        </div>
-
-        <div class="flex flex-col text-center sm:text-center">
-          <p class="text-lg font-bold text-white">{{ member.name }}</p>
-          <p class="mb-5 text-xs text-gray-400">{{ member.role }}</p>
-        </div>
+        <MemberCard :member="member" />
       </div>
     </div>
   </div>
 </template>
-
-<script>
-import members from '../assets/data/dataTeam.json'
-
-export default {
-  data() {
-    return {
-      members,
-    }
-  },
-}
-</script>

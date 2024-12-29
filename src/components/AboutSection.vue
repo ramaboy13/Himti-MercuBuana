@@ -1,6 +1,4 @@
-<script setup>
-import { Icon } from '@iconify/vue/dist/iconify.js'
-</script>
+<script></script>
 
 <template>
   <section class="relative mx-auto overflow-hidden" id="about">
@@ -80,11 +78,14 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
       class="z-[1] h-full px-5 pt-24 text-white sm:z-0 sm:px-8 sm:pt-32 lg:ml-10 lg:mr-10 lg:pt-60"
     >
       <!-- Two Columns Layout -->
-      <div class="mb-10 mt-8 grid items-start gap-8 md:mt-0 md:grid-cols-2">
+
+      <div
+        class="mb-10 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row md:px-20"
+      >
         <!-- Left Side (Tentang HIMTI + Description) -->
         <div class="w-full" data-aos="fade-right">
           <h1 class="text-4xl font-bold">Tentang HIMTI</h1>
-          <div class="mt-2 h-1 w-52 bg-purple-600"></div>
+          <div class="mt-2 h-1 w-64 bg-main-4"></div>
           <p class="my-6 text-justify leading-relaxed">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
@@ -93,11 +94,11 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
             akademisi, profesional, dan penggemar teknologi dari berbagai latar
             belakang.
           </p>
-          <button
-            class="rounded-lg bg-main-2 px-4 py-2 text-white shadow-xl transition-colors hover:bg-accent"
+          <!-- <button
+            class="rounded-lg bg-main-4 px-4 py-2 text-white shadow-xl transition-colors hover:bg-accent"
           >
             Selengkapnya
-          </button>
+          </button> -->
         </div>
 
         <!-- Right Side (Visi & Misi) -->
@@ -108,7 +109,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
             data-aos="fade-left"
           >
             <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+              class="flex size-14 items-center justify-center rounded-full bg-main-4 p-2 sm:size-16"
             >
               <Icon icon="mdi:eye-outline" color="white" width="50" />
             </div>
@@ -117,7 +118,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
                 Visi
               </h1>
               <div class="flex w-full justify-end md:justify-start">
-                <div class="md mb-4 h-1 w-11 bg-purple-600 text-right"></div>
+                <div class="md mb-4 h-1 w-20 bg-main-4 text-right"></div>
               </div>
               <div class="text-justify">
                 Menjadikan HIMTI (Himpunan Mahasiswa Teknik Informatika) sebagai
@@ -132,14 +133,14 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
           <!-- Misi -->
           <div class="rtl flex gap-6 text-left" data-aos="fade-up">
             <div
-              class="flex size-16 items-center justify-center rounded-full bg-main-2 p-2"
+              class="flex size-14 items-center justify-center rounded-full bg-main-4 p-2 sm:size-16"
             >
               <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
             </div>
             <div class="">
               <h1 class="mb-1 text-4xl font-bold">Misi</h1>
-              <div class="mb-4 h-1 w-11 bg-purple-600"></div>
-              <div class="text-justify sm:text-start">
+              <div class="mb-4 h-1 w-20 bg-main-4"></div>
+              <div class="text-start">
                 <li>
                   Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
                   bidang akademis melalui penyelenggaraan penelitian,

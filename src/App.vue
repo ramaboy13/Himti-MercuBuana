@@ -1,13 +1,20 @@
 <script setup>
-import FooterSection from './components/FooterSection.vue'
 import NavbarSection from './components/NavbarSection.vue'
 </script>
 
 <template>
-  <NavbarSection />
-  <!-- router-view akan menggantikan komponen dinamis sesuai dengan route -->
-  <router-view />
-  <!-- <FooterSection /> -->
+  <div class="wrapper">
+    <NavbarSection />
+    <!-- router-view akan menggantikan komponen dinamis sesuai dengan route -->
+    <router-view />
+    <!-- <FooterSection /> -->
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  cursor:
+    url('./assets/img/cursor.png') 16 16,
+    auto;
+}
+</style>
