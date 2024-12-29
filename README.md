@@ -106,15 +106,17 @@ We welcome contributions from anyone who wishes to help improve this website. To
 
 ## ⚙️ **Environment Setup**
 
+<<<<<<< HEAD
 - **NodeJS**: version = 16.20.2+
+=======
+- **Node.js**: version = 16.20.2+
+>>>>>>> 86960746b25718cd0fd868398055ead83c770454
 - **npm**: version = 8.19.4+
 
 ## 👨‍💻 **Development Team**
 
-- **Project Lead**: Erlangga Daffa
 - **UI/UX Designer**: Bimo Saputro
-- **Frontend Developer**: Barito Surya Ramadhani
-- **Frontend Developer**: Husein Yarid Zidane
+- **Frontend Developer**: Barito Surya Ramadhani, Husein Yarid Zidane
 
 ## 📝 **License**
 
