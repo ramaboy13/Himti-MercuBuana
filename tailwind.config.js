@@ -17,7 +17,6 @@ export default {
         'main-2': '#512B90',
         'main-4' : '#7f3e78',
         'main-4': '#7f3e78',
-
         'bg-2': '#2C2B31',
         'member-card': '#4A0070',
       },

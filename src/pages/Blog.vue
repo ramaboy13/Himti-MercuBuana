@@ -1,4 +1,69 @@
-// src/views/BlogList.vue
+<script>
+import posts from '../assets/data/post.json'
+import BlogCard from '../components/BlogCard.vue'
+
+export default {
+  name: 'BlogList',
+  components: {
+    BlogCard,
+  },
+  data() {
+    return {
+      posts: posts.posts,
+      searchQuery: '',
+      selectedTags: [],
+      currentPage: 1,
+      postsPerPage: 6,
+    }
+  },
+  computed: {
+    allTags() {
+      const tags = new Set()
+      this.posts.forEach((post) => {
+        post.tags.forEach((tag) => tags.add(tag))
+      })
+      return Array.from(tags)
+    },
+    filteredPosts() {
+      return this.posts.filter((post) => {
+        const matchesSearch =
+          post.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          post.excerpt.toLowerCase().includes(this.searchQuery.toLowerCase())
+
+        const matchesTags =
+          this.selectedTags.length === 0 ||
+          this.selectedTags.every((tag) => post.tags.includes(tag))
+
+        return matchesSearch && matchesTags
+      })
+    },
+    totalPages() {
+      return Math.ceil(this.filteredPosts.length / this.postsPerPage)
+    },
+    paginatedPosts() {
+      const start = (this.currentPage - 1) * this.postsPerPage
+      const end = start + this.postsPerPage
+      return this.filteredPosts.slice(start, end)
+    },
+  },
+  methods: {
+    toggleTag(tag) {
+      if (this.selectedTags.includes(tag)) {
+        this.selectedTags = this.selectedTags.filter((t) => t !== tag)
+      } else {
+        this.selectedTags.push(tag)
+      }
+      this.currentPage = 1 // Reset to first page when filtering
+    },
+  },
+  watch: {
+    searchQuery() {
+      this.currentPage = 1 // Reset to first page when searching
+    },
+  },
+}
+</script>
+
 <template>
   <div class="container mx-auto px-4 py-8 pt-32">
     <h1 class="mb-1 text-3xl font-bold text-white">All blog posts</h1>
@@ -84,72 +149,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import posts from '../assets/data/post.json'
-import BlogCard from '../components/BlogCard.vue'
-
-export default {
-  name: 'BlogList',
-  components: {
-    BlogCard,
-  },
-  data() {
-    return {
-      posts: posts.posts,
-      searchQuery: '',
-      selectedTags: [],
-      currentPage: 1,
-      postsPerPage: 6,
-    }
-  },
-  computed: {
-    allTags() {
-      const tags = new Set()
-      this.posts.forEach((post) => {
-        post.tags.forEach((tag) => tags.add(tag))
-      })
-      return Array.from(tags)
-    },
-    filteredPosts() {
-      return this.posts.filter((post) => {
-        const matchesSearch =
-          post.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-          post.excerpt.toLowerCase().includes(this.searchQuery.toLowerCase())
-
-        const matchesTags =
-          this.selectedTags.length === 0 ||
-          this.selectedTags.every((tag) => post.tags.includes(tag))
-
-        return matchesSearch && matchesTags
-      })
-    },
-    totalPages() {
-      return Math.ceil(this.filteredPosts.length / this.postsPerPage)
-    },
-    paginatedPosts() {
-      const start = (this.currentPage - 1) * this.postsPerPage
-      const end = start + this.postsPerPage
-      return this.filteredPosts.slice(start, end)
-    },
-  },
-  methods: {
-    toggleTag(tag) {
-      if (this.selectedTags.includes(tag)) {
-        this.selectedTags = this.selectedTags.filter((t) => t !== tag)
-      } else {
-        this.selectedTags.push(tag)
-      }
-      this.currentPage = 1 // Reset to first page when filtering
-    },
-  },
-  watch: {
-    searchQuery() {
-      this.currentPage = 1 // Reset to first page when searching
-    },
-  },
-}
-</script>
 
 <style>
 .aspect {
