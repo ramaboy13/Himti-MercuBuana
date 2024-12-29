@@ -46,7 +46,7 @@
 
 <script setup>
 // Set the date we're counting down to
-var countDownDate = new Date('Jan 1, 2025 00:00:00').getTime()
+var countDownDate = new Date('May 1, 2025 00:00:00').getTime()
 
 // Update the countdown every 1 second
 var x = setInterval(function () {
