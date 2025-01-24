@@ -160,7 +160,7 @@ export default {
       <!-- Navigation Buttons -->
       <button
         type="button"
-        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-secondary hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-main-4 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Previous slide"
       >
         <span class="text-2xl" aria-hidden="true">
@@ -175,7 +175,7 @@ export default {
 
       <button
         type="button"
-        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-secondary hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-main-4 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Next slide"
       >
         <span class="sr-only">Next</span>

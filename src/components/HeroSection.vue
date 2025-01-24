@@ -47,14 +47,17 @@ export default {
     >
       <!-- Text Section -->
       <div class="w-full text-center text-white md:w-2/3 md:text-left">
-        <h5 class="text-lg font-semibold text-white md:text-2xl">
+        <h5
+          class="text-sm font-semibold text-white sm:text-base md:text-lg lg:text-2xl"
+        >
           HIMTI Universitas Mercu Buana
         </h5>
-        <h1 class="mb-2 text-2xl font-bold md:text-5xl">
+        <h1 class="mb-2 text-lg font-bold sm:text-xl md:text-2xl lg:text-3xl">
           <span class="typing-text text-main-4">{{ displayText }}</span>
         </h1>
-
-        <h1 class="text-xl font-semibold text-white md:text-2xl">
+        <h1
+          class="text-sm font-semibold text-white sm:text-base md:text-lg lg:text-2xl"
+        >
           Tahun 2024 - 2025
         </h1>
 
@@ -83,14 +86,14 @@ export default {
           </p>
           <button
             @click="toggleText"
-            class="hover:text-accent-light text-sm text-accent"
+            class="hover:text-accent-light text-sm text-main-4"
           >
             {{ isExpanded ? 'Lihat lebih sedikit' : 'Selengkapnya' }}
           </button>
         </div>
 
         <!-- Desktop: Full text -->
-        <div class="hidden md:block">
+        <div class="hidden sm:hidden md:block">
           <p class="mb-4 text-base leading-relaxed text-white">
             {{ fullText }}
           </p>
