@@ -65,7 +65,7 @@ const routes = [
   {
     path: '/fkti',
     name: 'FktiPages',
-    component: ComingSoon,
+    component: FktiPages,
   },
 
   // Halaman Kelascore
