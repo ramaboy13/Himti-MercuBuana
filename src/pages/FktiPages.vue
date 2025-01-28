@@ -5,11 +5,15 @@ import imagefkti3 from '../assets/img/FKTI/FKTI3.avif'
 import imagefkti4 from '../assets/img/FKTI/FKTI4.avif'
 import imagefkti5 from '../assets/img/FKTI/FKTI5.avif'
 
+// Team Pembicara
+import teamPembicara from '../assets/img/FKTI/Pembicara/1.webp'
+
 export default {
   name: 'FktiPages',
   data() {
     return {
       images: [imagefkti1, imagefkti3, imagefkti2, imagefkti4, imagefkti5],
+      teamPembicara: [teamPembicara],
     }
   },
   methods: {
@@ -43,7 +47,7 @@ export default {
             Ayo Daftar Sekarang.
           </span>
           <a
-            href="javascript:;"
+            href="#register"
             class="flex h-8 w-8 items-center justify-center rounded-full bg-main-4"
           >
             <svg
@@ -103,7 +107,7 @@ export default {
     </section>
 
     <!-- Section Deskripsi -->
-    <div
+    <section
       class="container relative mx-auto mt-20 flex h-full max-w-6xl flex-col justify-between px-10 xl:px-0"
     >
       <h2
@@ -114,6 +118,7 @@ export default {
       <p class="mb-12 text-center text-lg text-gray-100">
         Harap Baca Sebelum Melakukan Pendaftaran
       </p>
+      <!-- Card Atas -->
       <div class="w-full">
         <div class="mb-10 flex w-full flex-col sm:flex-row">
           <div
@@ -171,6 +176,8 @@ export default {
             </div>
           </div>
         </div>
+
+        <!-- Card Bawah -->
         <div class="mb-5 flex w-full flex-col sm:flex-row">
           <div
             class="mb-10 w-full transition-transform duration-300 hover:-rotate-12 hover:scale-105 sm:mb-0 sm:w-1/2"
@@ -258,11 +265,11 @@ export default {
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Pemateri -->
     <section id="our-team" class="py-32">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto max-w-7xl px-7 md:px-4">
         <h2
           class="mb-8 bg-gradient-to-r from-purple-600 via-pink-500 to-main-4 bg-clip-text text-center text-3xl font-bold text-transparent"
         >
@@ -270,16 +277,16 @@ export default {
         </h2>
 
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Team Member 1 -->
+          <!-- Team Member -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="relative my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/1.jpg"
+              :src="teamPembicara"
               alt="Team Member 1"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Rahmat Hidayat
@@ -287,16 +294,15 @@ export default {
             <p class="text-gray-300">Role: Kepala Program Studi</p>
           </div>
 
-          <!-- Team Member 2 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="relative my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/4.jpg"
+              :src="teamPembicara"
               alt="Team Member 2"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Prof. Irwan Nugraha
@@ -304,16 +310,15 @@ export default {
             <p class="text-gray-300">Role: Dosen Senior</p>
           </div>
 
-          <!-- Team Member 3 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/3.jpg"
+              :src="teamPembicara"
               alt="Team Member 3"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Siti Aminah
@@ -321,16 +326,15 @@ export default {
             <p class="text-gray-300">Role: Pakar Sistem Informasi</p>
           </div>
 
-          <!-- Team Member 4 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="400"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/2.jpg"
+              :src="teamPembicara"
               alt="Team Member 4"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Budi Santoso
@@ -338,16 +342,15 @@ export default {
             <p class="text-gray-300">Role: Ahli Data Science</p>
           </div>
 
-          <!-- Team Member 5 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="500"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/5.jpg"
+              :src="teamPembicara"
               alt="Team Member 5"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Amelia Wijaya
@@ -355,16 +358,15 @@ export default {
             <p class="text-gray-300">Role: Spesialis Kecerdasan Buatan</p>
           </div>
 
-          <!-- Team Member 6 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="600"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/6.jpg"
+              :src="teamPembicara"
               alt="Team Member 6"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Andi Pratama
@@ -372,16 +374,15 @@ export default {
             <p class="text-gray-300">Role: Dosen Keamanan Siber</p>
           </div>
 
-          <!-- Team Member 7 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="700"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/7.jpg"
+              :src="teamPembicara"
               alt="Team Member 7"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Prof. Arif Wijaya
@@ -389,16 +390,15 @@ export default {
             <p class="text-gray-300">Role: Pakar Jaringan Komputer</p>
           </div>
 
-          <!-- Team Member 8 -->
           <div
-            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-transform duration-300 hover:scale-105 hover:border-4 hover:border-main-4"
+            class="my-6 rounded-lg bg-gray-800 p-6 text-center shadow-md transition-all duration-500 hover:border hover:border-main-4 hover:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.4)]"
             data-aos="fade-up"
             data-aos-delay="800"
           >
             <img
-              src="https://spacema-dev.com/elevate/assets/images/team/8.jpg"
+              :src="teamPembicara"
               alt="Team Member 8"
-              class="mb-4 w-full rounded-full"
+              class="mb-4 w-full rounded-full shadow-inner"
             />
             <h3 class="mb-2 text-xl font-semibold text-white">
               Dr. Lisa Sutrisno
@@ -410,20 +410,24 @@ export default {
     </section>
 
     <!-- Registrasi Form -->
-    <section class="body-font relative text-gray-400">
+    <section
+      id="register"
+      class="body-font relative mx-auto max-w-7xl pb-24 text-gray-400"
+    >
       <h1
         class="bg-gradient-to-r from-purple-600 via-pink-500 to-main-4 bg-clip-text text-center text-3xl font-bold text-transparent"
       >
         LOKASI ACARA FKTI 2025
       </h1>
-      <div class="container mx-auto flex flex-wrap px-5 py-24 sm:flex-nowrap">
+      <div
+        class="container mx-auto flex flex-wrap gap-6 px-5 pt-8 sm:flex-nowrap"
+      >
+        <!-- Map -->
         <div
-          class="relative flex items-end justify-start overflow-hidden rounded-lg bg-gray-300 p-10 sm:mr-10 md:w-1/2 lg:w-2/3"
+          class="relative flex h-[400px] w-full flex-col items-end justify-start overflow-hidden rounded-lg bg-gray-300 sm:mr-10 md:h-[735px] md:w-1/2 lg:w-2/3"
         >
           <iframe
-            width="100%"
-            height="100%"
-            class="absolute inset-0"
+            class="absolute inset-0 h-full w-full"
             frameborder="0"
             title="map"
             marginheight="0"
@@ -433,38 +437,46 @@ export default {
             style="filter: grayscale(1) contrast(1.2) opacity(0.4)"
           ></iframe>
           <div
-            class="relative flex flex-wrap rounded-xl border-4 border-main-4 bg-gray-800 py-6 shadow-md"
+            class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 rounded-xl border-4 border-main-4 bg-gray-800 py-4 shadow-md md:block"
           >
-            <div class="px-6 lg:w-1/2">
-              <h2
-                class="title-font text-xs font-semibold tracking-widest text-gray-200"
-              >
-                ADDRESS
-              </h2>
-              <p class="mt-1">
-                Jl. Meruya Selatan No.1, RT.4/RW.1, Joglo, Kec. Kembangan, Kota
-                Jakarta Barat, Daerah Khusus Ibukota Jakarta 11650
-              </p>
-            </div>
-            <div class="mt-4 px-6 lg:mt-0 lg:w-1/2">
-              <h2
-                class="title-font text-xs font-semibold tracking-widest text-gray-200"
-              >
-                Catatan
-              </h2>
-              <a class="leading-relaxed text-red-500"
-                >Perhatikan Baik Baik Lokasi Acara</a
-              >
-              <h2
-                class="title-font mt-4 text-xs font-semibold tracking-widest text-gray-200"
-              >
-                PHONE
-              </h2>
-              <p class="leading-relaxed">(021) 12345678</p>
+            <div class="flex h-20 w-[600px]">
+              <div class="flex-1 border-r border-gray-700 px-6">
+                <h2
+                  class="title-font text-xs font-semibold tracking-widest text-gray-200"
+                >
+                  ADDRESS
+                </h2>
+                <p class="mt-1 text-sm text-gray-300">
+                  Jl. Meruya Selatan No.1, RT.4/RW.1, Joglo, Kec. Kembangan,
+                  Kota Jakarta Barat
+                </p>
+              </div>
+              <div class="flex-1 px-6">
+                <div class="mb-2">
+                  <h2
+                    class="title-font text-xs font-semibold tracking-widest text-gray-200"
+                  >
+                    Catatan
+                  </h2>
+                  <p class="text-sm leading-relaxed text-red-500">
+                    Perhatikan Baik Baik Lokasi Acara
+                  </p>
+                </div>
+                <div>
+                  <h2
+                    class="title-font text-xs font-semibold tracking-widest text-gray-200"
+                  >
+                    PHONE
+                  </h2>
+                  <p class="text-sm leading-relaxed text-gray-300">
+                    (021) 12345678
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
+        <!-- Form -->
         <div
           class="mt-8 flex w-full flex-col rounded-lg border-4 border-main-4 bg-gray-800 p-6 md:ml-auto md:mt-0 md:w-1/2 md:py-8 lg:w-1/3"
         >
@@ -489,7 +501,6 @@ export default {
             7. Setelah pembayaran pertama atau pelunasan selesai, Anda akan
             mendapatkan Notifikasi.
           </p>
-
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSdDtUm4g9pllRLBuKs3kHBc0G8tOXior5hT2csruHwU40IHrg/viewform?usp=header"
             class="rounded border-0 bg-main-4 px-6 py-2 text-center text-lg text-white hover:bg-accent focus:outline-none"
@@ -498,20 +509,22 @@ export default {
           </a>
         </div>
       </div>
-    </section>
-
-    <!-- Payment methods -->
-    <div class="p-10">
-      <div class="relative mx-auto max-w-7xl">
+      <!-- Payment Methods Card -->
+      <div class="relative mx-auto max-w-7xl px-4">
         <div
           class="mx-auto max-w-lg overflow-hidden rounded-lg shadow-lg lg:flex lg:max-w-none"
         >
-          <div class="flex-1 bg-gray-800 px-6 py-8 lg:p-12">
-            <h3 class="text-2xl font-extrabold text-white sm:text-3xl">
-              Lifetime access
+          <div class="flex-1 px-4 py-8 lg:px-2">
+            <h3
+              class="bg-gradient-to-r from-purple-600 via-pink-500 to-main-4 bg-clip-text text-2xl font-extrabold text-transparent sm:text-3xl"
+            >
+              Apa Aja Sih Yang Kamu Dapatkan?
             </h3>
             <p class="mt-6 text-base text-gray-50 sm:text-lg">
-              Take your Tailwind CSS development to the next level!
+              Peserta wajib membawa pakaian yang sesuai, perlengkapan pribadi,
+              dan alat tulis. Dilarang membawa rokok, minuman keras, senjata
+              tajam, serta barang berharga berlebihan. Tidak diperbolehkan
+              meninggalkan lokasi tanpa izin atau membuat keributan.
             </p>
             <div class="mt-8">
               <div class="flex items-center">
@@ -524,43 +537,7 @@ export default {
                 <li class="flex items-start lg:col-span-1">
                   <div class="flex-shrink-0">
                     <svg
-                      class="h-5 w-5 text-green-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-white">Inspect Tailwind CSS websites</p>
-                </li>
-                <li class="flex items-start lg:col-span-1">
-                  <div class="flex-shrink-0">
-                    <svg
-                      class="h-5 w-5 text-green-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-white">Edit mode in real-time</p>
-                </li>
-                <li class="flex items-start lg:col-span-1">
-                  <div class="flex-shrink-0">
-                    <svg
-                      class="h-5 w-5 text-green-400"
+                      class="h-5 w-5 text-main-4"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -574,13 +551,13 @@ export default {
                     </svg>
                   </div>
                   <p class="ml-3 text-white">
-                    Copy utility classes right into your clipboard
+                    Full Catering (3x Makan + 2x Snack)
                   </p>
                 </li>
                 <li class="flex items-start lg:col-span-1">
                   <div class="flex-shrink-0">
                     <svg
-                      class="h-5 w-5 text-green-400"
+                      class="h-5 w-5 text-main-4"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -594,39 +571,125 @@ export default {
                     </svg>
                   </div>
                   <p class="ml-3 text-white">
-                    Free Chrome extension updates (Firefox coming soon)
+                    Transportasi PP (Bus AC Executive)
                   </p>
+                </li>
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <svg
+                      class="h-5 w-5 text-main-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-white">
+                    Merchendise Eksklusif (Jaket + ID Card)
+                  </p>
+                </li>
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <svg
+                      class="h-5 w-5 text-main-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-white">
+                    Games & Team Building Activities
+                  </p>
+                </li>
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <svg
+                      class="h-5 w-5 text-main-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-white">
+                    Akomodasi Penginapan 2 Hari 1 Malam
+                  </p>
+                </li>
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <svg
+                      class="h-5 w-5 text-main-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-white">Sertifikat Kegiatan</p>
                 </li>
               </ul>
             </div>
           </div>
           <div
-            class="bg-gray-700 px-6 py-8 text-center lg:flex lg:flex-shrink-0 lg:flex-col lg:justify-center lg:p-12"
+            class="px-6 py-8 text-center lg:flex lg:flex-shrink-0 lg:flex-col lg:justify-center lg:p-12"
           >
             <p class="text-lg font-medium leading-6 text-white">
-              Pay once, own it forever
+              Harga Tiket Per Orang
             </p>
             <div
               class="mt-4 flex items-center justify-center text-5xl font-extrabold text-white"
             >
-              <span>$19.99</span
-              ><span class="ml-3 text-xl font-medium text-gray-50">USD</span>
+              <span>300K</span
+              ><span class="ml-3 text-xl font-medium text-gray-50">Rupiah</span>
             </div>
             <div class="mt-6">
               <div class="rounded-md shadow">
-                <a
-                  href="#"
-                  class="flex items-center justify-center rounded-md border border-transparent bg-indigo-500 px-5 py-3 text-base font-medium text-white hover:bg-indigo-600"
-                  >Buy now</a
-                >
+                <div class="group relative inline-flex">
+                  <div
+                    class="transitiona-all animate-tilt absolute -inset-px rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg duration-1000 group-hover:-inset-1 group-hover:opacity-100 group-hover:duration-200"
+                  ></div>
+                  <a
+                    href="#"
+                    title="Get quote now"
+                    class="font-pj relative inline-flex items-center justify-center rounded-xl bg-gray-900 px-8 py-4 text-lg font-bold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+                    role="button"
+                  >
+                    Daftar Sekarang
+                  </a>
+                </div>
               </div>
               <p class="mt-3 text-sm text-gray-300">
-                100% money back guarantee
+                *Pembayaran bisa dicicil 2x
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
