@@ -70,7 +70,7 @@
               to="/kelascore"
               class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
-              <span class="mr-2">Daftar</span>
+              <span class="mr-2">Lihat Detail</span>
 
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
@@ -110,7 +110,7 @@
               to="/seminarit"
               class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
-              <span class="mr-2">Daftar</span>
+              <span class="mr-2">Lihat Detail</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
           </div>
@@ -149,7 +149,7 @@
               to="/fkti"
               class="flex items-center rounded-full bg-main-4 px-4 py-2 text-white"
             >
-              <span class="mr-2">Daftar</span>
+              <span class="mr-2">Lihat Detail</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
           </div>

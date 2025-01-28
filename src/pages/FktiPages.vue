@@ -518,7 +518,7 @@ export default {
             <h3
               class="bg-gradient-to-r from-purple-600 via-pink-500 to-main-4 bg-clip-text text-2xl font-extrabold text-transparent sm:text-3xl"
             >
-              Apa Aja Sih Yang Kamu Dapatkan?
+              Peraturan dan Fasilitas
             </h3>
             <p class="mt-6 text-base text-gray-50 sm:text-lg">
               Peserta wajib membawa pakaian yang sesuai, perlengkapan pribadi,
@@ -679,12 +679,12 @@ export default {
                     class="font-pj relative inline-flex items-center justify-center rounded-xl bg-gray-900 px-8 py-4 text-lg font-bold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
                     role="button"
                   >
-                    Daftar Sekarang
+                    Bayar Sekarang
                   </a>
                 </div>
               </div>
               <p class="mt-3 text-sm text-gray-300">
-                *Pembayaran bisa dicicil 2x
+                *Pembayaran bisa dicicil maks 5x
               </p>
             </div>
           </div>
