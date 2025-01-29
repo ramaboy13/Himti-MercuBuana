@@ -72,7 +72,7 @@ const routes = [
   {
     path: '/kelascore',
     name: 'KelascorePages',
-    component: ComingSoon,
+    component: KelascorePages,
   },
 
   // Halaman Seminar IT
