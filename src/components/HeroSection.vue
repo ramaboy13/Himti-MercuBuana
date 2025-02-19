@@ -1,40 +1,46 @@
-<script>
+<script setup>
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import logoHimti from '../assets/img/C-Tech 2.avif'
 
-export default {
-  name: 'HeroSection',
-  data() {
-    return {
-      logoHimti,
-      text: 'HIMPUNAN TEKNIK INFORMATIKA',
-      displayText: '',
-      currentIndex: 0,
-      isExpanded: false,
-      fullText:
-        'Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan kami untuk mencapai tujuan bersama.',
+// Reactive state
+const displayText = ref('')
+const currentIndex = ref(0)
+const isExpanded = ref(false)
+const isTyping = ref(false)
+let animationFrameId = null
+
+const fullText = ref(
+  'Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan kami untuk mencapai tujuan bersama.',
+)
+
+// Computed properties
+const HEADER_TEXT = 'HIMPUNAN TEKNIK INFORMATIKA'
+
+// Methods
+const typeText = (timestamp) => {
+  if (currentIndex.value < HEADER_TEXT.length) {
+    if (!animationFrameId || timestamp - animationFrameId > 90) {
+      // Kontrol kecepatan
+      displayText.value += HEADER_TEXT.charAt(currentIndex.value)
+      currentIndex.value++
+      animationFrameId = timestamp
     }
-  },
-  computed: {
-    truncatedText() {
-      return this.fullText.slice(0, 100) + '...'
-    },
-  },
-  methods: {
-    typeText() {
-      if (this.currentIndex < this.text.length) {
-        this.displayText += this.text.charAt(this.currentIndex)
-        this.currentIndex++
-        setTimeout(this.typeText, 100)
-      }
-    },
-    toggleText() {
-      this.isExpanded = !this.isExpanded
-    },
-  },
-  mounted() {
-    this.typeText()
-  },
+    requestAnimationFrame(typeText)
+  }
 }
+
+const toggleText = () => {
+  isExpanded.value = !isExpanded.value
+}
+
+// Lifecycle hooks
+onMounted(() => {
+  requestAnimationFrame(typeText)
+})
+
+onUnmounted(() => {
+  cancelAnimationFrame(animationFrameId)
+})
 </script>
 
 <template>
@@ -47,14 +53,14 @@ export default {
     >
       <!-- Text Section -->
       <div class="w-full text-center text-white md:w-2/3 md:text-left">
-        <h5 class="text-lg font-semibold text-white md:text-2xl">
-          HIMTI Universitas Mercu Buana
+        <h5 class="text-md font-semibold text-white md:text-2xl">
+          Universitas Mercu Buana
         </h5>
-        <h1 class="mb-2 text-2xl font-bold md:text-5xl">
-          <span class="typing-text text-main-4">{{ displayText }}</span>
+        <h1 class="mb-2 text-2xl font-bold md:text-4xl">
+          <span class="typing-text text-accent">{{ displayText }}</span>
         </h1>
 
-        <h1 class="text-xl font-semibold text-white md:text-2xl">
+        <h1 class="text-md font-semibold text-white md:text-2xl">
           Tahun 2024 - 2025
         </h1>
 
@@ -74,12 +80,17 @@ export default {
         </div>
 
         <!-- Centered line on mobile, left-aligned on desktop -->
-        <div class="mx-auto mb-6 mt-5 h-1 w-56 bg-main-4 md:mx-0"></div>
+        <div
+          class="mx-auto mb-6 mt-5 h-1 w-3/5 rounded-full bg-accent md:mx-0 lg:w-4/12"
+        ></div>
 
         <!-- Mobile: Truncated text with read more -->
         <div class="text-center md:hidden">
-          <p class="mb-2 text-sm leading-relaxed text-white">
-            {{ isExpanded ? fullText : truncatedText }}
+          <p
+            class="mb-2 text-sm leading-relaxed text-white transition-all xl:text-base"
+            :class="isExpanded ? 'line-clamp-none' : 'line-clamp-3'"
+          >
+            {{ fullText }}
           </p>
           <button
             @click="toggleText"
@@ -180,9 +191,27 @@ export default {
   min-height: 100dvh;
 }
 
+/* Tambahkan will-change untuk optimasi render */
 .typing-text {
-  border-right: 2px solid white;
+  /* border-right: 2px solid white; */
+  white-space: wrap;
+  overflow: hidden;
   animation: blink 0.75s step-end infinite;
+}
+
+.typing-text::after {
+  content: '';
+  border-right: 2px solid white;
+  animation: blink 1s infinite; /* Kecepatan kedip */
+  display: inline-block;
+  transform: translateY(15%);
+  height: 1em;
+}
+
+/* Optimasi animasi floating */
+.floating-image {
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes blink {
@@ -195,6 +224,16 @@ export default {
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .logo-himti {
@@ -202,26 +241,5 @@ export default {
     height: auto;
     margin: 0 auto;
   }
-}
-
-/* Transition for text expansion */
-p {
-  transition: all 0.3s ease-in-out;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-60px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.floating-image {
-  animation: float 3s ease-in-out infinite;
 }
 </style>

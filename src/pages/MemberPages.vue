@@ -1,134 +1,103 @@
-<script>
-import data from '../assets/data/dataTeam.json'
-import MemberCard from '../components/MemberCard.vue'
+<script setup lang="js">
+  import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+  import MemberCard from '../components/card/MemberCard.vue'
+  import data from '../assets/data/dataTeam.json'
 
-export default {
-  components: {
-    MemberCard,
-  },
-  data() {
-    return {
-      members: data.data, // Menyimpan data anggota
-      selectedRole: 'all', // State untuk menyimpan peran yang dipilih
+  // State Management
+  const members = ref([])
+  const selectedRole = ref('all')
+  const isLoading = ref(true)
+  const error = ref(null)
+  let timeoutId = null
+
+  // Computed Properties
+  const roles = computed(() => {
+    const uniqueRoles = [...new Set(members.value.map((m) => m.role))]
+    return uniqueRoles.sort((a, b) => a.localeCompare(b))
+  })
+
+  const filteredMembers = computed(() => {
+    if (!members.value.length) return []
+    return selectedRole.value === 'all'
+      ? members.value
+      : members.value.filter((m) => m.role === selectedRole.value)
+  })
+
+  // Lifecycle Hooks
+  onMounted(() => {
+    loadMembers()
+  })
+
+  onBeforeUnmount(() => {
+    cleanup()
+  })
+
+  // Methods
+  const loadMembers = async () => {
+    try {
+      isLoading.value = true
+      error.value = null
+
+      // Simulasi API call dengan timeout
+      await new Promise((resolve, reject) => {
+        timeoutId = setTimeout(() => {
+          try {
+            members.value = structuredClone(data.data)
+            resolve()
+          } catch (err) {
+            reject(err)
+          }
+        }, 800)
+      })
+    } catch (err) {
+      handleError(err)
+    } finally {
+      isLoading.value = false
     }
-  },
-  computed: {
-    filteredMembers() {
-      if (this.selectedRole === 'all') {
-        return this.members
-      } else {
-        return this.members.filter(
-          (member) => member.role === this.selectedRole,
-        )
-      }
-    },
-    roles() {
-      return [...new Set(this.members.map((m) => m.role))]
-    },
-  },
-  methods: {
-    async fetchMembers() {
-      try {
-        const response = await fetch(data.data)
-        const result = await response.json()
-        this.members = result // Menyimpan data anggota dalam state
-      } catch (error) {
-        console.error('Error fetching members:', error)
-      }
-    },
-    handleRoleChange(role) {
-      this.selectedRole = role
-    },
-  },
-}
+  }
+
+  const handleError = (err) => {
+    error.value = err.message || 'Gagal memuat data anggota'
+    console.error('Error:', err)
+    members.value = []
+  }
+
+  const cleanup = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId)
+      timeoutId = null
+    }
+  }
+
+  // Filter Handler
+  const updateFilter = (role) => {
+    selectedRole.value = role
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 </script>
 
 <template>
   <div
-    class="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
-  >
+    class="mx-auto min-h-screen px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
     <div class="mx-auto mb-10 mt-10 sm:text-center lg:mt-10 lg:max-w-xl">
       <p
-        class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-semibold uppercase tracking-wider text-white"
-      >
+        class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-semibold uppercase tracking-wider text-white">
         Temui Tim Hebat Kami
       </p>
-      <p class="text-base text-white md:text-lg">
+      <p class="cursor-text text-base text-white md:text-lg">
         Kami adalah sekelompok individu penuh semangat yang berdedikasi untuk
         kemajuan dan inovasi dalam dunia Teknik Informatika. Bersama, kami
         mewujudkan visi untuk menciptakan solusi teknologi yang berdampak.
       </p>
-
-      <div class="hs-dropdown relative inline-flex">
-        <button
-          id="hs-dropdown-default"
-          type="button"
-          class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-          aria-haspopup="menu"
-          aria-expanded="false"
-          aria-label="Dropdown"
-        >
-          Actions
-          <svg
-            class="size-4 hs-dropdown-open:rotate-180"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </button>
-
-        <div
-          class="hs-dropdown-menu duration mt-2 hidden min-w-60 rounded-lg bg-white opacity-0 shadow-md transition-[opacity,margin] before:absolute before:-top-4 before:start-0 before:h-4 before:w-full after:absolute after:-bottom-4 after:start-0 after:h-4 after:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="hs-dropdown-default"
-        >
-          <div class="space-y-0.5 p-1">
-            <a
-              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-              href="#"
-            >
-              Newsletter
-            </a>
-            <a
-              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-              href="#"
-            >
-              Purchases
-            </a>
-            <a
-              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-              href="#"
-            >
-              Downloads
-            </a>
-            <a
-              class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-              href="#"
-            >
-              Team Account
-            </a>
-          </div>
-        </div>
-      </div>
 
       <!-- Tambahkan dropdown filter -->
       <div class="mt-6">
         <label for="role" class="mr-4 text-white">Filter by Role:</label>
 
         <select
-          id="role"
           v-model="selectedRole"
-          class="rounded-md bg-gray-800 px-4 py-2 text-white"
-        >
+          @change="updateFilter(selectedRole)"
+          class="rounded-md bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 focus:ring-2 focus:ring-accent">
           <option value="all">All</option>
           <option v-for="role in roles" :key="role" :value="role">
             {{ role }}
@@ -136,15 +105,39 @@ export default {
         </select>
       </div>
     </div>
+
+    <div v-if="isLoading" class="w-full text-center text-white">
+      <div class="inline-flex content-center items-center gap-3">
+        <svg
+          class="size-5 animate-spin text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24">
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Loading...
+      </div>
+    </div>
     <div
-      class="mx-auto grid grid-cols-2 gap-3 sm:gap-6 lg:max-w-screen-lg lg:grid-cols-4 lg:gap-5"
-    >
-      <div
-        v-for="member in filteredMembers"
-        :key="member.id"
-        class="rounded-lg bg-main-3"
-      >
-        <MemberCard :member="member" />
+      v-else-if="filteredMembers.length === 0"
+      class="text-center text-white">
+      Tidak ada anggota yang ditemukan
+    </div>
+
+    <div
+      class="mx-5 grid grid-cols-1 gap-4 py-10 text-left md:grid-cols-2 lg:grid-cols-4 xl:mx-10">
+      <div v-for="member in filteredMembers" class="bg-main-3 rounded-lg">
+        <MemberCard :key="member.id" :member="member" />
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import { nextTick, onMounted, ref, watch } from 'vue'
 import data from '../assets/data/dataTeam.json'
-import MemberCard from './MemberCard.vue'
+import MemberCard from './card/MemberCard.vue'
 
 export default {
   name: 'MemberCarousel',
@@ -140,7 +140,7 @@ export default {
       <!-- Loading -->
       <div
         v-if="members.length === 0"
-        class="flex min-h-60 flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70"
+        class="flex min-h-full flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70"
       >
         <div
           class="flex flex-auto flex-col items-center justify-center p-4 md:p-5"
@@ -160,7 +160,7 @@ export default {
       <!-- Navigation Buttons -->
       <button
         type="button"
-        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-secondary hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-main-2 hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Previous slide"
       >
         <span class="text-2xl" aria-hidden="true">
@@ -175,7 +175,7 @@ export default {
 
       <button
         type="button"
-        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-secondary hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-accent text-gray-800 hover:bg-main-2 hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Next slide"
       >
         <span class="sr-only">Next</span>
@@ -216,7 +216,7 @@ export default {
   left: -10px;
   right: -10px;
   bottom: -10px;
-  z-index: -1; /* Membantu mengangkat */
+  z-index: -2; /* Membantu mengangkat */
 }
 
 .hs-carousel-slide > div {

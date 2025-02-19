@@ -3,7 +3,7 @@ import NavbarSection from './components/NavbarSection.vue'
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper subpixel-antialiased">
     <NavbarSection />
     <!-- router-view akan menggantikan komponen dinamis sesuai dengan route -->
     <router-view />

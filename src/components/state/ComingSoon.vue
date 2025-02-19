@@ -15,7 +15,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
     <button>
       <router-link
         to="/"
-        class="text-md rounded-full bg-accent px-4 py-2 font-semibold text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 lg:px-6 lg:py-3 lg:text-lg"
+        class="text-md rounded-full bg-accent px-4 py-2 font-semibold text-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0 lg:px-6 lg:py-3 lg:text-lg"
       >
         Go Home
       </router-link>
