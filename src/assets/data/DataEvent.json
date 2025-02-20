@@ -1,0 +1,60 @@
+{
+  "recentEvents": [
+    {
+      "id": 1,
+      "slug": "pengabdian-masyarakat-2025",
+      "title": "Pengabdian Masyarakat 2025",
+      "category": "Kegiatan Sosial",
+      "author": "Himpunan Teknik Informatika",
+      "authorImage": "/img/logo-himti.webp",
+      "date": "2025-01-22",
+      "time": "08:00 AM - 01:00 PM",
+      "location": "SMK TELKOM JAKARTA BARAT",
+      "image": "/img/EVENT/PENGMAS2025/Pengmas1.avif",
+      "views": 1024,
+      "content": "<p>Bergabunglah dalam kegiatan pengabdian masyarakat bersama Himpunan Teknik Informatika. Kegiatan ini bertujuan untuk memberikan edukasi teknologi kepada masyarakat, seperti pelatihan komputer dan pemanfaatan teknologi dalam kehidupan sehari-hari.</p>",
+      "highlights": [
+        "Pelatihan Komputer",
+        "Sosialisasi Teknologi",
+        "Penyuluhan Digital",
+        "Kolaborasi dengan Warga",
+        "Aksi Sosial"
+      ],
+      "gallery": [
+        "/img/EVENT/PENGMAS2025/Pengmas1.avif",
+        "/img/EVENT/PENGMAS2025/Pengmas2.avif",
+        "/img/EVENT/PENGMAS2025/Pengmas3.avif",
+        "/img/EVENT/PENGMAS2025/Pengmas4.avif",
+        "/img/EVENT/PENGMAS2025/Pengmas5.avif",
+        "/img/EVENT/PENGMAS2025/Pengmas6.avif"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Kegiatan Sosial",
+      "count": 2
+    },
+    {
+      "id": 2,
+      "name": "Pendidikan",
+      "count": 4
+    },
+    {
+      "id": 3,
+      "name": "Workshop",
+      "count": 1
+    },
+    {
+      "id": 4,
+      "name": "Kompetisi",
+      "count": 2
+    },
+    {
+      "id": 5,
+      "name": "Festival",
+      "count": 1
+    }
+  ]
+}

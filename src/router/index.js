@@ -3,7 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Menggunakan lazy loading untuk setiap halaman
 const Home = () => import('../pages/Home.vue')
 const Blog = () => import('../pages/Blog.vue')
-const Event = () => import('../pages/Event.vue')
+const Event = () => import('../pages/EventPages.vue')
+const EventDetail = () => import('../pages/EventDetail.vue')
 const FktiPages = () => import('../pages/FktiPages.vue')
 const KelascorePages = () => import('../pages/KelascorePages.vue')
 const Team = () => import('../pages/MemberPages.vue')
@@ -32,16 +33,27 @@ const routes = [
     path: '/post/:id(\\d+)',
     name: 'PostDetail',
     component: PostDetail,
-    props: true, // Kirim parameter sebagai props ke komponen
+    props: true,
   },
 
-  // Halaman Event
+  // Update these routes in your router.js
   {
     path: '/event',
     name: 'Event',
-    component: ComingSoon,
+    component: Event,
+    props: (route) => ({
+      category: route.query.category,
+      type: route.query.type,
+      search: route.query.search,
+      date: route.query.date,
+    }),
   },
-
+  {
+    path: '/event/:slug',
+    name: 'EventDetail',
+    component: EventDetail,
+    props: true,
+  },
   // Halaman Team
   {
     path: '/team',
@@ -53,14 +65,14 @@ const routes = [
   {
     path: '/fkti',
     name: 'FktiPages',
-    component: ComingSoon,
+    component: FktiPages,
   },
 
   // Halaman Kelascore
   {
     path: '/kelascore',
     name: 'KelascorePages',
-    component: ComingSoon,
+    component: KelascorePages,
   },
 
   // Halaman Seminar IT
@@ -105,6 +117,22 @@ const router = createRouter({
     // Default: gulir ke atas halaman
     return { top: 0 }
   },
+})
+
+// Navigation Guards
+router.beforeEach((to, from, next) => {
+  // Set document title berdasarkan route
+  document.title = `${to.name} - Himti Mercu Buana` || 'Himti Mercu Buana'
+
+  // Tambahkan loading state jika diperlukan
+  // store.commit('setLoading', true)
+
+  next()
+})
+
+router.afterEach(() => {
+  // Remove loading state
+  // store.commit('setLoading', false)
 })
 
 export default router

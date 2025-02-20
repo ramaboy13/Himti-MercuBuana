@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import ProgramCard from './card/ProgramCard.vue'
+  import ProgramCard from './card/ProgramCard.vue'
 </script>
 
 <template>
   <section
     id="program"
-    class="lg:pt-30 overflow-hidden px-5 pt-20 text-primary"
-  >
+    class="lg:pt-30 overflow-hidden px-5 pt-20 text-primary">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
       <fieldset
-        class="mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-pink-300 p-8 text-primary"
-      >
+        class="mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-pink-300 p-8 text-primary">
         <legend
-          class="w-fit overflow-hidden rounded-full border-8 border-primary bg-accent px-4 py-2 text-lg font-semibold text-primary"
-        >
+          class="w-fit overflow-hidden rounded-full border-8 border-primary bg-accent px-4 py-2 text-lg font-semibold text-primary">
           <p class="text-center text-3xl font-bold">Program</p>
         </legend>
 
@@ -47,8 +44,7 @@ import ProgramCard from './card/ProgramCard.vue'
           title="Kelas Core"
           icon="lucide:file-code-2"
           :items="['UI/UX', 'HTML, CSS, JavaScript', 'Responsive Web']"
-          route="/kelascore"
-        />
+          route="/kelascore" />
 
         <!-- Card Seminar IT -->
         <ProgramCard
@@ -59,16 +55,14 @@ import ProgramCard from './card/ProgramCard.vue'
             'Network Engineer',
             'Software Engineer',
           ]"
-          route="/seminarit"
-        />
+          route="/seminarit" />
 
         <!-- Card FKTI -->
         <ProgramCard
           title="FKTI"
           icon="lucide:users"
           :items="['Keakraban Mahasiswa IT', 'Knowledge', 'Kepemimpinan']"
-          route="/fkti"
-        />
+          route="/fkti" />
       </div>
     </div>
   </section>

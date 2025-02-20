@@ -3,41 +3,46 @@
     <div
       class="mlg:px-8 mx-auto mt-9 flex max-w-5xl flex-col items-center justify-center px-6 text-center lg:mt-10"
     >
-      <img
-        src="../../assets/img/ManwithhisLaptop.png"
-        alt="Logo"
-        class="mb-8 h-40 w-40 lg:h-60 lg:w-60"
-      />
-      <h2 class="mb-8 text-xl font-bold text-main-2 lg:text-5xl">
-        Our Website is Coming Soon
-      </h2>
-      <p class="mb-6 leading-relaxed text-gray-400 lg:text-xl">
-        Stay tuned for updates and get ready for an extraordinary experience!
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4 p-2">
-        <div
-          class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
-        >
-          <div id="days" class="text-xl font-bold text-gray-300"></div>
-          <div class="text-xs uppercase text-gray-400">days</div>
-        </div>
-        <div
-          class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
-        >
-          <div id="hours" class="text-xl font-bold text-gray-300"></div>
-          <div class="text-xs uppercase text-gray-400">hours</div>
-        </div>
-        <div
-          class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
-        >
-          <div id="minutes" class="text-xl font-bold text-gray-300"></div>
-          <div class="text-xs uppercase text-gray-400">minutes</div>
-        </div>
-        <div
-          class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
-        >
-          <div id="seconds" class="text-xl font-bold text-gray-300"></div>
-          <div class="text-xs uppercase text-gray-400">seconds</div>
+      <div
+        class="circlePosition absolute left-[50%] top-[50%] z-[1] h-[400px] w-[590px] translate-x-[-50%] translate-y-[-50%] rounded-[100%] bg-main-2 blur-[100px]"
+      ></div>
+      <div class="relative z-[2] flex flex-col items-center justify-center">
+        <img
+          src="../../assets/img/ManwithhisLaptop.png"
+          alt="Logo"
+          class="mb-8 h-40 w-40 lg:h-60 lg:w-60"
+        />
+        <h2 class="mb-8 text-xl font-bold text-white lg:text-5xl">
+          Our Website is Coming Soon
+        </h2>
+        <p class="mb-6 leading-relaxed text-gray-400 lg:text-xl">
+          Stay tuned for updates and get ready for an extraordinary experience!
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4 p-2">
+          <div
+            class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
+          >
+            <div id="days" class="text-xl font-bold text-gray-300"></div>
+            <div class="text-xs uppercase text-gray-400">days</div>
+          </div>
+          <div
+            class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
+          >
+            <div id="hours" class="text-xl font-bold text-gray-300"></div>
+            <div class="text-xs uppercase text-gray-400">hours</div>
+          </div>
+          <div
+            class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
+          >
+            <div id="minutes" class="text-xl font-bold text-gray-300"></div>
+            <div class="text-xs uppercase text-gray-400">minutes</div>
+          </div>
+          <div
+            class="min-w-[120px] rounded-full border border-main-2 bg-main-1 px-6 py-2"
+          >
+            <div id="seconds" class="text-xl font-bold text-gray-300"></div>
+            <div class="text-xs uppercase text-gray-400">seconds</div>
+          </div>
         </div>
       </div>
     </div>
@@ -46,7 +51,7 @@
 
 <script setup>
 // Set the date we're counting down to
-var countDownDate = new Date('Jan 1, 2025 00:00:00').getTime()
+var countDownDate = new Date('May 1, 2025 00:00:00').getTime()
 
 // Update the countdown every 1 second
 var x = setInterval(function () {

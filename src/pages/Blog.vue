@@ -65,7 +65,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto mt-20 px-4 py-8">
+  <div class="container mx-auto px-4 py-8 pt-32">
     <h1 class="mb-1 text-3xl font-bold text-white">All blog posts</h1>
     <div class="bg-main-4 mb-10 mt-2 h-1 w-64"></div>
 
