@@ -215,7 +215,6 @@
               type="hidden"
               id="kode"
               value="Saya menghubungi anda melalui Web Himti" />
-
             <div class="mt-4 grid">
               <button
                 type="submit"
@@ -264,57 +263,6 @@
     </ModalComponent>
     <!-- Modal End -->
   </section>
-
-  <!-- Modal -->
-  <div
-    v-if="showModal"
-    class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-0">
-    <!-- Backdrop dengan efek blur -->
-    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-    <!-- Modal Content -->
-    <div
-      class="bg-main-1 relative z-50 w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-center shadow-xl transition-all">
-      <!-- Icon Checkmark -->
-      <div
-        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-        <svg
-          class="h-8 w-8 text-green-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
-
-      <!-- Title -->
-      <h3 class="mb-2 text-2xl font-bold text-gray-300">Terima Kasih!</h3>
-
-      <!-- Message -->
-      <div class="mb-6">
-        <p class="text-gray-300">
-          Pesan Anda akan diteruskan ke WhatsApp kami.
-        </p>
-        <p class="mt-2 text-sm text-red-500">
-          Mohon untuk tidak menghubungi nomor ini jika tidak ada kepentingan
-          yang jelas.
-        </p>
-      </div>
-
-      <!-- Note -->
-      <div class="rounded-lg bg-blue-50 p-4">
-        <p class="text-sm text-blue-800">
-          Anda akan segera dialihkan ke WhatsApp...
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sisanya tetap sama seperti template sebelumnya -->
 </template>
 
 <style scoped>
