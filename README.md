@@ -106,8 +106,8 @@ We welcome contributions from anyone who wishes to help improve this website. To
 
 ## ⚙️ **Environment Setup**
 
-- **NodeJS**: version = 16.20.2+
-- **npm**: version = 8.19.4+
+- **NodeJS**: version = 20+
+- **npm**: version = 10+
 
 ## 👨‍💻 **Development Team**
 
