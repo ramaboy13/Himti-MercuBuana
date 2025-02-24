@@ -10,9 +10,9 @@
   })
 
   // Data Dummy for Development delete this when production
-  // props.member.name = 'Shani Indira Natio'
-  // props.member.image =
-  //   'https://i.pinimg.com/1200x/0e/74/0e/0e740eb857f7c8aab7fc884c0cba0d66.jpg'
+  props.member.name = 'Shani Indira Natio'
+  props.member.image =
+    'https://i.pinimg.com/1200x/33/3c/e8/333ce8249a43ab0266428b179f210502.jpg'
 
   const isHovered = ref(false)
   const maxNameLength = 15
@@ -27,14 +27,14 @@
   })
 
   const displayedName = computed(() =>
-    isHovered.value ? props.member.name : truncatedName.value,
+    isHovered.value ? props.member.name : truncatedName.value
   )
 
   const cardClasses = computed(
     () =>
-      `relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg duration-300 transition-all ${
+      `relative h-full overflow-hidden rounded-lg border border-accent bg-gray-800 shadow-lg transition-all ${
         isHovered.value ? 'hover:shadow-2xl' : 'scale-100'
-      } dark:bg-neutral-900`,
+      } dark:bg-neutral-900`
   )
 </script>
 
@@ -44,7 +44,7 @@
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false">
     <div
-      class="group relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all">
+      class="group relative h-full overflow-hidden rounded-lg border-accent bg-gray-800 shadow-lg transition-all">
       <div class="overflow-hidden">
         <!-- Badge -->
         <div
@@ -57,7 +57,7 @@
         <img
           :src="member.image"
           :alt="member.name"
-          class="h-72 w-full scale-105 object-cover transition-all duration-300 group-hover:scale-100"
+          class="h-72 w-full scale-105 object-cover transition-all group-hover:scale-100"
           loading="lazy"
           @error="$emit('imageError', member)" />
       </div>
@@ -82,4 +82,17 @@
   --tw-scale-y: 1.05;
   transform: scale(var(--tw-scale-x), var(--tw-scale-y));
 } */
+
+  .hover\:shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  /* Tambahkan animasi smooth untuk transisi hover */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
 </style>

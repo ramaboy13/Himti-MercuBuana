@@ -10,7 +10,7 @@
   let animationFrameId = null
 
   const fullText = ref(
-    'Selamat datang di website resmi Himpunan Mahasiswa Teknik Informatika Universitas Mercu Buana! Temukan informasi terkini tentang program, kegiatan, dan inisiatif kami dalam memberi dampak positif bagi masyarakat. Mari berkolaborasi dan mewujudkan visi bersama.',
+    'Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan kami untuk mencapai tujuan bersama.',
   )
 
   // Computed properties
