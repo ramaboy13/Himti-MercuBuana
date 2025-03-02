@@ -5,20 +5,20 @@
 <template>
   <section
     id="program"
-    class="lg:pt-30 overflow-hidden px-5 pt-20 text-primary">
+    class="text-primary overflow-hidden px-5 pt-14 lg:pt-24">
     <div class="mx-auto max-w-7xl">
       <!-- Program Card -->
 
       <fieldset
-        class="mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-pink-300 p-8 text-primary">
+        class="from-accent text-primary mb-8 overflow-hidden rounded-2xl bg-linear-to-r to-pink-300 p-8">
         <legend
-          class="w-fit overflow-hidden rounded-full border-8 border-primary bg-accent px-4 py-2 text-lg font-semibold text-primary">
-          <p class="text-center text-3xl font-bold">Program</p>
+          class="border-primary bg-accent text-primary w-fit overflow-hidden rounded-full border-8 px-4 py-2 text-lg font-semibold">
+          <p class="text-center text-xl font-bold xl:text-3xl">Program</p>
         </legend>
 
         <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <!-- Kolom Kiri -->
-          <p class="text-2xl font-semibold">
+          <p class="text-xl font-semibold xl:text-2xl">
             Berikut adalah beberapa program yang kami tawarkan
           </p>
 

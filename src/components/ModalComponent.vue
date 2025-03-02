@@ -27,15 +27,15 @@
     <!-- Latar belakang gelap -->
     <div
       v-if="isVisible"
-      class="fixed inset-0 z-10 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      class="fixed inset-0 z-10 flex items-center justify-center bg-black/50 backdrop-blur-xs">
       <div class="absolute inset-0" @click="closeModal"></div>
       <!-- Konten modal -->
       <div
-        class="relative w-10/12 max-w-lg rounded-lg bg-primary p-6 text-center text-white shadow-lg dark:bg-gray-800">
+        class="bg-primary relative w-10/12 max-w-lg rounded-lg p-6 text-center text-white shadow-lg dark:bg-gray-800">
         <!-- Tombol tutup -->
         <button
           @click="closeModal"
-          class="absolute right-5 top-2 text-3xl text-accent hover:text-main-2 dark:hover:text-gray-300">
+          class="text-accent hover:text-main-2 absolute top-2 right-5 cursor-pointer text-3xl dark:hover:text-gray-300">
           &times;
         </button>
         <!-- Slot untuk konten modal -->

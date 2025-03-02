@@ -78,7 +78,7 @@
 
 <template>
   <div
-    class="mx-auto min-h-screen px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
+    class="mx-auto min-h-screen px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-(--breakpoint-xl) lg:px-8 lg:py-20">
     <div class="mx-auto mb-10 mt-10 sm:text-center lg:mt-10 lg:max-w-xl">
       <p
         class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-semibold uppercase tracking-wider text-white">

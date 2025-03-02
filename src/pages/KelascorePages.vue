@@ -84,7 +84,7 @@
         <div
           v-for="(category, index) in categories"
           :key="index"
-          class="rounded-lg bg-white/10 p-6 backdrop-blur-sm transition-all hover:bg-white/20 hover:shadow-lg"
+          class="rounded-lg bg-white/10 p-6 backdrop-blur-xs transition-all hover:bg-white/20 hover:shadow-lg"
         >
           <img
             :src="category.image"

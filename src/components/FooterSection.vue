@@ -42,7 +42,7 @@
   <!-- Foooter -->
   <section class="bg-gray-900">
     <div
-      class="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-5 sm:px-6 lg:px-8">
+      class="mx-auto max-w-(--breakpoint-xl) space-y-8 overflow-hidden px-4 py-5 sm:px-6 lg:px-8">
       <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
         <div v-for="(item, index) in navItems" :key="index" class="px-5 py-2">
           <a

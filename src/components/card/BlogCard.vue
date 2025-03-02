@@ -28,7 +28,7 @@
   <router-link
     :to="{ name: 'PostDetail', params: { id: props.post.id } }"
     class="group block cursor-pointer overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all hover:shadow-xl">
-    <div class="aspect-[16/9] overflow-hidden">
+    <div class="aspect-16/9 overflow-hidden">
       <img
         :src="imageSrc"
         :alt="props.post.title"

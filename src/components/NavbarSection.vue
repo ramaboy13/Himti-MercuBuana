@@ -156,7 +156,7 @@
       <a @click="router.push('/')" class="flex cursor-pointer items-center">
         <img :src="logoHimti" alt="Logo HimTi" class="h-13 w-12" />
         <h1
-          class="ml-3 hidden font-poppins text-2xl font-bold text-white md:inline md:text-lg">
+          class="font-poppins ml-3 hidden text-2xl font-bold text-white md:inline md:text-lg">
           HIMTI MERCU BUANA
         </h1>
       </a>
@@ -172,14 +172,14 @@
       <!-- Mobile Menu Overlay -->
       <div
         v-if="isOpen"
-        class="fixed inset-0 bg-primary bg-opacity-50 lg:hidden"
+        class="bg-primary bg-opacity-50 fixed inset-0 lg:hidden"
         @click="isOpen = false"></div>
 
       <!-- Navbar Links -->
       <div
         id="mobile-nav"
         :class="[
-          'fixed bottom-0 right-0 top-0 z-50 w-64 transform transition-transform duration-300 ease-in-out lg:relative lg:right-auto lg:top-auto lg:z-auto lg:h-auto lg:w-auto lg:transform-none',
+          'fixed top-0 right-0 bottom-0 z-50 w-64 transform transition-transform duration-300 ease-in-out lg:relative lg:top-auto lg:right-auto lg:z-auto lg:h-auto lg:w-auto lg:transform-none',
           isOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0',
           'bg-primary p-4 shadow-lg lg:flex lg:items-center lg:space-x-5 lg:bg-transparent lg:p-0 lg:shadow-none',
         ]">
@@ -203,18 +203,18 @@
               @click="toggleDropdown"
               id="hs-dropdown-scale-animation"
               type="button"
-              class="hs-dropdown-toggle text-md inline-flex items-center rounded-lg bg-white px-4 py-3 text-slate-800 shadow-sm transition-all duration-200 hover:bg-accent hover:text-primary focus:text-slate-800 focus:outline-none disabled:pointer-events-none disabled:opacity-50 lg:bg-transparent lg:px-4 lg:text-slate-200 focus:lg:bg-transparent focus:lg:text-slate-200"
+              class="hs-dropdown-toggle text-md hover:text-primary hover:bg-accent inline-flex cursor-pointer items-center rounded-lg bg-white px-4 py-3 text-slate-800 shadow-sm transition-all duration-200 focus:text-slate-800 focus:outline-none disabled:pointer-events-none disabled:opacity-50 lg:bg-transparent lg:px-4 lg:text-slate-200 focus:lg:bg-transparent focus:lg:text-slate-200"
               aria-haspopup="menu"
               aria-expanded="false"
               aria-label="Dropdown">
               More
               <Icon
                 icon="fe:arrow-down"
-                class="ml-1 transition-transform duration-300 ease-in-out hs-dropdown-open:rotate-180" />
+                class="hs-dropdown-open:rotate-180 ml-1 transition-transform duration-300 ease-in-out" />
             </button>
 
             <div
-              class="hs-dropdown-menu absolute z-50 hidden min-w-60 scale-95 rounded-lg bg-slate-800/[.7] opacity-0 shadow-sm shadow-slate-700 backdrop-blur transition-all duration-300 ease-in-out hs-dropdown-open:scale-100 hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+              class="hs-dropdown-menu hs-dropdown-open:scale-100 hs-dropdown-open:opacity-100 absolute z-50 hidden min-w-60 scale-95 rounded-lg bg-slate-800/[.7] opacity-0 shadow-sm shadow-slate-700 backdrop-blur transition-all duration-300 ease-in-out dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="hs-dropdown-scale-animation">
@@ -223,7 +223,7 @@
                   v-for="item in dropdownItems"
                   :key="item.path"
                   @click="handleNavigation(item)"
-                  class="hover flex cursor-pointer items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-200 transition-colors duration-300 hover:bg-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0">
+                  class="hover hover:bg-accent hover:text-primary focus:ring-accent flex cursor-pointer items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-200 transition-colors duration-300 focus:ring-2 focus:ring-offset-0 focus:outline-none">
                   {{ item.name }}
                 </a>
               </div>

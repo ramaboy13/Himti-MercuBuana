@@ -31,7 +31,7 @@
 
       <router-link
         to="/team"
-        class="mx-auto my-6 block w-44 rounded-xl bg-accent px-4 py-2 text-center text-primary transition-transform duration-300 hover:scale-105 hover:bg-main-2 focus:bg-purple-950 focus:ring-2 focus:ring-accent md:text-lg">
+        class="bg-accent text-primary hover:bg-main-2 mx-auto my-6 block w-44 rounded-xl px-4 py-2 text-center transition-transform duration-300 focus:scale-95 focus:ring-2 focus:ring-purple-400 md:text-lg">
         <span>Selengkapnya</span>
       </router-link>
     </div>

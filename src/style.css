@@ -1,9 +1,38 @@
-/* Font Poppins */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-
 /* Poppins Fonts from local */
 @import url('./assets/fonts/fonts.css');
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Solusi sementara untuk preline with tailwind v4 */
+@source "preline/dist"; /* <- not sure if it should point to the directory instead: "../preline/dist" */
+@plugin "preline/plugin"; /* Uses newish shorthand syntax from https://github.com/BALOTIAS/preline-tw-v4 */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --text-color-white: #cdd6f4;
+
+  --color-primary: #180d2a;
+  --color-secondary: #7e3874;
+  --color-accent: #d287c0;
+  --color-main-2: #b66aa4;
+
+  --font-poppins: Poppins, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

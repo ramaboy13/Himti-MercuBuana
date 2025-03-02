@@ -79,7 +79,7 @@ export default {
           v-model="searchQuery"
           type="text"
           placeholder="Search posts..."
-          class="focus:ring-main-4 w-full rounded-lg bg-gray-800 px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2"
+          class="focus:ring-main-4 w-full rounded-lg bg-gray-800 px-4 py-2 text-white placeholder-gray-400 focus:outline-hidden focus:ring-2"
         />
         <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
           🔍

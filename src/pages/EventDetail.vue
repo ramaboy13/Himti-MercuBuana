@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-main-1 to-purple-950">
+  <div class="min-h-screen bg-linear-to-b from-main-1 to-purple-950">
     <!-- Loading State -->
     <div v-if="isLoading" class="container mx-auto px-4 py-8 pt-28 text-center">
       <p class="text-purple-200">Loading event details...</p>
@@ -77,7 +77,7 @@
           <!-- Event Details -->
           <div class="prose prose-invert mb-8 max-w-none">
             <h2 class="text-2xl font-bold text-white">Event Details</h2>
-            <div class="mb-6 rounded-xl bg-white/5 p-6 backdrop-blur-sm">
+            <div class="mb-6 rounded-xl bg-white/5 p-6 backdrop-blur-xs">
               <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
                   <h3 class="font-semibold text-purple-300">Date & Time</h3>
@@ -100,7 +100,7 @@
           <!-- Event Highlights -->
           <div v-if="event.highlights?.length" class="mb-8">
             <h2 class="mb-4 text-xl font-bold text-white">Event Highlights</h2>
-            <ul class="space-y-2 rounded-xl bg-white/5 p-6 backdrop-blur-sm">
+            <ul class="space-y-2 rounded-xl bg-white/5 p-6 backdrop-blur-xs">
               <li
                 v-for="highlight in event.highlights"
                 :key="highlight"
@@ -137,14 +137,14 @@
         <!-- Sidebar -->
         <div class="lg:col-span-4">
           <!-- Search -->
-          <div class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-sm">
+          <div class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-xs">
             <h3 class="mb-4 text-lg font-bold text-white">Search Events</h3>
             <div class="relative">
               <input
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search events..."
-                class="w-full rounded-lg border border-purple-300/20 bg-white/5 px-4 py-2 text-white placeholder-purple-300 backdrop-blur-sm transition-all focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20"
+                class="w-full rounded-lg border border-purple-300/20 bg-white/5 px-4 py-2 text-white placeholder-purple-300 backdrop-blur-xs transition-all focus:border-purple-400 focus:outline-hidden focus:ring-2 focus:ring-purple-400/20"
               />
               <button class="absolute right-3 top-2.5">
                 <i class="fas fa-search text-purple-300"></i>
@@ -155,7 +155,7 @@
           <!-- Categories -->
           <div
             v-if="categories.length"
-            class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-sm"
+            class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-xs"
           >
             <h3 class="mb-4 text-lg font-bold text-white">Categories</h3>
             <ul class="space-y-3">
@@ -176,7 +176,7 @@
           <!-- Tags -->
           <div
             v-if="tags.length"
-            class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-sm"
+            class="mb-8 rounded-xl bg-white/5 p-6 backdrop-blur-xs"
           >
             <h3 class="mb-4 text-lg font-bold text-white">Tags</h3>
             <div class="flex flex-wrap gap-2">

@@ -16,9 +16,10 @@
 
   const iconClass = (social) => {
     return {
-      'text-4xl': social.name === 'Email',
-      'text-5xl': social.name !== 'Email',
-      '-translate-x-[2px] scale-125': social.name === 'LinkedIn',
+      'text-4xl hover:scale-110': social.name === 'Email',
+      'text-5xl hover:scale-110': social.name !== 'Email',
+      '-translate-x-[2px] hover:scale-138 scale-125':
+        social.name === 'LinkedIn',
     }
   }
 
@@ -76,12 +77,12 @@
 <template>
   <!-- Contact Us Section -->
   <section
-    class="mx-auto w-full px-5 pb-9 pt-20 sm:px-6 lg:px-8 lg:pt-20"
+    class="mx-auto w-full px-5 pt-20 pb-9 sm:px-6 lg:px-8 lg:pt-20"
     id="contact">
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
       <!-- Title -->
       <div class="mb-10 pt-6 text-center">
-        <h1 class="text-3xl font-bold text-white dark:text-white sm:text-4xl">
+        <h1 class="text-3xl font-bold text-white sm:text-4xl dark:text-white">
           Kontak Kami
         </h1>
         <p class="mt-3 text-white dark:text-neutral-400">
@@ -100,8 +101,9 @@
             <!-- Icon Social Media -->
             <a
               :href="social.url"
+              target="_blank"
               rel="noopener"
-              class="h-fit transition-all duration-200 hover:scale-110"
+              class="h-fit transition-all duration-200"
               :class="iconClass(social)">
               <Icon
                 :icon="
@@ -110,9 +112,11 @@
                 :color="social.iconColor" />
             </a>
             <div>
-              <h3 class="text-xl font-semibold text-white">
-                {{ social.name }}
-              </h3>
+              <a :href="social.url" target="_blank" rel="noopener">
+                <h3 class="text-xl font-semibold text-white">
+                  {{ social.name }}
+                </h3>
+              </a>
               <p class="mt-1 text-sm text-white">
                 {{ social.description }}
               </p>
@@ -120,8 +124,12 @@
                 :href="social.url"
                 rel="noopener"
                 target="_blank"
-                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-accent transition-all duration-300 hover:scale-105 hover:text-opacity-80 focus:text-gray-800 focus:outline-none">
-                Selengkapnya
+                class="text-accent mt-2 inline-flex items-center gap-x-2 text-sm font-medium transition-all duration-300 hover:underline hover:opacity-85 focus:text-gray-800 focus:outline-hidden">
+                {{
+                  social.name === 'Email'
+                    ? 'humas@himtimercubuana.org'
+                    : 'Selengkapnya'
+                }}
               </a>
             </div>
           </div>
@@ -129,7 +137,7 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border border-gray-400 bg-gray-900 p-4 text-white dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8">
+          class="dark:border-main-2 dark:bg-main-2 flex flex-col rounded-2xl border border-gray-400 bg-gray-900 p-4 text-white sm:p-6 lg:p-8">
           <h2
             class="mb-8 text-center text-xl font-semibold shadow-slate-50 dark:text-neutral-200">
             Hubungi kami kapan saja melalui Whatsapp
@@ -149,7 +157,7 @@
                     type="text"
                     name="name"
                     id="name"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Name"
                     required />
                 </div>
@@ -168,7 +176,7 @@
                     type="text"
                     name="institusi"
                     id="institusi"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Organisation"
                     required />
                 </div>
@@ -186,7 +194,7 @@
                     name="email"
                     id="email"
                     autocomplete="email"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:text-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Email"
                     required />
                 </div>
@@ -205,7 +213,7 @@
                     name="message"
                     id="message"
                     rows="4"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Message"
                     required></textarea>
                 </div>
@@ -219,7 +227,7 @@
             <div class="mt-4 grid">
               <button
                 type="submit"
-                class="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-green-500 px-4 py-3 text-sm font-semibold text-slate-50 transition-transform hover:bg-green-600 focus:scale-95 dark:focus:ring-offset-neutral-900">
+                class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-transparent bg-green-500 px-4 py-3 text-sm font-semibold text-slate-50 transition-transform hover:bg-green-600 focus:ring-3 focus:ring-green-300">
                 <!-- <i class="fab fa-whatsapp text-2xl"></i> -->
                 <i class="text-2xl">
                   <Icon icon="simple-icons:whatsapp" color="#f8fafc" />
@@ -264,55 +272,6 @@
     </ModalComponent>
     <!-- Modal End -->
   </section>
-
-  <!-- Modal -->
-  <div
-    v-if="showModal"
-    class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-0">
-    <!-- Backdrop dengan efek blur -->
-    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-    <!-- Modal Content -->
-    <div
-      class="bg-main-1 relative z-50 w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-center shadow-xl transition-all">
-      <!-- Icon Checkmark -->
-      <div
-        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-        <svg
-          class="h-8 w-8 text-green-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
-
-      <!-- Title -->
-      <h3 class="mb-2 text-2xl font-bold text-gray-300">Terima Kasih!</h3>
-
-      <!-- Message -->
-      <div class="mb-6">
-        <p class="text-gray-300">
-          Pesan Anda akan diteruskan ke WhatsApp kami.
-        </p>
-        <p class="mt-2 text-sm text-red-500">
-          Mohon untuk tidak menghubungi nomor ini jika tidak ada kepentingan
-          yang jelas.
-        </p>
-      </div>
-
-      <!-- Note -->
-      <div class="rounded-lg bg-blue-50 p-4">
-        <p class="text-sm text-blue-800">
-          Anda akan segera dialihkan ke WhatsApp...
-        </p>
-      </div>
-    </div>
-  </div>
 
   <!-- Sisanya tetap sama seperti template sebelumnya -->
 </template>

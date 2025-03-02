@@ -38,7 +38,7 @@ const props = defineProps({
     <div class="w-fit justify-self-center">
       <router-link
         :to="route"
-        class="flex items-center gap-1 rounded-xl bg-accent bg-gradient-to-br from-accent to-pink-300 px-4 py-2 text-primary shadow-lg hover:shadow-xl"
+        class="flex items-center gap-1 rounded-xl bg-accent bg-linear-to-br from-accent to-pink-300 px-4 py-2 text-primary shadow-lg hover:shadow-xl"
       >
         <span class="font-medium">Daftar</span>
         <Icon icon="mdi:arrow-right" :class="'text-primary'" width="auto" />

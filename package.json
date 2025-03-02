@@ -9,18 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "preline": "^2.5.1",
+    "@tailwindcss/vite": "^4.0.8",
+    "preline": "github:BALOTIAS/preline-tw-v4",
     "vue": "^3.5.10",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.2",
+    "@tailwindcss/postcss": "^4.0.8",
     "@vitejs/plugin-vue": "^5.1.4",
-    "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.13",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.8",
     "vite": "^5.4.8",
     "vite-plugin-vue-devtools": "^7.6.7"
   },
