@@ -49,7 +49,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import Typed from 'typed.js'
+// import Typed from 'typed.js'
 
 const typedText = ref(null)
 
