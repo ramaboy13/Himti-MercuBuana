@@ -4,9 +4,9 @@
       class="mlg:px-8 mx-auto mt-9 flex max-w-5xl flex-col items-center justify-center px-6 text-center lg:mt-10"
     >
       <div
-        class="circlePosition absolute left-[50%] top-[50%] z-[1] h-[400px] w-[590px] translate-x-[-50%] translate-y-[-50%] rounded-[100%] bg-main-2 blur-[100px]"
+        class="circlePosition absolute left-[50%] top-[50%] z-1 h-[400px] w-[590px] translate-x-[-50%] translate-y-[-50%] rounded-[100%] bg-main-2 blur-[100px]"
       ></div>
-      <div class="relative z-[2] flex flex-col items-center justify-center">
+      <div class="relative z-2 flex flex-col items-center justify-center">
         <img
           src="../../assets/img/ManwithhisLaptop.png"
           alt="Logo"

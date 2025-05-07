@@ -25,7 +25,7 @@
     <!-- Latar belakang gelap -->
     <div
       v-if="isVisible"
-      class="fixed inset-0 z-10 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      class="fixed inset-0 z-10 flex items-center justify-center bg-black/50 backdrop-blur-xs">
       <div class="absolute inset-0" @click="closeModal"></div>
       <!-- Konten modal -->
       <div

@@ -1,41 +1,41 @@
 <script setup lang="js">
-  import { ref, computed } from 'vue'
+import { ref, computed } from 'vue';
 
-  let props = defineProps({
-    member: {
-      type: Object,
-      required: true,
-      validator: (value) => value.name && value.role && value.image,
-    },
-  })
+let props = defineProps({
+  member: {
+    type: Object,
+    required: true,
+    validator: (value) => value.name && value.role && value.image,
+  },
+});
 
-  // Data Dummy for Development delete this when production
-  // props.member.name = 'Shani Indira Natio'
-  // props.member.image =
-  //   'https://i.pinimg.com/1200x/0e/74/0e/0e740eb857f7c8aab7fc884c0cba0d66.jpg'
+// Data Dummy for Development delete this when production
+// props.member.name = 'Shani Indira Natio'
+// props.member.image =
+//   'https://i.pinimg.com/1200x/0e/74/0e/0e740eb857f7c8aab7fc884c0cba0d66.jpg'
 
-  const isHovered = ref(false)
-  const maxNameLength = 15
+const isHovered = ref(false);
+const maxNameLength = 15;
 
-  // Computed properties
-  const truncatedName = computed(() => {
-    if (props.member.name.length <= maxNameLength) return props.member.name
-    const truncated = props.member.name.slice(0, maxNameLength)
-    return truncated.lastIndexOf(' ') > 0
-      ? truncated.slice(0, truncated.lastIndexOf(' ') + 2) + '.'
-      : truncated + '...'
-  })
+// Computed properties
+const truncatedName = computed(() => {
+  if (props.member.name.length <= maxNameLength) return props.member.name;
+  const truncated = props.member.name.slice(0, maxNameLength);
+  return truncated.lastIndexOf(' ') > 0
+    ? truncated.slice(0, truncated.lastIndexOf(' ') + 2) + '.'
+    : truncated + '...';
+});
 
-  const displayedName = computed(() =>
-    isHovered.value ? props.member.name : truncatedName.value,
-  )
+const displayedName = computed(() =>
+  isHovered.value ? props.member.name : truncatedName.value,
+);
 
-  const cardClasses = computed(
-    () =>
-      `relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg duration-300 transition-all ${
-        isHovered.value ? 'hover:shadow-2xl' : 'scale-100'
-      } dark:bg-neutral-900`,
-  )
+const cardClasses = computed(
+  () =>
+    `relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg duration-300 transition-all ${
+      isHovered.value ? 'hover:shadow-2xl' : 'scale-100'
+    } dark:bg-neutral-900`,
+);
 </script>
 
 <template>
@@ -49,7 +49,7 @@
         <!-- Badge -->
         <div
           v-if="member.badge"
-          class="absolute left-4 top-4 z-10 text-clip rounded-md bg-accent px-3 py-1 text-xs">
+          class="bg-accent absolute top-4 left-4 z-10 rounded-md px-3 py-1 text-xs text-clip">
           {{ member.badge }}
         </div>
 
@@ -57,7 +57,7 @@
         <img
           :src="member.image"
           :alt="member.name"
-          class="h-72 w-full scale-105 object-cover transition-all duration-300 group-hover:scale-100"
+          class="h-72 w-full scale-100 object-cover transition-all duration-300 group-hover:scale-105"
           loading="lazy"
           @error="$emit('imageError', member)" />
       </div>
@@ -77,7 +77,7 @@
 </template>
 
 <style scoped>
-  /* .hover\:scale-105 {
+/* .hover\:scale-105 {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: scale(var(--tw-scale-x), var(--tw-scale-y));
