@@ -48,7 +48,7 @@
     id="home"
     class="relative flex min-h-screen items-center justify-center bg-cover bg-center px-4 md:px-8">
     <div
-      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12 lg:mb-28">
+      class="z-1 flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12 lg:mb-28">
       <!-- Text Section -->
       <div class="w-full text-center text-white md:w-2/3 md:text-left">
         <h5 class="text-md font-semibold text-white md:text-2xl">

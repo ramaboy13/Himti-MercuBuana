@@ -137,7 +137,7 @@
       <!-- Loading -->
       <div
         v-if="members.length === 0"
-        class="flex min-h-full flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70">
+        class="flex min-h-full flex-col rounded-xl shadow-xs dark:bg-neutral-800 dark:shadow-neutral-700/70">
         <div
           class="flex flex-auto flex-col items-center justify-center p-4 md:p-5">
           <div class="flex justify-center">

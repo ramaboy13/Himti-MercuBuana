@@ -1,87 +1,87 @@
 <script setup>
-  import { ref, computed } from 'vue'
-  import socialData from '../assets/data/socmed.json'
-  import ModalComponent from './ModalComponent.vue'
+import { ref, computed } from 'vue';
+import socialData from '../assets/data/socmed.json';
+import ModalComponent from './ModalComponent.vue';
 
-  // social media links
-  const socialLinks = socialData.data
+// social media links
+const socialLinks = socialData.data;
 
-  // Nama platform yang ingin ditampilkan
-  const desiredPlatforms = ['Instagram', 'LinkedIn', 'Email']
+// Nama platform yang ingin ditampilkan
+const desiredPlatforms = ['Instagram', 'LinkedIn', 'Email'];
 
-  // Filter data untuk mendapatkan platform yang diinginkan
-  const filteredPlatforms = computed(() =>
-    socialLinks.filter((social) => desiredPlatforms.includes(social.name)),
-  )
+// Filter data untuk mendapatkan platform yang diinginkan
+const filteredPlatforms = computed(() =>
+  socialLinks.filter((social) => desiredPlatforms.includes(social.name)),
+);
 
-  const iconClass = (social) => {
-    return {
-      'text-4xl': social.name === 'Email',
-      'text-5xl': social.name !== 'Email',
-      '-translate-x-[2px] scale-125': social.name === 'LinkedIn',
-    }
+const iconClass = (social) => {
+  return {
+    'text-4xl': social.name === 'Email',
+    'text-5xl': social.name !== 'Email',
+    '-translate-x-[2px] scale-125': social.name === 'LinkedIn',
+  };
+};
+
+// Form Handler
+// State untuk modal dan form input
+const isModalVisible = ref(false);
+const name = ref('');
+const institusi = ref('');
+const email = ref('');
+const message = ref('');
+const kode = ref('Saya menghubungi anda melalui Web Himti');
+
+// Computed property untuk URL WhatsApp
+const whatsappUrl = computed(() => {
+  const phoneNumber = '+6285719066792';
+  const text = `Halo Kak,\n\nNama saya: *${name.value}*\nSaya Dari: *${institusi.value}*\n\nPesan :\n${message.value}\n\nEmail: *${email.value}*\n*${kode.value}*`;
+  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+});
+
+// Method untuk mengirim pesan ke WhatsApp
+const sendMessageToWhatsapp = async () => {
+  // Validasi input
+  if (
+    !name.value ||
+    !institusi.value ||
+    !email.value ||
+    !message.value ||
+    !kode.value
+  ) {
+    alert('Mohon lengkapi semua field yang diperlukan');
+    return;
   }
 
-  // Form Handler
-  // State untuk modal dan form input
-  const isModalVisible = ref(false)
-  const name = ref('')
-  const institusi = ref('')
-  const email = ref('')
-  const message = ref('')
-  const kode = ref('Saya menghubungi anda melalui Web Himti')
+  // Tampilkan modal
+  isModalVisible.value = true;
 
-  // Computed property untuk URL WhatsApp
-  const whatsappUrl = computed(() => {
-    const phoneNumber = '+6285719066792'
-    const text = `Halo Kak,\n\nNama saya: *${name.value}*\nSaya Dari: *${institusi.value}*\n\nPesan :\n${message.value}\n\nEmail: *${email.value}*\n*${kode.value}*`
-    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
-  })
+  // Tunggu 3 detik sebelum membuka WhatsApp
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  // Method untuk mengirim pesan ke WhatsApp
-  const sendMessageToWhatsapp = async () => {
-    // Validasi input
-    if (
-      !name.value ||
-      !institusi.value ||
-      !email.value ||
-      !message.value ||
-      !kode.value
-    ) {
-      alert('Mohon lengkapi semua field yang diperlukan')
-      return
-    }
+  // Buka WhatsApp
+  // window.open(whatsappUrl.value, '_blank')
 
-    // Tampilkan modal
-    isModalVisible.value = true
+  // Tunggu 3 detik lagi sebelum menutup modal
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    // Tunggu 3 detik sebelum membuka WhatsApp
-    await new Promise((resolve) => setTimeout(resolve, 3000))
+  // Tutup modal
+  isModalVisible.value = false;
+};
 
-    // Buka WhatsApp
-    // window.open(whatsappUrl.value, '_blank')
-
-    // Tunggu 3 detik lagi sebelum menutup modal
-    await new Promise((resolve) => setTimeout(resolve, 3000))
-
-    // Tutup modal
-    isModalVisible.value = false
-  }
-
-  const closeModal = () => {
-    isModalVisible.value = false
-  }
+const closeModal = () => {
+  isModalVisible.value = false;
+};
 </script>
 
 <template>
   <!-- Contact Us Section -->
   <section
-    class="mx-auto w-full px-5 pb-9 pt-20 sm:px-6 lg:px-8 lg:pt-20"
+    class="mx-auto w-full px-5 pt-20 pb-9 sm:px-6 lg:px-8 lg:pt-20"
     id="contact">
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
       <!-- Title -->
       <div class="mb-10 pt-6 text-center">
-        <h1 class="text-3xl font-bold text-white dark:text-white sm:text-4xl">
+        <h1 class="text-3xl font-bold text-white sm:text-4xl dark:text-white">
           Kontak Kami
         </h1>
         <p class="mt-3 text-white dark:text-neutral-400">
@@ -120,7 +120,7 @@
                 :href="social.url"
                 rel="noopener"
                 target="_blank"
-                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-accent transition-all duration-300 hover:scale-105 hover:text-opacity-80 focus:text-gray-800 focus:outline-none">
+                class="text-accent hover:text-opacity-80 mt-2 inline-flex items-center gap-x-2 text-sm font-medium transition-all duration-300 hover:scale-105 focus:text-gray-800 focus:outline-hidden">
                 Selengkapnya
               </a>
             </div>
@@ -129,7 +129,7 @@
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border border-gray-400 bg-gray-900 p-4 text-white dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8">
+          class="dark:border-main-2 dark:bg-main-2 flex flex-col rounded-2xl border border-gray-400 bg-gray-900 p-4 text-white sm:p-6 lg:p-8">
           <h2
             class="mb-8 text-center text-xl font-semibold shadow-slate-50 dark:text-neutral-200">
             Hubungi kami kapan saja melalui Whatsapp
@@ -149,7 +149,7 @@
                     type="text"
                     name="name"
                     id="name"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors placeholder:text-gray-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Name"
                     required />
                 </div>
@@ -168,7 +168,7 @@
                     type="text"
                     name="institusi"
                     id="institusi"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors placeholder:text-gray-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Organisation"
                     required />
                 </div>
@@ -186,7 +186,7 @@
                     name="email"
                     id="email"
                     autocomplete="email"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors placeholder:text-gray-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Email"
                     required />
                 </div>
@@ -205,7 +205,7 @@
                     name="message"
                     id="message"
                     rows="4"
-                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors placeholder:text-gray-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Message"
                     required></textarea>
                 </div>
@@ -266,13 +266,13 @@
 </template>
 
 <style scoped>
-  .modal-enter-active,
-  .modal-leave-active {
-    transition: opacity 0.3s ease;
-  }
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
 
-  .modal-enter-from,
-  .modal-leave-to {
-    opacity: 0;
-  }
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
 </style>

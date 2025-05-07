@@ -163,28 +163,28 @@ export default {
               <textarea
                 placeholder="Your comment"
                 rows="4"
-                class="focus:border-main-4 w-full rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
+                class="focus:border-main-4 w-full rounded-sm bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-hidden"
               ></textarea>
               <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <input
                   type="text"
                   placeholder="Your name"
-                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
+                  class="focus:border-main-4 rounded-sm bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-hidden"
                 />
                 <input
                   type="email"
                   placeholder="Your email"
-                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
+                  class="focus:border-main-4 rounded-sm bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-hidden"
                 />
                 <input
                   type="url"
                   placeholder="Your website"
-                  class="focus:border-main-4 rounded bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none"
+                  class="focus:border-main-4 rounded-sm bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-hidden"
                 />
               </div>
               <button
                 type="submit"
-                class="bg-main-4 rounded px-6 py-2 text-white hover:bg-opacity-90"
+                class="bg-main-4 rounded-sm px-6 py-2 text-white hover:bg-opacity-90"
               >
                 Submit
               </button>
@@ -201,7 +201,7 @@ export default {
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search..."
-                class="focus:border-main-4 w-full rounded bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:outline-none"
+                class="focus:border-main-4 w-full rounded-sm bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:outline-hidden"
                 @keyup.enter="handleSearch"
               />
               <button

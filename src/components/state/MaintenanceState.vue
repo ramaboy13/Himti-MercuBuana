@@ -4,7 +4,7 @@
     <div
       class="items-center justify-center overflow-hidden text-center text-gray-300 antialiased"
     >
-      <article class="mx-auto max-w-screen-md items-center p-12">
+      <article class="mx-auto max-w-(--breakpoint-md) items-center p-12">
         <h1
           class="mb-12 animate-pulse text-3xl font-light text-purple-600 md:text-4xl lg:text-6xl"
         >
