@@ -190,41 +190,6 @@
               </router-link>
             </div>
           </div>
-
-          <!-- Related Events -->
-          <div
-            v-if="relatedEvents.length"
-            class="rounded-xl bg-white/5 p-6 backdrop-blur-sm"
-          >
-            <h3 class="mb-4 text-lg font-bold text-white">Related Events</h3>
-            <div class="space-y-4">
-              <router-link
-                v-for="relatedEvent in relatedEvents"
-                :key="relatedEvent.id"
-                :to="{
-                  name: 'EventDetail',
-                  params: { slug: relatedEvent.slug },
-                }"
-                class="group flex gap-4"
-              >
-                <img
-                  :src="relatedEvent.image || '/placeholder-event.jpg'"
-                  :alt="relatedEvent.title"
-                  class="h-20 w-20 rounded-lg object-cover transition-transform group-hover:scale-105"
-                />
-                <div>
-                  <h4
-                    class="font-semibold text-white transition-colors group-hover:text-purple-300"
-                  >
-                    {{ relatedEvent.title }}
-                  </h4>
-                  <p class="text-sm text-purple-200">
-                    {{ formatDate(relatedEvent.date) }}
-                  </p>
-                </div>
-              </router-link>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -284,7 +249,6 @@ export default {
         event.value = foundEvent
         categories.value = eventData.categories || []
         tags.value = eventData.tags || []
-
         // Get related events (same category, excluding current event)
         relatedEvents.value = eventData.recentEvents
           .filter(

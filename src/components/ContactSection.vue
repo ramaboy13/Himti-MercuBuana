@@ -1,47 +1,83 @@
 <script setup>
-import { ref } from 'vue'
+  import { ref, computed } from 'vue'
+  import socialData from '../assets/data/socmed.json'
+  import ModalComponent from './ModalComponent.vue'
 
-const showModal = ref(false)
+  // social media links
+  const socialLinks = socialData.data
 
-const MessageToWhatsapp = () => {
-  const name = document.getElementById('namalengkap').value
-  const institusi = document.getElementById('institusi').value
-  const email = document.getElementById('email').value
-  const pesan = document.getElementById('pesan-anda').value
-  const kode = document.getElementById('kode').value
+  // Nama platform yang ingin ditampilkan
+  const desiredPlatforms = ['Instagram', 'LinkedIn', 'Email']
 
-  if (!name || !institusi) {
-    alert('Mohon isi nama dan institusi')
-    return false
+  // Filter data untuk mendapatkan platform yang diinginkan
+  const filteredPlatforms = computed(() =>
+    socialLinks.filter((social) => desiredPlatforms.includes(social.name)),
+  )
+
+  const iconClass = (social) => {
+    return {
+      'text-4xl': social.name === 'Email',
+      'text-5xl': social.name !== 'Email',
+      '-translate-x-[2px] scale-125': social.name === 'LinkedIn',
+    }
   }
 
-  const text = `Halo Kak,\n\nNama saya: *${name}*\nSaya Dari: *${institusi}*\n\nPesan :\n${pesan}\n\nEmail: *${email}*\n*${kode}*`
+  // Form Handler
+  // State untuk modal dan form input
+  const isModalVisible = ref(false)
+  const name = ref('')
+  const institusi = ref('')
+  const email = ref('')
+  const message = ref('')
+  const kode = ref('Saya menghubungi anda melalui Web Himti')
 
-  const phoneNumber = '+6285719066792'
+  // Computed property untuk URL WhatsApp
+  const whatsappUrl = computed(() => {
+    const phoneNumber = '+6285719066792'
+    const text = `Halo Kak,\n\nNama saya: *${name.value}*\nSaya Dari: *${institusi.value}*\n\nPesan :\n${message.value}\n\nEmail: *${email.value}*\n*${kode.value}*`
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
+  })
 
-  // Tampilkan modal
-  showModal.value = true
+  // Method untuk mengirim pesan ke WhatsApp
+  const sendMessageToWhatsapp = async () => {
+    // Validasi input
+    if (
+      !name.value ||
+      !institusi.value ||
+      !email.value ||
+      !message.value ||
+      !kode.value
+    ) {
+      alert('Mohon lengkapi semua field yang diperlukan')
+      return
+    }
 
-  // Beri jeda sebelum membuka WhatsApp
-  setTimeout(() => {
-    const urlToWhatsapp = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
-    window.open(urlToWhatsapp, '_blank')
-    // Tutup modal setelah WhatsApp dibuka
-    setTimeout(() => {
-      showModal.value = false
-    }, 3000)
-  }, 3000)
+    // Tampilkan modal
+    isModalVisible.value = true
 
-  return false
-}
+    // Tunggu 3 detik sebelum membuka WhatsApp
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+
+    // Buka WhatsApp
+    // window.open(whatsappUrl.value, '_blank')
+
+    // Tunggu 3 detik lagi sebelum menutup modal
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+
+    // Tutup modal
+    isModalVisible.value = false
+  }
+
+  const closeModal = () => {
+    isModalVisible.value = false
+  }
 </script>
 
 <template>
   <!-- Contact Us Section -->
   <section
     class="mx-auto w-full px-5 pb-9 pt-20 sm:px-6 lg:px-8 lg:pt-20"
-    id="contact"
-  >
+    id="contact">
     <div class="mx-auto max-w-2xl lg:max-w-7xl">
       <!-- Title -->
       <div class="mb-10 pt-6 text-center">
@@ -49,167 +85,144 @@ const MessageToWhatsapp = () => {
           Kontak Kami
         </h1>
         <p class="mt-3 text-white dark:text-neutral-400">
-          Kami sangat senang apabila kita saling berinteraksi.
+          Kami selalu terbuka untuk berinteraksi! Jangan ragu untuk menghubungi
+          kami.
         </p>
       </div>
 
       <div class="grid gap-6 lg:mt-20 lg:grid-cols-2 lg:gap-48">
         <!-- Contact Information Section (Left) -->
-        <div class="divide-y divide-main-4 dark:divide-neutral-800">
-          <!-- Instagram Block -->
-          <div class="flex gap-x-7 py-6">
-            <span class="text-accent">
-              <Icon icon="simple-icons:instagram" width="48" height="48" />
-            </span>
-
+        <div class="divide-y divide-slate-400 dark:divide-neutral-800">
+          <div
+            v-for="(social, key) in filteredPlatforms"
+            :key="key"
+            class="flex gap-x-7 py-6">
+            <!-- Icon Social Media -->
+            <a
+              :href="social.url"
+              rel="noopener"
+              class="h-fit transition-all duration-200 hover:scale-110"
+              :class="iconClass(social)">
+              <Icon
+                :icon="
+                  social.name === 'Email' ? 'logos:google-gmail' : social.icon
+                "
+                :color="social.iconColor" />
+            </a>
             <div>
-              <h3 class="font-semibold text-white dark:text-neutral-200">
-                Instagram
+              <h3 class="text-xl font-semibold text-white">
+                {{ social.name }}
               </h3>
-              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
-                Follow Instagram kami untuk tetap terhubung dan mendapatkan
-                informasi terbaru.
+              <p class="mt-1 text-sm text-white">
+                {{ social.description }}
               </p>
               <a
-                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                href="https://www.instagram.com/himti_mercubuana/"
+                :href="social.url"
+                rel="noopener"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-accent transition-all duration-300 hover:scale-105 hover:text-opacity-80 focus:text-gray-800 focus:outline-none">
                 Selengkapnya
               </a>
-            </div>
-          </div>
-
-          <!-- Linkedin Block -->
-          <div class="flex gap-x-7 py-6">
-            <span>
-              <Icon icon="logos:linkedin-icon" width="48" height="48" />
-            </span>
-
-            <div>
-              <h3 class="font-semibold text-white dark:text-neutral-200">
-                Linkedin
-              </h3>
-              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
-                Ayo terkoneksi bersama kami di Linkedin
-              </p>
-              <a
-                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                href="https://www.linkedin.com/company/himti/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Selengkapnya
-              </a>
-            </div>
-          </div>
-
-          <!-- Email Block -->
-          <div class="flex gap-x-7 py-6">
-            <span>
-              <Icon icon="logos:google-gmail" width="48" height="48" />
-            </span>
-
-            <div>
-              <h3 class="font-semibold text-white dark:text-neutral-200">
-                Email
-              </h3>
-              <p class="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
-                Jika Anda ingin mengirim email kepada kami, silakan hubungi kami
-                di sini.
-              </p>
-              <p
-                class="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-blue-600 hover:text-gray-800 focus:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-              >
-                himti.mercubuana@gmail.com
-              </p>
             </div>
           </div>
         </div>
 
         <!-- Form Section (Right) -->
         <div
-          class="flex flex-col rounded-2xl border border-main-4 bg-gray-900 p-4 dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8"
-        >
+          class="flex flex-col rounded-2xl border border-gray-400 bg-gray-900 p-4 text-white dark:border-main-2 dark:bg-main-2 sm:p-6 lg:p-8">
           <h2
-            class="mb-8 text-center text-xl font-semibold text-white shadow-slate-50 dark:text-neutral-200"
-          >
+            class="mb-8 text-center text-xl font-semibold shadow-slate-50 dark:text-neutral-200">
             Hubungi kami kapan saja melalui Whatsapp
           </h2>
 
-          <form @submit.prevent="MessageToWhatsapp">
+          <form @submit.prevent="sendMessageToWhatsapp">
             <div class="grid gap-4">
-              <div class="relative">
-                <label for="namalengkap" class="sr-only">Nama Lengkap</label>
+              <!-- Grid -->
+              <div class="w-full">
+                <label for="name" class="sr-only">Name</label>
                 <div class="flex items-center">
-                  <i class="fas fa-user absolute left-3 text-gray-400"></i>
+                  <label class="absolute p-3 text-xl text-gray-400" for="name">
+                    <Icon icon="ic:baseline-person" />
+                  </label>
                   <input
+                    v-model="name"
                     type="text"
-                    id="namalengkap"
-                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="Nama Lengkap"
-                    required
-                  />
+                    name="name"
+                    id="name"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    placeholder="Name"
+                    required />
                 </div>
               </div>
 
               <div class="relative">
-                <label for="institusi" class="sr-only"
-                  >Institusi atau Organisasi</label
-                >
+                <label for="institusi" class="sr-only">organisation</label>
                 <div class="flex items-center">
-                  <i class="fas fa-user absolute left-3 text-gray-400"></i>
+                  <label
+                    class="absolute p-3 text-xl text-gray-400"
+                    for="institusi">
+                    <Icon icon="gg:organisation" color="" />
+                  </label>
                   <input
+                    v-model="institusi"
                     type="text"
+                    name="institusi"
                     id="institusi"
-                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="Institusi / Organisasi"
-                    required
-                  />
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                    placeholder="Organisation"
+                    required />
                 </div>
               </div>
 
               <div class="relative">
                 <label for="email" class="sr-only">Email</label>
                 <div class="flex items-center">
-                  <i class="fas fa-envelope absolute left-3 text-gray-400"></i>
+                  <label class="absolute p-3 text-xl text-gray-400" for="email">
+                    <Icon icon="ic:email" color="" />
+                  </label>
                   <input
+                    v-model="email"
                     type="email"
+                    name="email"
                     id="email"
-                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    autocomplete="email"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Email"
-                  />
+                    required />
                 </div>
               </div>
 
               <div class="relative">
-                <label for="pesan-anda" class="sr-only">Pesan Anda</label>
+                <label for="message" class="sr-only">Message</label>
                 <div class="flex items-start">
-                  <i
-                    class="fas fa-comment-alt absolute left-3 mt-3 text-gray-400"
-                  ></i>
+                  <label
+                    class="absolute p-3 text-xl text-gray-400"
+                    for="message">
+                    <Icon icon="ic:round-mode-comment" />
+                  </label>
                   <textarea
-                    id="pesan-anda"
+                    v-model="message"
+                    name="message"
+                    id="message"
                     rows="4"
-                    class="block w-full rounded-lg border border-main-4 bg-gray-700 px-10 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    class="block w-full rounded-lg border border-gray-400 bg-gray-700 px-10 py-3 text-sm transition-colors invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
                     placeholder="Message"
-                  ></textarea>
+                    required></textarea>
                 </div>
               </div>
             </div>
             <input
               type="hidden"
               id="kode"
-              value="Saya menghubungi anda melalui Web Himti"
-            />
-
+              value="Saya menghubungi anda melalui Web Himti" />
             <div class="mt-4 grid">
               <button
                 type="submit"
-                class="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-green-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900"
-              >
-                <i class="fab fa-whatsapp text-2xl"></i>
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-green-500 px-4 py-3 text-sm font-semibold text-slate-50 transition-transform hover:bg-green-600 focus:scale-95 dark:focus:ring-offset-neutral-900">
+                <!-- <i class="fab fa-whatsapp text-2xl"></i> -->
+                <i class="text-2xl">
+                  <Icon icon="simple-icons:whatsapp" color="#f8fafc" />
+                </i>
                 Send Whatsapp
               </button>
             </div>
@@ -217,37 +230,14 @@ const MessageToWhatsapp = () => {
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Modal -->
-  <div
-    v-if="showModal"
-    class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-0"
-  >
-    <!-- Backdrop dengan efek blur -->
-    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-    <!-- Modal Content -->
-    <div
-      class="relative z-50 w-full max-w-md transform overflow-hidden rounded-2xl bg-main-1 p-6 text-center shadow-xl transition-all"
-    >
+    <!-- Modal Start -->
+    <ModalComponent :isVisible="isModalVisible" @close="closeModal">
       <!-- Icon Checkmark -->
       <div
-        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100"
-      >
-        <svg
-          class="h-8 w-8 text-green-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 13l4 4L19 7"
-          ></path>
-        </svg>
+        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+        <Icon
+          icon="material-symbols:check-rounded"
+          class="text-4xl text-green-500" />
       </div>
 
       <!-- Title -->
@@ -270,20 +260,19 @@ const MessageToWhatsapp = () => {
           Anda akan segera dialihkan ke WhatsApp...
         </p>
       </div>
-    </div>
-  </div>
-
-  <!-- Sisanya tetap sama seperti template sebelumnya -->
+    </ModalComponent>
+    <!-- Modal End -->
+  </section>
 </template>
 
 <style scoped>
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.3s ease;
-}
+  .modal-enter-active,
+  .modal-leave-active {
+    transition: opacity 0.3s ease;
+  }
 
-.modal-enter-from,
-.modal-leave-to {
-  opacity: 0;
-}
+  .modal-enter-from,
+  .modal-leave-to {
+    opacity: 0;
+  }
 </style>

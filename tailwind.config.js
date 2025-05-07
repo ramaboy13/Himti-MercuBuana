@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// @type {import('tailwindcss').Config}
 export default {
   darkMode: 'class',
   content: [
@@ -8,17 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      textColor: {
+        white: '#cdd6f4',
+      },
       colors: {
         primary: '#180D2A',
         secondary: '#7E3874',
-        accent: '#7B4399',
-        'main-3': '#2C2B31',
-        'main-1': '#180D2A',
-        'main-2': '#512B90',
-        'main-4' : '#7f3e78',
-        'main-4': '#7f3e78',
-        'bg-2': '#2C2B31',
-        'member-card': '#4A0070',
+        accent: '#D287C0',
+        'main-2': '#B66AA4',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Add Poppins font family

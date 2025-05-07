@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "Facebook",
+      "icon": "simple-icons:facebook",
+      "iconColor": "#0866FF",
+      "url": "",
+      "description": ""
+    },
+    {
+      "name": "Instagram",
+      "icon": "simple-icons:instagram",
+      "iconColor": "#FF0069",
+      "url": "https://www.instagram.com/himti.umb/",
+      "description": "Follow kami di Instagram untuk update terbaru dan cerita menarik!"
+    },
+    {
+      "name": "TikTok",
+      "icon": "simple-icons:tiktok",
+      "iconColor": "#000000",
+      "url": "https://www.tiktok.com/@himti.mercu.buana",
+      "description": ""
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "mdi:linkedin",
+      "iconColor": "#0077B5",
+      "url": "https://www.linkedin.com/company/himti/",
+      "description": "Ayo terkoneksi bersama kami di Linkedin"
+    },
+    {
+      "name": "Email",
+      "icon": "simple-icons:gmail",
+      "iconColor": "#EA4335",
+      "url": "mailto:humas@himtimercubuana.org",
+      "description": "Jika Anda ingin mengirim email kepada kami, silakan hubungi kami di sini."
+    }
+  ]
+}

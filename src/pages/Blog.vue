@@ -1,6 +1,6 @@
 <script>
 import posts from '../assets/data/post.json'
-import BlogCard from '../components/BlogCard.vue'
+import BlogCard from '../components/card/BlogCard.vue'
 
 export default {
   name: 'BlogList',

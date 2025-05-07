@@ -65,14 +65,14 @@ const routes = [
   {
     path: '/fkti',
     name: 'FktiPages',
-    component: ComingSoon,
+    component: FktiPages,
   },
 
   // Halaman Kelascore
   {
     path: '/kelascore',
     name: 'KelascorePages',
-    component: ComingSoon,
+    component: KelascorePages,
   },
 
   // Halaman Seminar IT
