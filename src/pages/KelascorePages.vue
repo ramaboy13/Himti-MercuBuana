@@ -10,6 +10,6 @@ import FooterSection from '../components/FooterSection.vue';
 <HeroKelasCore />
 <BenefitKelasCore />
 <AboutKelasCore />
-<FormKelasCore />
+<!-- <FormKelasCore /> -->
 <FooterSection />
 </template>
