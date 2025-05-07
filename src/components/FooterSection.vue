@@ -11,7 +11,7 @@
   const socialLinks = socialData.data
 
   const filteredSocialLinks = computed(
-    () => socialLinks.filter((social) => social.url) // ambil yang memiliki link
+    () => socialLinks.filter((social) => social.url), // ambil yang memiliki link
   )
 
   // Menentukan navigasi berdasarkan halaman
@@ -42,7 +42,7 @@
   <!-- Foooter -->
   <section class="bg-gray-900">
     <div
-      class="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-5 sm:px-6 lg:px-8">
+      class="mx-auto max-w-(--breakpoint-xl) space-y-8 overflow-hidden px-4 py-5 sm:px-6 lg:px-8">
       <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
         <div v-for="(item, index) in navItems" :key="index" class="px-5 py-2">
           <a
@@ -61,7 +61,7 @@
           rel="noopener noreferrer"
           :class="[
             social.name === 'LinkedIn' ? 'scale-125' : '', // Skala lebih besar untuk LinkedIn
-            'cursor-pointer text-2xl text-gray-400 transition-colors duration-200 hover:text-accent',
+            'hover:text-accent cursor-pointer text-2xl text-gray-400 transition-colors duration-200',
           ]">
           <span class="sr-only">{{ social.name }}</span>
 

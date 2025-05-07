@@ -67,7 +67,7 @@
       <!-- Two Columns Layout -->
 
       <div
-        class="mb-10 mt-8 flex max-w-screen-xl flex-col items-start gap-8 text-justify md:mt-0 md:px-10 lg:flex-row">
+        class="mb-10 mt-8 flex max-w-(--breakpoint-xl) flex-col items-start gap-8 text-justify md:mt-0 md:px-10 lg:flex-row">
         <!-- Left Side (Tentang HIMTI + Description) -->
         <div class="w-full" data-aos="fade-right">
           <h1 class="text-4xl font-bold">Tentang HIMTI</h1>

@@ -1,10 +1,10 @@
 {
   "tabWidth": 2,
-  "semi": false,
+  "semi": true,
   "singleQuote": true,
   "jsxSingleQuote": true,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "vueIndentScriptAndStyle": true,
+  "vueIndentScriptAndStyle": false,
   "htmlWhitespaceSensitivity": "ignore",
   "printWidth": 80,
   "trailingComma": "all",

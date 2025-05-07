@@ -1,5 +1,5 @@
 <script setup>
-import { Icon } from '@iconify/vue'
+import { Icon } from '@iconify/vue';
 
 // Definisikan props yang diterima oleh komponen
 const props = defineProps({
@@ -7,13 +7,12 @@ const props = defineProps({
   icon: String, // Nama ikon
   items: Array, // Daftar fitur
   route: String, // Route untuk tombol daftar
-})
+});
 </script>
 
 <template>
   <div
-    class="content-center justify-center rounded-2xl border border-accent bg-gray-900 p-6 shadow-2xl"
-  >
+    class="border-accent content-center justify-center rounded-2xl border bg-gray-900 p-6 shadow-2xl">
     <!-- Header Card -->
     <div class="mb-4 flex items-center">
       <Icon :icon="icon" width="44" />
@@ -25,9 +24,8 @@ const props = defineProps({
       <li
         v-for="(item, index) in items"
         :key="index"
-        class="mb-2 flex items-center"
-      >
-        <i class="rounded-full bg-accent p-2 text-3xl text-primary">
+        class="mb-2 flex items-center">
+        <i class="bg-accent text-primary rounded-full p-2 text-3xl">
           <Icon icon="mdi:check" width="20" />
         </i>
         <span class="ml-2">{{ item }}</span>
@@ -38,8 +36,7 @@ const props = defineProps({
     <div class="w-fit justify-self-center">
       <router-link
         :to="route"
-        class="flex items-center gap-1 rounded-xl bg-accent bg-gradient-to-br from-accent to-pink-300 px-4 py-2 text-primary shadow-lg hover:shadow-xl"
-      >
+        class="bg-accent from-accent text-primary flex items-center gap-1 rounded-xl bg-linear-to-br to-pink-300 px-4 py-2 shadow-lg hover:shadow-xl">
         <span class="font-medium">Daftar</span>
         <Icon icon="mdi:arrow-right" :class="'text-primary'" width="auto" />
       </router-link>

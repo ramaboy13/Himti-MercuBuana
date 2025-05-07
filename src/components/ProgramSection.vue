@@ -10,7 +10,7 @@
       <!-- Program Card -->
 
       <fieldset
-        class="mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-pink-300 p-8 text-primary">
+        class="mb-8 overflow-hidden rounded-2xl bg-linear-to-r from-accent to-pink-300 p-8 text-primary">
         <legend
           class="w-fit overflow-hidden rounded-full border-8 border-primary bg-accent px-4 py-2 text-lg font-semibold text-primary">
           <p class="text-center text-3xl font-bold">Program</p>

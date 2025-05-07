@@ -148,7 +148,7 @@
 <template>
   <nav
     :class="[
-      'fixed top-0 z-[2] w-full shadow-md transition-colors duration-300',
+      'fixed top-0 z-2 w-full shadow-md transition-colors duration-300',
       isScrolled && !isOpen ? 'scrolled' : 'bg-primary',
     ]">
     <div class="mx-auto flex items-center justify-between px-5 py-3">
@@ -165,7 +165,7 @@
       <button
         id="hamburger-button"
         @click="toggleMenu"
-        class="text-white focus:outline-none lg:hidden">
+        class="text-white focus:outline-hidden lg:hidden">
         <Icon icon="pajamas:hamburger" class="text-2xl" />
       </button>
 
@@ -203,7 +203,7 @@
               @click="toggleDropdown"
               id="hs-dropdown-scale-animation"
               type="button"
-              class="hs-dropdown-toggle text-md inline-flex items-center rounded-lg bg-white px-4 py-3 text-slate-800 shadow-sm transition-all duration-200 hover:bg-accent hover:text-primary focus:text-slate-800 focus:outline-none disabled:pointer-events-none disabled:opacity-50 lg:bg-transparent lg:px-4 lg:text-slate-200 focus:lg:bg-transparent focus:lg:text-slate-200"
+              class="hs-dropdown-toggle text-md inline-flex items-center rounded-lg bg-white px-4 py-3 text-slate-800 shadow-xs transition-all duration-200 hover:bg-accent hover:text-primary focus:text-slate-800 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 lg:bg-transparent lg:px-4 lg:text-slate-200 lg:focus:bg-transparent lg:focus:text-slate-200"
               aria-haspopup="menu"
               aria-expanded="false"
               aria-label="Dropdown">
@@ -214,7 +214,7 @@
             </button>
 
             <div
-              class="hs-dropdown-menu absolute z-50 hidden min-w-60 scale-95 rounded-lg bg-slate-800/[.7] opacity-0 shadow-sm shadow-slate-700 backdrop-blur transition-all duration-300 ease-in-out hs-dropdown-open:scale-100 hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+              class="hs-dropdown-menu absolute z-50 hidden min-w-60 scale-95 rounded-lg bg-slate-800/[.7] opacity-0 shadow-xs shadow-slate-700 backdrop-blur-sm transition-all duration-300 ease-in-out hs-dropdown-open:scale-100 hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="hs-dropdown-scale-animation">
@@ -223,7 +223,7 @@
                   v-for="item in dropdownItems"
                   :key="item.path"
                   @click="handleNavigation(item)"
-                  class="hover flex cursor-pointer items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-200 transition-colors duration-300 hover:bg-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0">
+                  class="hover flex cursor-pointer items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-200 transition-colors duration-300 hover:bg-accent hover:text-primary focus:outline-hidden focus:ring-2 focus:ring-accent focus:ring-offset-0">
                   {{ item.name }}
                 </a>
               </div>

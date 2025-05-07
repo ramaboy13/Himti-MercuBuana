@@ -25,7 +25,7 @@ export default {
       <div class="mt-8">
         <a
           href="/"
-          class="inline-flex items-center rounded-full border border-transparent bg-accent px-4 py-2 text-base font-medium text-primary duration-200 hover:scale-105 hover:bg-main-2 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-0"
+          class="inline-flex items-center rounded-full border border-transparent bg-accent px-4 py-2 text-base font-medium text-primary duration-200 hover:scale-105 hover:bg-main-2 focus:outline-hidden focus:ring-2 focus:ring-accent focus:ring-offset-0"
         >
           <Icon icon="akar-icons:arrow-left" class="mr-1" />
           Go back home

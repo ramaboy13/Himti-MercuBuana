@@ -1,17 +1,19 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 // Menggunakan lazy loading untuk setiap halaman
-const Home = () => import('../pages/Home.vue')
-const Blog = () => import('../pages/Blog.vue')
-const Event = () => import('../pages/EventPages.vue')
-const EventDetail = () => import('../pages/EventDetail.vue')
-const FktiPages = () => import('../pages/FktiPages.vue')
-const KelascorePages = () => import('../pages/KelascorePages.vue')
-const Team = () => import('../pages/MemberPages.vue')
-const SeminarITPages = () => import('../pages/SeminarITPages.vue')
-const PostDetail = () => import('../pages/PostDetail.vue')
-const NotFound = () => import('../components/state/NotFound.vue')
-const ComingSoon = () => import('../components/state/ComingSoon.vue')
+const Home = () => import('../pages/Home.vue');
+const Blog = () => import('../pages/Blog.vue');
+const Event = () => import('../pages/EventPages.vue');
+const EventDetail = () => import('../pages/EventDetail.vue');
+const FktiPages = () => import('../pages/FktiPages.vue');
+const KelascorePages = () => import('../pages/KelascorePages.vue');
+const Team = () => import('../pages/MemberPages.vue');
+const SeminarITPages = () => import('../pages/SeminarITPages.vue');
+const PostDetail = () => import('../pages/PostDetail.vue');
+const NotFound = () => import('../components/state/NotFound.vue');
+const ComingSoon = () => import('../components/state/ComingSoon.vue');
+const BlogSection = () => import('../components/Blog/BlogSection.vue');
+const BlogDetail = () => import('../components/Blog/BlogDetail.vue');
 
 const routes = [
   // Halaman Home
@@ -31,12 +33,11 @@ const routes = [
   // Detail Post (dengan validasi ID berupa angka)
   {
     path: '/post/:id(\\d+)',
-    name: 'PostDetail',
+    name: 'Post Detail',
     component: PostDetail,
     props: true,
   },
-
-  // Update these routes in your router.js
+  // Halaman Event
   {
     path: '/event',
     name: 'Event',
@@ -50,7 +51,7 @@ const routes = [
   },
   {
     path: '/event/:slug',
-    name: 'EventDetail',
+    name: 'Event Detail',
     component: EventDetail,
     props: true,
   },
@@ -64,31 +65,43 @@ const routes = [
   // Halaman FKTI
   {
     path: '/fkti',
-    name: 'FktiPages',
+    name: 'FKTI',
     component: FktiPages,
   },
 
   // Halaman Kelascore
   {
     path: '/kelascore',
-    name: 'KelascorePages',
+    name: 'Kelascore',
     component: KelascorePages,
   },
 
   // Halaman Seminar IT
   {
     path: '/seminarit',
-    name: 'SeminarITPages',
+    name: 'Seminar IT',
     component: ComingSoon,
   },
 
   // Halaman 404 Not Found
   {
     path: '/:pathMatch(.*)*',
-    name: 'NotFound',
+    name: 'Not Found',
     component: NotFound,
   },
-]
+  // Halaman blog
+  {
+    path: '/blogs',
+    name: 'Blogs Page',
+    component: BlogSection,
+  },
+  {
+    path: '/blog/:id',
+    name: 'Blog Detail',
+    component: BlogDetail,
+    props: true,
+  },
+];
 
 const router = createRouter({
   // Gunakan HTML5 history mode
@@ -101,38 +114,37 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     // Jika posisi tersimpan ada, gunakan itu
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     }
 
     // Jika hash berubah di halaman yang sama
     if (to.path === from.path) {
-      return { element: to.hash, behavior: 'smooth' }
+      return { element: to.hash, behavior: 'smooth' };
     }
 
     // Jika navigasi ke hash di halaman lain
     if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' }
+      return { el: to.hash, behavior: 'smooth' };
     }
 
     // Default: gulir ke atas halaman
-    return { top: 0 }
+    return { top: 0 };
   },
-})
+});
 
 // Navigation Guards
 router.beforeEach((to, from, next) => {
   // Set document title berdasarkan route
-  document.title = `${to.name} - Himti Mercu Buana` || 'Himti Mercu Buana'
+  document.title = `${to.name} - Himti Mercu Buana` || 'Himti Mercu Buana';
 
   // Tambahkan loading state jika diperlukan
   // store.commit('setLoading', true)
 
-  next()
-})
+  next();
+});
 
-router.afterEach(() => {
-  // Remove loading state
-  // store.commit('setLoading', false)
-})
+router.afterEach(async (to, from, failure) => {
+  if (!failure) setTimeout(() => window.HSStaticMethods.autoInit(), 100);
+});
 
-export default router
+export default router;
