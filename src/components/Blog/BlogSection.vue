@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, reactive, ref } from 'vue';
 import { axiosInstance } from '../../lib/axios/http';
 import BlogCard from './BlogCard.vue';
 import Loading from '../utils/Loading.vue';
@@ -7,13 +7,13 @@ import FooterSection from '../FooterSection.vue';
 
 // const searchInput = ref('');
 const isLoading = ref(false);
-let responseData = ref([]);
+let responseData = reactive([]);
 let length = ref(0);
 const sortBy = ref('latest');
 
 const sortedData = computed(() => {
   // Buat salinan array untuk menghindari mutasi data asli
-  return [...responseData.value].sort((a, b) => {
+  return [...responseData].sort((a, b) => {
     return sortBy.value === 'latest'
       ? b.id - a.id // Descending: ID besar ke kecil
       : a.id - b.id; // Ascending: ID kecil ke besar
@@ -35,11 +35,11 @@ const fetchData = async () => {
     const { data } = await axiosInstance.get(`/posts`, {
       params: { postId: 1 },
     });
-    length.value = data.length;
-    responseData.value = data.posts;
-    console.log(data);
+    length.value = data.posts.length;
+    responseData = data.posts;
+    console.log(responseData);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   } finally {
     isLoading.value = false;
   }
@@ -50,7 +50,6 @@ onMounted(() => {
 });
 </script>
 <template>
-  <!-- Card Blog -->
   <div
     class="mx-auto min-h-dvh max-w-[85rem] px-4 py-25 text-white sm:px-6 lg:px-8 lg:py-20">
     <!-- Title -->
@@ -59,18 +58,6 @@ onMounted(() => {
       <p class="mt-1 text-slate-400">
         Stay in the know with insights from industry experts.
       </p>
-      <!-- <input
-        type="text"
-        v-model="searchInput"
-        class="my-4 w-full rounded-lg border-2 border-gray-400 px-4 py-2 placeholder:text-gray-500 focus:border-purple-500 focus:outline-none"
-        @keyup.enter="fetchData"
-        placeholder="Search by Post ID" />
-      <button
-        :disabled="isLoading"
-        class="text-primary cursor-pointer rounded-lg bg-purple-500 px-3 py-2 disabled:bg-purple-700"
-        @click="fetchData()">
-        Test
-      </button> -->
     </div>
     <!-- End Title -->
 
@@ -116,7 +103,6 @@ onMounted(() => {
     </div>
     <!-- End Grid -->
   </div>
-  <!-- End Card Blog -->
 
   <FooterSection />
 </template>
