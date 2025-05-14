@@ -27,7 +27,7 @@ const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    component: ComingSoon,
+    component: BlogSection,
   },
 
   // Detail Post (dengan validasi ID berupa angka)
@@ -88,12 +88,6 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'Not Found',
     component: NotFound,
-  },
-  // Halaman blog
-  {
-    path: '/blogs',
-    name: 'Blogs Page',
-    component: BlogSection,
   },
   {
     path: '/blog/:id',
