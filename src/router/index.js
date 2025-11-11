@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory,  } from 'vue-router'
 
 // Menggunakan lazy loading untuk setiap halaman
 const Home = () => import('../pages/Home.vue')
@@ -12,6 +12,7 @@ const SeminarITPages = () => import('../pages/SeminarITPages.vue')
 const PostDetail = () => import('../pages/PostDetail.vue')
 const NotFound = () => import('../components/state/NotFound.vue')
 const ComingSoon = () => import('../components/state/ComingSoon.vue')
+const AboutPages = () => import('../pages/AboutPages.vue')
 
 const routes = [
   // Halaman Home
@@ -19,6 +20,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+
+  // Halaman About
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPages,
   },
 
   // Halaman Blog
@@ -99,40 +107,29 @@ const router = createRouter({
 
   // Gulir otomatis ke atas saat berpindah page
   scrollBehavior(to, from, savedPosition) {
-    // Jika posisi tersimpan ada, gunakan itu
     if (savedPosition) {
       return savedPosition
     }
-
-    // Jika hash berubah di halaman yang sama
     if (to.path === from.path) {
       return { element: to.hash, behavior: 'smooth' }
     }
-
-    // Jika navigasi ke hash di halaman lain
     if (to.hash) {
       return { el: to.hash, behavior: 'smooth' }
     }
-
-    // Default: gulir ke atas halaman
     return { top: 0 }
   },
 })
 
 // Navigation Guards
 router.beforeEach((to, from, next) => {
-  // Set document title berdasarkan route
   document.title = `${to.name} - Himti Mercu Buana` || 'Himti Mercu Buana'
-
-  // Tambahkan loading state jika diperlukan
-  // store.commit('setLoading', true)
+  //store.commit('setLoading', true)
 
   next()
 })
 
 router.afterEach(() => {
-  // Remove loading state
-  // store.commit('setLoading', false)
+  //store.commit('setLoading', false)
 })
 
 export default router

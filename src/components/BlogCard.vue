@@ -18,13 +18,13 @@ export default {
 <template>
   <router-link
     :to="{ name: 'PostDetail', params: { id: post.id } }"
-    class="group block cursor-pointer overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all hover:shadow-xl"
+    class="group block cursor-pointer overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all bg-main-2:shadow-xl"
   >
     <div class="aspect-[16/9] overflow-hidden">
       <img
         :src="post.image"
         :alt="post.title"
-        class="h-full w-full transform object-cover object-center transition-transform duration-300 group-hover:scale-105"
+        class="h-full w-full transform object-cover object-center transition-transform duration-300 group-bg-main-2:scale-105"
       />
     </div>
     <div class="p-6">
@@ -33,7 +33,7 @@ export default {
         <span class="mx-2">•</span>
         <span>{{ post.date }}</span>
       </div>
-      <h2 class="mb-2 text-xl font-semibold text-white group-hover:text-main-4">
+      <h2 class="mb-2 text-xl font-semibold text-white group-bg-main-2:text-main-4">
         {{ post.title }}
       </h2>
       <p class="mb-4 text-gray-300">{{ truncateText(post.excerpt, 100) }}</p>

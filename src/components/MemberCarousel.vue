@@ -48,7 +48,7 @@ export default {
 
     const initCarousel = async () => {
       try {
-        await nextTick() // Tunggu hingga DOM selesai diperbarui
+        await nextTick()
         const carouselElement = document.querySelector('[data-hs-carousel]')
 
         if (!carouselElement) {
@@ -56,8 +56,8 @@ export default {
           return
         }
 
-        destroyCarousel() // Hancurkan carousel sebelumnya jika ada
-        reinitializeCarousel() // Inisialisasi ulang carousel
+        destroyCarousel() 
+        reinitializeCarousel()
       } catch (error) {
         console.error('Error initializing carousel:', error)
       }
@@ -72,7 +72,6 @@ export default {
       }
     }
 
-    // Watch perubahan pada data members
     watch(
       () => members.value,
       async (newMembers) => {
@@ -83,7 +82,6 @@ export default {
       { immediate: true },
     )
 
-    // Lifecycle hooks
     onMounted(() => {
       loadMembers()
     })
@@ -114,7 +112,7 @@ export default {
       }'
       class="relative"
     >
-      <div class="hs-carousel w-full overflow-hidden rounded-lg bg-transparent">
+      <div class="hs-carousel w-full rounded-lg bg-transparent">
         <div class="relative min-h-96">
           <div
             class="hs-carousel-body bg-red absolute bottom-0 start-0 top-0 flex flex-nowrap transition-transform duration-700"
@@ -126,7 +124,6 @@ export default {
               :key="member.id || index"
               class="hs-carousel-slide w-full px-1 sm:w-1/2 lg:w-1/3"
             >
-              <!-- Member Card -->
               <div
                 class="relative transform transition-transform duration-300 ease-in-out hover:z-10 hover:scale-105 hover:shadow-lg"
               >
@@ -137,7 +134,6 @@ export default {
         </div>
       </div>
 
-      <!-- Loading -->
       <div
         v-if="members.length === 0"
         class="flex min-h-60 flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70"
@@ -157,10 +153,9 @@ export default {
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
       <button
         type="button"
-        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-main-4 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-main-2 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Previous slide"
       >
         <span class="text-2xl" aria-hidden="true">
@@ -175,7 +170,7 @@ export default {
 
       <button
         type="button"
-        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-main-4 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
+        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-main-2 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
         aria-label="Next slide"
       >
         <span class="sr-only">Next</span>

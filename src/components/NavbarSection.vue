@@ -93,14 +93,14 @@ const navItems = computed(() => {
   const pageSpecificItems = {
     Home: [
       { name: 'Home', path: '#' }, // Path diubah menjadi '#' untuk halaman Home
-      { name: 'About', path: '#about' },
+      { name: 'About', path: '/about' },
       { name: 'Program', path: '#program' },
       { name: 'Members', path: '#team' },
       { name: 'Contact us', path: '#contact' },
     ],
     Blog: [
       { name: 'Home', path: '/' }, // Path tetap '/' untuk halaman selain Home
-      { name: 'About', path: '#about' },
+      { name: 'About', path: '/about' },
       { name: 'Program', path: '#program' },
       { name: 'Members', path: '#team' },
       { name: 'Contact us', path: '#contact' },

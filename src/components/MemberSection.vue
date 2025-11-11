@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      members, // Data anggota langsung digunakan
+      members,
     }
   },
 }
@@ -25,16 +25,14 @@ export default {
         luas yang siap menghadirkan terobosan baru dalam kegiatan kemahasiswaan.
       </p>
 
-      <!-- Carousel -->
-      <MemberCarousel />
-      <!-- End Carousel -->
-
       <router-link
         to="/team"
-        class="mx-auto my-6 block w-44 rounded-full bg-main-4 px-4 py-2 text-center text-white hover:bg-purple-900 focus:bg-purple-950 focus:ring-2 focus:ring-accent md:text-lg"
+        class="mx-auto my-7 block w-56 rounded-full bg-main-2 px-6 py-2 text-center text-white hover:bg-purple-900 focus:bg-purple-950 focus:ring-2 focus:ring-accent md:text-lg"
       >
-        <span>Selengkapnya </span>
+        <span>Lihat Selengkapnya</span>
       </router-link>
+
+      <MemberCarousel />
     </div>
   </section>
 </template>

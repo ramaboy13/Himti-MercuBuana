@@ -27,7 +27,7 @@ export default {
     })
 
     const cardClasses = computed(() => [
-      'relative h-full overflow-hidden rounded-lg border border-main-4 bg-gray-800 shadow-lg transition-all duration-300',
+      'relative h-full overflow-hidden rounded-lg border border-main-2 bg-gray-800 shadow-lg transition-all duration-300',
       isHovered.value
         ? 'hover:scale-105 hover:shadow-2xl dark:bg-neutral-900'
         : 'scale-100 shadow-lg dark:bg-neutral-900',
@@ -59,17 +59,15 @@ export default {
     @mouseleave="onMouseLeave"
   >
     <div
-      class="border-main-4 relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300"
+      class="border-main-2 relative h-full overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300"
     >
-      <!-- Badge -->
       <div
         v-if="member.badge"
-        class="bg-main-4 absolute left-4 top-4 z-10 rounded-md px-3 py-1 text-xs text-white"
+        class="bg-main-2 absolute left-4 top-4 z-10 rounded-md px-3 py-1 text-xs text-white"
       >
         {{ member.badge }}
       </div>
 
-      <!-- Gambar Anggota -->
       <img
         :src="member.image"
         :alt="member.name"
@@ -78,7 +76,6 @@ export default {
         @error="$emit('imageError', member)"
       />
 
-      <!-- Konten Anggota -->
       <div class="p-5">
         <h3
           class="mb-1 text-center text-lg font-semibold text-white dark:text-white"
@@ -106,7 +103,6 @@ export default {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/* Tambahkan animasi smooth untuk transisi hover */
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
