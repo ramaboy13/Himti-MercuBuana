@@ -5,13 +5,13 @@ Welcome to the digital world of **HiMTI**! We are proud to present a modern and 
 <div >
 Build with:
   <a margin-right="20px" target="_blank" href="https://vuejs.org/">
-    <img height="20" src="https://cdn.simpleicons.org/vuedotjs?viewbox=20" />
+    <img height="20" src="https://cdn.simpleicons.org/vue.js?viewbox=auto" />
   </a> + 
   <a margin-right="20px" target="_blank" href="https://vite.dev/">
     <img height="20" src="https://cdn.simpleicons.org/vite?viewbox=auto" />
   </a>+
   <a margin-right="20px" target="_blank" href="https://tailwindcss.com/">
-    <img height="20" src="https://cdn.simpleicons.org/tailwindcss?viewbox=20" />
+    <img height="20" src="https://cdn.simpleicons.org/tailwindcss?viewbox=auto" />
   </a>
 </div>
 
@@ -112,7 +112,8 @@ We welcome contributions from anyone who wishes to help improve this website. To
 ## 👨‍💻 **Development Team**
 
 - **UI/UX Designer**: Bimo Saputro
-- **Frontend Developer**: Barito Surya Ramadhani, Husein Yarid Zidane
+- **Frontend Developer**: Barito Surya Ramadhani, Husein Yarid Zidane, Bagas Indra Lesmana, Muhammad Rizky Hibatullah, Jericho Rayhan Maulana, Aknaf Saputra, Vicky Ardiansyah
+- **Backend Developer**: Bagas Indra Lesmana, Muhammad Rizky Hibatullah
 
 ## 📝 **License**
 
