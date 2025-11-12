@@ -2,7 +2,6 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import { computed } from 'vue'
 
-// 1. Menerima data 'members' dari parent (pages/About.vue)
 const props = defineProps({
   members: {
     type: Array,
@@ -11,10 +10,8 @@ const props = defineProps({
   }
 })
 
-// 2. Logika inti Anda tidak berubah,
-//    Hanya sumber data diubah dari 'teamData.data' menjadi 'props.members'
 const divisions = computed(() => {
-  const allMembers = props.members // <-- Menggunakan data dari props
+  const allMembers = props.members
   const grouped = allMembers.reduce((acc, member) => {
     const divisionName = member.role
     if (!acc[divisionName]) {
@@ -114,7 +111,3 @@ const divisions = computed(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Tidak perlu style khusus, semua sudah ditangani Tailwind */
-</style>

@@ -2,7 +2,6 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import GalleryCard from '../components/GalleryCard.vue'
 
-// Menerima data gallery dari parent (pages/About.vue)
 defineProps({
   galleryItems: {
     type: Array,
@@ -77,18 +76,15 @@ defineProps({
   min-width: 300px;
 }
 
-/* Custom carousel gap style */
 .carousel-gap {
   gap: 50px;
 }
 
-/* Fix carousel padding consistency */
 .hs-carousel-body {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* Ensure carousel buttons are visible */
 .hs-carousel-prev,
 .hs-carousel-next {
   z-index: 20;

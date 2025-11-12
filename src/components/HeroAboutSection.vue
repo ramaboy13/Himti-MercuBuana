@@ -2,11 +2,9 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import { ref, onMounted } from 'vue'
 
-// === Typing Animation Logic ===
 const fullText = 'Himpunan Teknik Informatika'
 const displayText = ref('')
 const currentIndex = ref(0)
-
 const typeText = () => {
   if (currentIndex.value < fullText.length) {
     displayText.value += fullText.charAt(currentIndex.value)
@@ -19,10 +17,9 @@ onMounted(() => {
   typeText()
 })
 
-// === Scroll Logic ===
 const scrollToContent = (e) => {
   e.preventDefault()
-  const gallerySection = document.getElementById('gallery') // ID ini ada di GallerySection
+  const gallerySection = document.getElementById('gallery')
   if (gallerySection) {
     gallerySection.scrollIntoView({ behavior: 'smooth' })
   }
