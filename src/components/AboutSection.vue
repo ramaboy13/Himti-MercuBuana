@@ -1,10 +1,11 @@
-<script></script>
+<script setup>
+// Impor Iconify
+import { Icon } from '@iconify/vue/dist/iconify.js'
+</script>
 
 <template>
   <section class="relative mx-auto overflow-hidden" id="about">
-    <!-- SVG Waves at the top -->
     <div class="absolute left-0 right-0 top-0 w-full">
-      <!-- Mobile -->
       <svg
         id="visual"
         viewBox="0 0 540 160"
@@ -33,16 +34,11 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         version="1.1"
       >
-        <path
-          d="M0 110L22.8 103.7C45.7 97.3 91.3 84.7 137 81.3C182.7 78 228.3 84 274 92.8C319.7 101.7 365.3 113.3 411.2 112.8C457 112.3 503 99.7 548.8 96.8C594.7 94 640.3 101 686 100.5C731.7 100 777.3 92 823 92.5C868.7 93 914.3 102 937.2 106.5L960 111L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#512b90"></path>
-        <path
-          d="M0 61L22.8 64.2C45.7 67.3 91.3 73.7 137 75.5C182.7 77.3 228.3 74.7 274 70.3C319.7 66 365.3 60 411.2 62.2C457 64.3 503 74.7 548.8 79C594.7 83.3 640.3 81.7 686 79.2C731.7 76.7 777.3 73.3 823 75.5C868.7 77.7 914.3 85.3 937.2 89.2L960 93L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#6534a9"></path>
-        <path
-          d="M0 56L22.8 53.2C45.7 50.3 91.3 44.7 137 49C182.7 53.3 228.3 67.7 274 68.3C319.7 69 365.3 56 411.2 54.5C457 53 503 63 548.8 62.5C594.7 62 640.3 51 686 53.2C731.7 55.3 777.3 70.7 823 78C868.7 85.3 914.3 84.7 937.2 84.3L960 84L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#7b3dc2"></path>
-        <path
-          d="M0 26L22.8 31.8C45.7 37.7 91.3 49.3 137 49.5C182.7 49.7 228.3 38.3 274 38.3C319.7 38.3 365.3 49.7 411.2 51.8C457 54 503 47 548.8 43.5C594.7 40 640.3 40 686 42C731.7 44 777.3 48 823 49.2C868.7 50.3 914.3 48.7 937.2 47.8L960 47L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#9246db"></path>
-        <path
-          d="M0 25L22.8 26.8C45.7 28.7 91.3 32.3 137 34.3C182.7 36.3 228.3 36.7 274 35.5C319.7 34.3 365.3 31.7 411.2 30.5C457 29.3 503 29.7 548.8 27.3C594.7 25 640.3 20 686 17.8C731.7 15.7 777.3 16.3 823 16.2C868.7 16 914.3 15 937.2 14.5L960 14L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#aa4ff5"></path>
+        <path d="M0 110L22.8 103.7C45.7 97.3 91.3 84.7 137 81.3C182.7 78 228.3 84 274 92.8C319.7 101.7 365.3 113.3 411.2 112.8C457 112.3 503 99.7 548.8 96.8C594.7 94 640.3 101 686 100.5C731.7 100 777.3 92 823 92.5C868.7 93 914.3 102 937.2 106.5L960 111L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#512b90"></path>
+        <path d="M0 61L22.8 64.2C45.7 67.3 91.3 73.7 137 75.5C182.7 77.3 228.3 74.7 274 70.3C319.7 66 365.3 60 411.2 62.2C457 64.3 503 74.7 548.8 79C594.7 83.3 640.3 81.7 686 79.2C731.7 76.7 777.3 73.3 823 75.5C868.7 77.7 914.3 85.3 937.2 89.2L960 93L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#6534a9"></path>
+        <path d="M0 56L22.8 53.2C45.7 50.3 91.3 44.7 137 49C182.7 53.3 228.3 67.7 274 68.3C319.7 69 365.3 56 411.2 54.5C457 53 503 63 548.8 62.5C594.7 62 640.3 51 686 53.2C731.7 55.3 777.3 70.7 823 78C868.7 85.3 914.3 84.7 937.2 84.3L960 84L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#7b3dc2"></path>
+        <path d="M0 26L22.8 31.8C45.7 37.7 91.3 49.3 137 49.5C182.7 49.7 228.3 38.3 274 38.3C319.7 38.3 365.3 49.7 411.2 51.8C457 54 503 47 548.8 43.5C594.7 40 640.3 40 686 42C731.7 44 777.3 48 823 49.2C868.7 50.3 914.3 48.7 937.2 47.8L960 47L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#9246db"></path>
+        <path d="M0 25L22.8 26.8C45.7 28.7 91.3 32.3 137 34.3C182.7 36.3 228.3 36.7 274 35.5C319.7 34.3 365.3 31.7 411.2 30.5C457 29.3 503 29.7 548.8 27.3C594.7 25 640.3 20 686 17.8C731.7 15.7 777.3 16.3 823 16.2C868.7 16 914.3 15 937.2 14.5L960 14L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z"fill="#aa4ff5"></path>
       </svg>
     </div>
 
@@ -70,24 +66,23 @@
             Selengkapnya
           </router-link>
         </div>
+        
         <div class="w-full">
+          
           <div
-            class="mb-8 flex flex-row-reverse gap-6 md:flex-row"
+            class="mb-8 mt-8 flex flex-row gap-4 md:gap-6"
             data-aos="fade-left"
           >
             <div
-              class="flex size-14 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
+              class="flex-shrink-0 flex size-12 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
             >
               <Icon icon="mdi:eye-outline" color="white" width="50" />
             </div>
-            <div class="">
-              <h1 class="mb-1 text-right text-4xl font-bold md:text-start">
+            <div class="w-full">
+              <h1 class="mb-1 text-left text-3xl font-bold md:text-start md:text-4xl">
                 Visi
               </h1>
-              <div class="flex w-full justify-end md:justify-start">
-                <div class="md mb-4 h-1 w-20 bg-main-2 text-right"></div>
-              </div>
-              <div class="text-justify text-gray-500">
+              <div class="text-justify text-sm text-gray-500 md:text-base">
                 Menjadikan HIMTI (Himpunan Mahasiswa Teknik Informatika) sebagai
                 wadah yang kreatif, inovatif, dan aspiratif bagi mahasiswa
                 Teknik Informatika dalam mengembangkan minat dan bakat, guna
@@ -96,16 +91,16 @@
               </div>
             </div>
           </div>
-          <div class="rtl flex gap-6 text-left" data-aos="fade-up">
+
+          <div class="flex flex-row gap-4 md:gap-6 text-left" data-aos="fade-up">
             <div
-              class="flex size-14 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
+              class="flex-shrink-0 flex size-12 items-center justify-center rounded-full bg-main-2 p-2 sm:size-16"
             >
               <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
             </div>
-            <div class="">
-              <h1 class="mb-1 text-4xl font-bold">Misi</h1>
-              <div class="mb-4 h-1 w-20 bg-main-2"></div>
-              <div class="text-start text-gray-500">
+            <div class="w-full">
+              <h1 class="mb-1 text-3xl font-bold md:text-4xl">Misi</h1>
+              <ul class="list-disc space-y-2 pl-5 text-start text-sm text-gray-500 md:text-base">
                 <li>
                   Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
                   bidang akademis melalui penyelenggaraan penelitian,
@@ -118,7 +113,7 @@
                   Bekerja sama dengan berbagai pihak untuk menunjang
                   pengembangan bakat mahasiswa Teknik Informatika.
                 </li>
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -126,5 +121,3 @@
     </div>
   </section>
 </template>
-
-<style scoped></style>

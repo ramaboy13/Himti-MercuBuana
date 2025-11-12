@@ -19,12 +19,6 @@
             akademisi, profesional, dan penggemar teknologi dari berbagai latar
             belakang.
           </p>
-          <router-link
-            to="/about"
-            class="inline-block rounded-lg bg-main-2 px-6 py-4 text-white shadow-xl transition-colors hover:bg-accent text-center"
-          >
-            Selengkapnya
-          </router-link>
         </div>
         <div class="w-full">
           <div
@@ -82,5 +76,3 @@
     </div>
   </section>
 </template>
-
-<style scoped></style>

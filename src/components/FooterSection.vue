@@ -74,7 +74,7 @@ const navItems = computed(() => {
         </a>
       </div>
       <p class="mt-8 text-center text-sm leading-6 text-gray-400 lg:text-base">
-        © 2024 HIMTI Mercu Buana, Inc. All rights reserved.
+        © 2025 HIMTI Mercu Buana, Inc. All rights reserved.
       </p>
     </div>
   </section>

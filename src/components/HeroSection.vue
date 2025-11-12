@@ -13,8 +13,9 @@ export default {
       isExpanded: false,
       fullText:
         'Di Himpunan Teknik Informatika! Di sini, Anda dapat menemukan informasi terbaru tentang proyek, kegiatan, serta inisiatif yang kami lakukan untuk menciptakan dampak positif bagi masyarakat. Temukan bagaimana Anda dapat terlibat, mendukung, atau bekerja sama dengan kami untuk mencapai tujuan bersama.',
-        }
+    }
   },
+  // computed dan methods tidak perlu diubah
   computed: {
     truncatedText() {
       return this.fullText.slice(0, 100) + '...'
@@ -44,7 +45,7 @@ export default {
     class="relative flex min-h-screen items-center justify-center bg-cover bg-center px-4 md:px-8"
   >
     <div
-      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 md:flex-row md:justify-between md:space-x-12 lg:mb-28"
+      class="z-[1] flex w-full max-w-6xl flex-col items-center justify-center px-5 pt-20 md:flex-row md:justify-between md:space-x-12 lg:mb-28 md:pt-0"
     >
       <div class="w-full text-center text-white md:w-2/3 md:text-left">
         <h5
@@ -53,45 +54,43 @@ export default {
           HIMTI Universitas Mercu Buana
         </h5>
         <h1 class="mb-2 text-lg font-bold sm:text-xl md:text-2xl lg:text-5xl">
-            <span class="text-white font-semibold mr-2">{{ textPrefix }}</span>
+          <span class="text-white font-semibold mr-2">{{ textPrefix }}</span>
           <span class="typing-text text-main-4">{{ displayText }}</span>
         </h1>
         <h1
           class="text-sm font-semibold text-white sm:text-base md:text-lg lg:text-3xl"
         >
-          Tahun 2024 - 2025
+          Tahun 2025 - 2026
         </h1>
-        <div
-          class="mx-auto my-6 w-48 md:hidden"
-          data-aos="fade-up"
-          data-aos-offset="200"
-          data-aos-delay="50"
-        >
-          <img
-            :src="logoHimti"
-            alt="HiMTI UMB"
-            class="floating-image h-auto w-full"
-            style="filter: drop-shadow(2px 2px 20px purple)"
-          />
-        </div>
+        
         <div class="mx-auto mb-6 mt-5 h-1 w-56 bg-main-4 md:mx-0"></div>
+
         <div class="text-center md:hidden">
-          <p class="mb-2 text-sm leading-relaxed text-gray-500">
-            {{ isExpanded ? fullText : truncatedText }}
-          </p>
-          <button
-            @click="toggleText"
-            class="hover:text-accent-light text-sm text-main-4"
-          >
-            {{ isExpanded ? 'Lihat lebih sedikit' : 'Selengkapnya' }}
-          </button>
+          <p class="mb-2 text-sm leading-relaxed text-gray-300">
+            {{ fullText }} </p>
         </div>
+        
         <div class="hidden sm:hidden md:block">
-            <p class="mb-4 text-base leading-relaxed text-gray-500">
+          <p class="mb-4 text-base leading-relaxed text-gray-300">
             {{ fullText }}
-            </p>
+          </p>
         </div>
       </div>
+      
+      <div
+        class="mx-auto my-6 w-48 md:hidden"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+      >
+        <img
+          :src="logoHimti"
+          alt="HiMTI UMB"
+          class="floating-image h-auto w-full"
+          style="filter: drop-shadow(2px 2px 20px purple)"
+        />
+      </div>
+
       <div
         class="hidden w-72 md:block"
         data-aos="fade-up"
@@ -108,7 +107,6 @@ export default {
     </div>
 
     <div class="absolute bottom-0 w-full">
-
       <svg
         id="visual"
         viewBox="0 0 540 960"
