@@ -21,6 +21,13 @@ const navItems = computed(() => {
       { name: 'Members', path: '#team' },
       { name: 'Contact us', path: '#contact' },
     ],
+    About: [
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+      { name: 'Program', path: '#program' },
+      { name: 'Members', path: '#team' },
+      { name: 'Contact us', path: '#contact' },
+    ],
   }
 
   // Kembalikan item spesifik untuk halaman aktif, fallback ke item umum jika tidak ditemukan

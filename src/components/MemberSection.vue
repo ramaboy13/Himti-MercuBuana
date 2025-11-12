@@ -16,7 +16,8 @@ export default {
 
 <template>
   <section class="bg-main-1 pt-20" id="team">
-    <div class="relative mx-auto w-full max-w-6xl rounded-lg px-6 pt-6">
+    <!-- Konten teks tetap di dalam container -->
+    <div class="relative mx-auto w-full max-w-6xl px-6 pt-6">
       <h2 class="mb-3 text-center text-3xl font-bold text-white">
         Temui tim kami yang terbaik
       </h2>
@@ -31,7 +32,10 @@ export default {
       >
         <span>Lihat Selengkapnya</span>
       </router-link>
+    </div>
 
+    <!-- Carousel DI LUAR container, full-width -->
+    <div class="w-full overflow-hidden">
       <MemberCarousel />
     </div>
   </section>

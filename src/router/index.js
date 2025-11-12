@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    component: ComingSoon,
+    component: Blog,
   },
 
   // Detail Post (dengan validasi ID berupa angka)

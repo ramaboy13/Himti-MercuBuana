@@ -1,6 +1,6 @@
 <script>
 import { Icon } from '@iconify/vue/dist/iconify.js'
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import data from '../assets/data/dataTeam.json'
 import MemberCard from './MemberCard.vue'
 
@@ -12,56 +12,9 @@ export default {
   },
   setup() {
     const members = ref([])
-    const isCarouselInitialized = ref(false)
-
-    const destroyCarousel = () => {
-      try {
-        const carouselElement = document.querySelector('[data-hs-carousel]')
-
-        if (!carouselElement) {
-          console.warn('Carousel element not found. Skipping destruction.')
-          return
-        }
-
-        const carouselInstance = window.HSCarousel.getInstance(carouselElement)
-
-        if (carouselInstance) {
-          carouselInstance.destroy()
-          console.log('Carousel destroyed successfully.')
-        }
-
-        isCarouselInitialized.value = false
-      } catch (error) {
-        console.error('Error destroying carousel:', error)
-      }
-    }
-
-    const reinitializeCarousel = () => {
-      try {
-        window.HSCarousel.autoInit()
-        console.log('Carousel reinitialized successfully.')
-        isCarouselInitialized.value = true
-      } catch (error) {
-        console.error('Error reinitializing carousel:', error)
-      }
-    }
-
-    const initCarousel = async () => {
-      try {
-        await nextTick()
-        const carouselElement = document.querySelector('[data-hs-carousel]')
-
-        if (!carouselElement) {
-          console.warn('Carousel element not found for initialization.')
-          return
-        }
-
-        destroyCarousel() 
-        reinitializeCarousel()
-      } catch (error) {
-        console.error('Error initializing carousel:', error)
-      }
-    }
+    const carouselTrack = ref(null)
+    const carouselContainer = ref(null)
+    const scrollInterval = ref(null)
 
     const loadMembers = () => {
       try {
@@ -72,160 +25,192 @@ export default {
       }
     }
 
-    watch(
-      () => members.value,
-      async (newMembers) => {
-        if (newMembers.length > 0) {
-          await initCarousel()
+    const startAutoScroll = () => {
+      if (!carouselTrack.value || members.value.length === 0) return
+
+      let scrollAmount = 0
+      const scrollStep = 1
+      const resetThreshold = carouselTrack.value.scrollWidth - carouselContainer.value.clientWidth
+
+      const scroll = () => {
+        if (scrollAmount >= resetThreshold) {
+          carouselTrack.value.style.transition = 'transform 0s'
+          scrollAmount = 0
+          carouselTrack.value.style.transform = 'translateX(0)'
+          setTimeout(() => {
+            carouselTrack.value.style.transition = 'transform 0.3s'
+          }, 50)
+        } else {
+          scrollAmount += scrollStep
+          carouselTrack.value.style.transform = `translateX(-${scrollAmount}px)`
         }
-      },
-      { immediate: true },
-    )
+        scrollInterval.value = requestAnimationFrame(scroll)
+      }
+
+      scrollInterval.value = requestAnimationFrame(scroll)
+    }
+
+    const stopAutoScroll = () => {
+      if (scrollInterval.value) {
+        cancelAnimationFrame(scrollInterval.value)
+        scrollInterval.value = null
+      }
+    }
 
     onMounted(() => {
       loadMembers()
+      nextTick(() => {
+        startAutoScroll()
+      })
+    })
+
+    onUnmounted(() => {
+      stopAutoScroll()
     })
 
     return {
       members,
-      isCarouselInitialized,
+      carouselTrack,
+      carouselContainer,
     }
   },
 }
 </script>
 
 <template>
-  <div class="h-full text-center">
-    <div
-      data-hs-carousel='{
-        "isDraggable": true,
-        "isInfiniteLoop": true,
-        "isAutoplay": true,
-        "interval": 3000,
-        "loadingClasses": "hidden",
-        "dotsItemClasses": "hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
-        "slidesQty": {
-          "xs": 1,
-          "md": 3,
-          "lg": 4
-        }
-      }'
-      class="relative"
-    >
-      <div class="hs-carousel w-full rounded-lg bg-transparent">
-        <div class="relative min-h-96">
+  <div class="h-full text-center overflow-hidden">
+    <div class="relative">
+      <div ref="carouselContainer" class="carousel-container w-full overflow-hidden">
+        <div ref="carouselTrack" class="carousel-track flex">
           <div
-            class="hs-carousel-body bg-red absolute bottom-0 start-0 top-0 flex flex-nowrap transition-transform duration-700"
-            :class="{ 'opacity-0': !isCarouselInitialized }"
-            :data-initialized="isCarouselInitialized"
+            v-for="member in members"
+            :key="member.id || member.name"
+            class="carousel-slide"
           >
-            <div
-              v-for="(member, index) in members"
-              :key="member.id || index"
-              class="hs-carousel-slide w-full px-1 sm:w-1/2 lg:w-1/3"
-            >
-              <div
-                class="relative transform transition-transform duration-300 ease-in-out hover:z-10 hover:scale-105 hover:shadow-lg"
-              >
-                <MemberCard :member="member" v-if="member" />
-              </div>
+            <div class="member-card-container">
+              <MemberCard :member="member" v-if="member" />
             </div>
           </div>
         </div>
       </div>
 
-      <div
-        v-if="members.length === 0"
-        class="flex min-h-60 flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70"
-      >
-        <div
-          class="flex flex-auto flex-col items-center justify-center p-4 md:p-5"
-        >
+      <div v-if="members.length === 0" class="flex min-h-60 flex-col rounded-xl shadow-sm dark:bg-neutral-800 dark:shadow-neutral-700/70">
+        <div class="flex flex-auto flex-col items-center justify-center p-4 md:p-5">
           <div class="flex justify-center">
-            <div
-              class="inline-block size-6 animate-spin rounded-full border-[3px] border-current border-t-transparent text-accent"
-              role="status"
-              aria-label="loading"
-            >
+            <div class="inline-block size-6 animate-spin rounded-full border-[3px] border-current border-t-transparent text-accent" role="status" aria-label="loading">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
         </div>
       </div>
-
-      <button
-        type="button"
-        class="hs-carousel-prev absolute start-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full bg-main-2 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
-        aria-label="Previous slide"
-      >
-        <span class="text-2xl" aria-hidden="true">
-          <Icon
-            icon="material-symbols:chevron-left-rounded"
-            color="black"
-            width="24"
-          />
-        </span>
-        <span class="sr-only">Previous</span>
-      </button>
-
-      <button
-        type="button"
-        class="hs-carousel-next absolute end-0 top-1/2 inline-flex h-[46px] w-[46px] -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full bg-main-2 text-gray-800 hover:bg-accent hs-carousel-disabled:pointer-events-none hs-carousel-disabled:opacity-50"
-        aria-label="Next slide"
-      >
-        <span class="sr-only">Next</span>
-        <span class="text-2xl" aria-hidden="true">
-          <span class="rounded-full bg-red-500">
-            <Icon
-              icon="material-symbols:chevron-right-rounded"
-              color="black"
-              width="24"
-            />
-          </span>
-        </span>
-      </button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.hs-carousel-body {
+.carousel-container {
+  min-height: 24rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.carousel-track {
+  transition: transform 0.3s ease;
   will-change: transform;
-  opacity: 0; /* Awalnya disembunyikan */
-  transition: opacity 0.3s ease-in-out;
+  padding: 0 1rem;
+  gap: 2rem;
 }
 
-.hs-carousel-body[data-initialized='true'] {
-  opacity: 1; /* Tampilkan jika sudah diinisialisasi */
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 280px;
+  padding: 0;
+  margin: 0;
 }
 
-.hs-carousel-slide {
-  transition: opacity 0.3s ease-in-out;
-  overflow: visible;
+@media (max-width: 1200px) {
+  .carousel-slide {
+    width: 270px;
+  }
+  .carousel-track {
+    gap: 0.875rem;
+  }
 }
 
-.hs-carousel-slide:hover::before {
+@media (max-width: 1024px) {
+  .carousel-slide {
+    width: 260px;
+  }
+  .carousel-track {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    width: 240px;
+  }
+  .carousel-track {
+    gap: 0.625rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-slide {
+    width: 220px;
+  }
+  .carousel-track {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.member-card-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.member-card-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.member-card-container::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  z-index: -1; /* Membantu mengangkat */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 1rem;
 }
 
-.hs-carousel-slide > div {
-  transition:
-    transform 0.3s ease-in-out,
-    z-index 0.3s;
-}
-
-/* Optional: Tambahkan animasi fade untuk transisi slide */
-.hs-carousel-slide.active {
+.member-card-container:hover::before {
   opacity: 1;
 }
 
-.hs-carousel-slide:not(.active) {
-  opacity: 0.5;
+.member-card-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+:deep(.member-card img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+:deep(.member-card) {
+  height: auto;
+  min-height: 400px;
 }
 </style>

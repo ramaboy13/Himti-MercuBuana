@@ -17,7 +17,7 @@ const MessageToWhatsapp = () => {
 
   const text = `Halo Kak,\n\nNama saya: *${name}*\nSaya Dari: *${institusi}*\n\nPesan :\n${pesan}\n\nEmail: *${email}*\n*${kode}*`
 
-  const phoneNumber = '+6285719066792'
+  const phoneNumber = '+6282124681113'
 
   // Tampilkan modal
   showModal.value = true
