@@ -65,25 +65,23 @@ const router = useRouter()
               <i class="rounded-full bg-main-2 p-2 text-3xl">
                 <Icon icon="mdi:check" color="white" width="20" />
               </i>
-              <span class="ml-2">HTML, CSS, JavaScript</span>
+              <span class="ml-2">Programming</span>
             </li>
             <li class="flex items-center">
               <i class="rounded-full bg-main-2 p-2 text-3xl">
                 <Icon icon="mdi:check" color="white" width="20" />
               </i>
-              <span class="ml-2">Responsive Web</span>
+              <span class="ml-2">Data Mining</span>
             </li>
           </ul>
-          <div class="flex justify-center">
+          <div class="flex justify-end">
             <router-link
               to="/kelascore"
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
-            >
+              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white">
               <span class="mr-2">Daftar</span>
-
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
-          </div>
+            </div>
         </div>
 
         <div
@@ -91,37 +89,36 @@ const router = useRouter()
         >
           <div class="mb-4 flex items-center">
             <Icon icon="lucide:presentation" width="44" />
-            <h2 class="ml-4 text-xl font-bold">Seminar IT</h2>
+            <h2 class="ml-4 text-xl font-bold">Seminar</h2>
           </div>
           <ul class="mb-4">
             <li class="mb-2 flex items-center">
               <i class="rounded-full bg-main-2 p-2 text-3xl">
                 <Icon icon="mdi:check" color="white" width="20" />
               </i>
-              <span class="ml-2">Pembelajaran Tentang IT</span>
+              <span class="ml-2">Pengenalan Dunia IT</span>
             </li>
             <li class="mb-2 flex items-center">
               <i class="rounded-full bg-main-2 p-2 text-3xl">
                 <Icon icon="mdi:check" color="white" width="20" />
               </i>
-              <span class="ml-2">Network Engineer</span>
+              <span class="ml-2">Dasar Web Development</span>
             </li>
             <li class="flex items-center">
               <i class="rounded-full bg-main-2 p-2 text-3xl">
                 <Icon icon="mdi:check" color="white" width="20" />
               </i>
-              <span class="ml-2">Software Engineer</span>
+              <span class="ml-2">Studi Kasus Industri</span>
             </li>
           </ul>
-          <div class="flex justify-center">
+            <div class="flex justify-end">
             <router-link
               to="/seminarit"
-              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
-            >
+              class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white">
               <span class="mr-2">Daftar</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
-          </div>
+            </div>
         </div>
 
         <div
@@ -151,7 +148,7 @@ const router = useRouter()
               <span class="ml-2">Kepemimpinan</span>
             </li>
           </ul>
-          <div class="flex justify-center">
+          <div class="flex justify-end">
             <router-link
               to="/fkti"
               class="flex items-center rounded-full bg-main-2 px-4 py-2 text-white"
@@ -159,7 +156,7 @@ const router = useRouter()
               <span class="mr-2">Daftar</span>
               <Icon icon="mdi:arrow-right" color="white" width="24" />
             </router-link>
-          </div>
+            </div>
         </div>
       </div>
     </div>
