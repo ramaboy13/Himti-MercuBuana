@@ -1,10 +1,12 @@
-import { createRouter, createWebHistory,  } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 // Menggunakan lazy loading untuk setiap halaman
 const Home = () => import('../pages/Home.vue')
 const Blog = () => import('../pages/Blog.vue')
 const Event = () => import('../pages/EventPages.vue')
 const EventDetail = () => import('../pages/EventDetail.vue')
+// Tambahkan import halaman Program
+const ProgramPage = () => import('../pages/ProgramPages.vue')
 const FktiPages = () => import('../pages/FktiPages.vue')
 const KelascorePages = () => import('../pages/KelascorePages.vue')
 const Team = () => import('../pages/MemberPages.vue')
@@ -44,7 +46,14 @@ const routes = [
     props: true,
   },
 
-  // Update these routes in your router.js
+  // Halaman Program (List Semua Program)
+  {
+    path: '/program',
+    name: 'Program',
+    component: ProgramPage, // Pastikan file ProgramPages.vue sudah dibuat
+  },
+
+  // Halaman Event
   {
     path: '/event',
     name: 'Event',
@@ -76,11 +85,11 @@ const routes = [
     component: ComingSoon,
   },
 
-  // Halaman Kelascore
+  // Halaman Kelascore (Detail Kelas Core)
   {
-    path: '/kelascore',
+    path: '/program/kelas-core', // Saya ubah sedikit path-nya agar rapi, atau bisa tetap '/kelascore'
     name: 'KelascorePages',
-    component: ComingSoon,
+    component: KelascorePages, // Menggunakan component asli, bukan ComingSoon
   },
 
   // Halaman Seminar IT
@@ -123,13 +132,9 @@ const router = createRouter({
 // Navigation Guards
 router.beforeEach((to, from, next) => {
   document.title = `${to.name} - Himti Mercu Buana` || 'Himti Mercu Buana'
-  //store.commit('setLoading', true)
-
   next()
 })
 
-router.afterEach(() => {
-  //store.commit('setLoading', false)
-})
+router.afterEach(() => {})
 
 export default router

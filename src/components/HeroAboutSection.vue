@@ -98,7 +98,7 @@ const scrollToContent = (e) => {
       <a
         href="#gallery"
         @click.prevent="scrollToContent"
-        class="mx-auto mt-6 inline-block rounded-full bg-main-2 px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        class="mx-auto mt-6 inline-block rounded-full bg-main-2 px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
         data-aos="fade-up"
         data-aos-delay="100"
       >
