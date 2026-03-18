@@ -67,35 +67,27 @@ const navItems = computed(() => {
       { name: 'Home', path: '#' },
       { name: 'About', path: '/about' },
       { name: 'Program', path: '/program' },
-      { name: 'Members', path: '#team' },
+      { name: 'Members', path: '/team' },
       { name: 'Contact Us', path: '#contact' },
     ],
     Program: [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
       { name: 'Program', path: '/program' },
-      { name: 'Members', path: '#team' },
+      { name: 'Members', path: '/team' },
       { name: 'Contact Us', path: '#contact' },
     ],
     Default: [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
       { name: 'Program', path: '/program' },
-      { name: 'Members', path: '#team' },
+      { name: 'Members', path: '/team' },
       { name: 'Contact Us', path: '#contact' },
     ],
   }
   return pageSpecificItems[route.name] || pageSpecificItems['Default']
 })
 
-const dropdownItems = [
-  { name: 'Blog', path: '/blog' },
-  { name: 'Event', path: '/event' },
-  { name: 'Team', path: '/team' },
-  { name: 'FKTI', path: '/fkti' },
-  { name: 'Kelascore', path: '/program/kelas-core' },
-  { name: 'Seminar IT', path: '/seminarit' },
-]
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
@@ -177,43 +169,7 @@ onUnmounted(() => {
             </a>
           </li>
 
-          <div
-            id="hs-dropdown-to-destroy"
-            class="hs-dropdown relative inline-flex items-center [--gpu-acceleration:true]"
-          >
-            <button
-              id="hs-dropdown-scale-animation"
-              type="button"
-              class="hs-dropdown-toggle inline-flex items-center gap-1 text-base font-bold text-slate-100 transition-colors hover:text-[#c084fc]"
-              aria-haspopup="menu"
-              aria-expanded="false"
-              aria-label="Dropdown"
-            >
-              More
-              <Icon
-                icon="fe:arrow-down"
-                class="transition-transform duration-300 ease-in-out hs-dropdown-open:rotate-180"
-              />
-            </button>
 
-            <div
-              class="hs-dropdown-menu z-10 mt-2 hidden min-w-[200px] rounded-xl border border-white/10 bg-[#2C2B31] p-2 opacity-0 shadow-xl transition-[opacity,margin] duration-[0.1ms] hs-dropdown-open:opacity-100"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="hs-dropdown-scale-animation"
-            >
-              <div class="flex flex-col gap-1">
-                <a
-                  v-for="item in dropdownItems"
-                  :key="item.path"
-                  @click="handleNavigation(item)"
-                  class="flex cursor-pointer items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-gray-200 transition-all hover:bg-[#6d28d9] hover:text-white"
-                >
-                  {{ item.name }}
-                </a>
-              </div>
-            </div>
-          </div>
         </ul>
       </div>
     </div>

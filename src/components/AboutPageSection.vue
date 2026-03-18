@@ -9,9 +9,9 @@
         class="mb-10 mt-8 flex flex-col items-start gap-8 md:mt-0 md:flex-row md:px-20"
       >
         <div class="w-full" data-aos="fade-right">
-          <h1 class="text-4xl font-bold">Tentang HIMTI</h1>
+          <h1 class="text-3xl md:text-4xl font-bold">Tentang HIMTI</h1>
           <div class="mt-2 h-1 w-64 bg-main-2"></div>
-          <p class="my-6 text-justify leading-relaxed text-gray-500">
+          <p class="my-6 text-justify text-sm md:text-base leading-relaxed text-gray-500">
             Himpunan Teknik Informatika adalah organisasi yang berdedikasi untuk
             memajukan bidang teknologi informasi dan ilmu komputer di
             universitas mercubuana. Didirikan pada tahun 2005, kami telah tumbuh
@@ -31,13 +31,13 @@
               <Icon icon="mdi:eye-outline" color="white" width="50" />
             </div>
             <div class="">
-              <h1 class="mb-1 text-right text-4xl font-bold md:text-start">
+              <h1 class="mb-1 text-right text-3xl md:text-4xl font-bold md:text-start">
                 Visi
               </h1>
               <div class="flex w-full justify-end md:justify-start">
                 <div class="md mb-4 h-1 w-20 bg-main-2 text-right"></div>
               </div>
-              <div class="text-justify text-gray-500">
+              <div class="text-justify text-sm md:text-base text-gray-500">
                 Menjadikan HIMTI (Himpunan Mahasiswa Teknik Informatika) sebagai
                 wadah yang kreatif, inovatif, dan aspiratif bagi mahasiswa
                 Teknik Informatika dalam mengembangkan minat dan bakat, guna
@@ -53,9 +53,9 @@
               <Icon icon="mdi:bullseye-arrow" color="white" width="50" />
             </div>
             <div class="">
-              <h1 class="mb-1 text-4xl font-bold">Misi</h1>
+              <h1 class="mb-1 text-3xl md:text-4xl font-bold">Misi</h1>
               <div class="mb-4 h-1 w-20 bg-main-2"></div>
-              <div class="text-start text-gray-500">
+              <div class="text-justify text-sm md:text-base text-gray-500">
                 <li>
                   Memfasilitasi mahasiswa dan mahasiswi Teknik Informatika dalam
                   bidang akademis melalui penyelenggaraan penelitian,

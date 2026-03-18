@@ -218,7 +218,7 @@ const handleMouseLeave = () => {
         <div
           class="mx-auto flex flex-col items-center justify-center text-center font-bold text-white max-w-6xl w-full"
         >
-          <h1 class="text-[32px] leading-tight tracking-tight sm:text-[36px] md:text-[40px] lg:text-[40px] font-bold font-poppins">
+          <h1 class="text-[24px] leading-tight tracking-tight sm:text-[28px] md:text-[40px] lg:text-[40px] font-bold font-poppins">
             <span
               >Rangkaian Program
               <span class="typing-text text-main-4">{{ displayText }}</span>&nbsp;</span
@@ -232,7 +232,9 @@ const handleMouseLeave = () => {
 
         <button
           @click="scrollToProgram"
-          class="mb-16 mt-6 inline-block rounded-full bg-main-2 px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          class="mx-auto mt-6 inline-block rounded-2xl bg-main-2 px-10 py-4 text-base md:text-lg font-bold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          data-aos="fade-up"
+        data-aos-delay="100"
         >
           Jelajahi Program HIMTI
         </button>

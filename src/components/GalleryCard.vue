@@ -20,7 +20,7 @@ defineProps({
     <div class="flex flex-1 flex-col p-5">
       <span class="text-xs text-gray-400">{{ item.date }}</span>
       <h4 class="mt-2 text-xl font-semibold">{{ item.title }}</h4>
-      <p class="mt-2 flex-1 text-sm text-gray-300">
+      <p class="mt-2 flex-1 text-sm text-gray-300 text-start">
         {{ item.description }}
       </p>
     </div>

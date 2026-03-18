@@ -49,11 +49,11 @@ export default {
   >
     <div class="mx-auto mb-10 mt-10 sm:text-center lg:mt-10 lg:max-w-xl">
       <p
-        class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-semibold uppercase tracking-wider text-white"
+        class="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-4xl font-bold uppercase tracking-wider text-white"
       >
         Temui Tim Hebat Kami
       </p>
-      <p class="text-base text-white md:text-lg">
+      <p class="text-base text-white md:text-lg font-semibold">
         Kami adalah sekelompok individu penuh semangat yang berdedikasi untuk
         kemajuan dan inovasi dalam dunia Teknik Informatika. Bersama, kami
         mewujudkan visi untuk menciptakan solusi teknologi yang berdampak.

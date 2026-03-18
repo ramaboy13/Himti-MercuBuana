@@ -81,16 +81,16 @@ const scrollToContent = (e) => {
     <div
       class="z-10 flex w-full max-w-4xl flex-1 flex-col justify-center text-center"
     >
-      <div class="mx-auto mb-8 text-center">
+      <div class="mx-auto mb-8 text-center px-2">
         <div
-          class=" text-[32px] font-bold leading-tight tracking-tight sm:text-[36px] md:text-[40px] lg:text-[40px]"
+          class=" text-[24px] font-bold leading-tight tracking-tight sm:text-[28px] md:text-[40px] lg:text-[40px]"
         >
           <span class="text-white">Ayo Kenali </span>
           <span class="typing-text text-main-4">{{ displayText }}</span>
         </div>
 
         <div
-          class="mt-1 text-[32px] font-bold leading-tight tracking-tight text-white sm:text-[36px] md:text-[40px] lg:text-[40px]"
+          class="mt-1 text-[24px] font-semibold leading-tight tracking-tight text-white sm:text-[28px] md:text-[40px] lg:text-[40px]"
         >
           Universitas Mercu Buana Lebih Dekat!
         </div>
@@ -98,7 +98,7 @@ const scrollToContent = (e) => {
       <a
         href="#gallery"
         @click.prevent="scrollToContent"
-        class="mx-auto mt-6 inline-block rounded-full bg-main-2 px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        class="mx-auto mt-6 inline-block rounded-2xl bg-main-2 px-10 py-4 text-base md:text-lg font-semibold text-white transition-colors hover:bg-main-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
         data-aos="fade-up"
         data-aos-delay="100"
       >

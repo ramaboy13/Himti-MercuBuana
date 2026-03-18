@@ -2,437 +2,332 @@
   "data": [
     {
       "id": 1,
-      "name": "Kristio Budi Prayoga",
+      "name": "Kia Restu Nugraha",
       "role": "BPH",
-      "badge": "Ketua Himpunan",
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=700"
+      "badge": "Ketua",
+      "image": "/img/BPH/Kia_Restu_Nugraha.avif"
     },
     {
       "id": 2,
-      "name": "Muhammad Ardhan Darmawan",
+      "name": "Irsyad Harry Nugroho",
       "role": "BPH",
-      "badge": "Wakil Ketua Himpunan",
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=700"
+      "badge": "Wakil Ketua",
+      "image": "/img/BPH/Irsyad_Harry_Nugroho.avif"
     },
     {
       "id": 3,
-      "name": "Fikri Ramadhan",
+      "name": "Luthfi Ardhika Akbar",
       "role": "BPH",
-      "badge": "Sekretaris",
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=700"
+      "badge": "Sekretaris I",
+      "image": "/img/BPH/Luthfi_Ardhika_Akbar.avif"
     },
     {
       "id": 4,
-      "name": "Ayaitulla Salsabilla Achmad",
+      "name": "Della Ulvanti",
       "role": "BPH",
-      "badge": "Sekretaris",
-      "image": "/img/BPH/Ayaitulla_Salsabilla_Achmad.avif"
+      "badge": "Sekretaris II",
+      "image": "/img/BPH/Della_Ulvanti.avif"
     },
     {
       "id": 5,
-      "name": "Shahibul Amnar",
+      "name": "Fitri Nur Fadiyah",
       "role": "BPH",
-      "badge": "Bendahara",
-      "image": "/img/BPH/Shahibul_Amnar.avif"
+      "badge": "Bendahara I",
+      "image": "/img/BPH/Fitri_Nur_Fadiyah.avif"
     },
     {
       "id": 6,
-      "name": "Huda",
+      "name": "Nazwa Nurul Qurotaaini",
       "role": "BPH",
-      "badge": "Bendahara",
-      "image": "/img/BPH/Huda.avif"
+      "badge": "Bendahara II",
+      "image": "/img/BPH/Nazwa_Nurul_Qurotaaini.avif"
     },
     {
       "id": 7,
-      "name": "Rifky Andrean",
-      "role": "Divisi Humas",
+      "name": "Oka Prayoga",
+      "role": "Divisi PSDM",
       "badge": "Ketua Divisi",
-      "image": "/img/HUMAS/Rifky_Andrean.avif"
+      "image": "/img/PSDM/Oka_Prayoga.avif"
     },
     {
       "id": 8,
-      "name": "Nadya Aurelia",
-      "role": "Divisi Humas",
+      "name": "Devin Novansyah",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Nadya_Aurelia.avif"
+      "image": "/img/PSDM/Devin_Novansyah.avif"
     },
     {
       "id": 9,
-      "name": "Fida Rizky Anindya",
-      "role": "Divisi Humas",
+      "name": "Rafli Ihsan Septiawan",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Fida_Rizky_Anindya.avif"
+      "image": "/img/PSDM/Rafli_Ihsan_Septiawan.avif"
     },
     {
       "id": 10,
-      "name": "Putri Nabila",
-      "role": "Divisi Humas",
+      "name": "Sendi Ferdiansyah",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Putri_Nabila.avif"
+      "image": "/img/PSDM/Sendi_Ferdiansyah.avif"
     },
     {
       "id": 11,
-      "name": "Faiz Muhammad Ramadhan",
-      "role": "Divisi Humas",
+      "name": "Pramadhan Dwiki Santoso",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Faiz_Muhammad_Ramadhan.avif"
+      "image": "/img/PSDM/Pramadhan_Dwiki_Santoso.avif"
     },
     {
       "id": 12,
-      "name": "Khairunnisa Ramadhan",
-      "role": "Divisi Humas",
+      "name": "Fazrillah Warham",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Khairunnisa_Ramadhan.avif"
+      "image": "/img/PSDM/Fazrillah_Warham.avif"
     },
     {
       "id": 13,
-      "name": "Faisal Ramadhan",
-      "role": "Divisi Humas",
+      "name": "Harari Zuhdi",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Faisal_Ramadhan.avif"
+      "image": "/img/PSDM/Harari_Zuhdi.avif"
     },
     {
       "id": 14,
-      "name": "Muhammad Rizky Samuel",
-      "role": "Divisi Humas",
+      "name": "Nauval Azis Prasetio",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Muhammad_Rizky_Samuel.avif"
+      "image": "/img/PSDM/Nauval_Azis_Prasetio.avif"
     },
     {
       "id": 15,
-      "name": "Irsyad Harry Nugroho",
-      "role": "Divisi Humas",
+      "name": "Muhamad Sultan Saputra",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Irsyad_Harry_Nugroho.avif"
+      "image": "/img/PSDM/Muhamad_Sultan_Saputra.avif"
     },
     {
       "id": 16,
-      "name": "Abdullah Al Manan",
-      "role": "Divisi Humas",
+      "name": "Aprilianus Ega Komara Dewa",
+      "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/HUMAS/Abdullah_Al_Manan.avif"
+      "image": "/img/PSDM/Aprilianus_Ega_Komara_Dewa.avif"
     },
     {
       "id": 17,
-      "name": "Raden Ardhan Razatsa Setiamadenda",
+      "name": "Raka Alrasyid",
       "role": "Divisi PSDM",
-      "badge": "Ketua Divisi",
-      "image": "/img/PSDM/Raden_Ardhan_Razatsa_Setiamadenda.avif"
+      "badge": "Anggota",
+      "image": "/img/PSDM/Raka_Alrasyid.avif"
     },
     {
       "id": 18,
-      "name": "Freedan Rafii Syafiq",
+      "name": "Rizky Aulia Rachman",
       "role": "Divisi PSDM",
       "badge": "Anggota",
-      "image": "/img/PSDM/Freedan_Rafii_Syafiq.avif"
+      "image": "/img/PSDM/Rizky_Aulia_Rachman.avif"
     },
     {
       "id": 19,
-      "name": "Hotman Jonathan Simanjuntak",
-      "role": "Divisi PSDM",
-      "badge": "Anggota",
-      "image": "/img/PSDM/Hotman_Jonathan_Simanjuntak.avif"
+      "name": "Rahmat saidi amrullah",
+      "role": "Divisi DESMED",
+      "badge": "Ketua Divisi",
+      "image": "/img/DESMED/Rahmat_saidi_amrullah.avif"
     },
     {
       "id": 20,
-      "name": "Syahwal Nurdin",
-      "role": "Divisi PSDM",
+      "name": "Muhammad Rizki Muarif",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "/img/PSDM/Syahwal_Nurdin.avif"
+      "image": "/img/DESMED/Muhammad_Rizki_Muarif.avif"
     },
     {
       "id": 21,
-      "name": "Yudha Wibisana",
-      "role": "Divisi PSDM",
+      "name": "Abdurrahman Adnan A Jahri",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "/img/PSDM/Yudha_Wibisana.avif"
+      "image": "/img/DESMED/Abdurrahman_Adnan_A_Jahri.avif"
     },
     {
       "id": 22,
-      "name": "Muhammad Riski Purwanto",
-      "role": "Divisi PSDM",
+      "name": "Muhamad Shafwan Dzaki",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "/img/PSDM/Muhammad_Riski_Purwanto.avif"
+      "image": "/img/DESMED/Muhamad_Shafwan_Dzaki.avif"
     },
     {
       "id": 23,
-      "name": "Kia Restu Nugraha",
-      "role": "Divisi PSDM",
+      "name": "Muhammad Sablik Mbipi",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "/img/PSDM/Kia_Restu_Nugraha.avif"
+      "image": "/img/DESMED/Muhammad_Sablik_Mbipi.avif"
     },
     {
       "id": 24,
-      "name": "Nazwa Nurul Qurataaini",
-      "role": "Divisi PSDM",
+      "name": "Samoedra Cakra Arifin",
+      "role": "Divisi DESMED",
       "badge": "Anggota",
-      "image": "/img/PSDM/Nazwa_Nurul_Qurataaini.avif"
+      "image": "/img/DESMED/Samoedra_Cakra_Arifin.avif"
     },
     {
       "id": 25,
-      "name": "Fitri Nur Fadiyah",
-      "role": "Divisi PSDM",
-      "badge": "Anggota",
-      "image": "/img/PSDM/Fitri_Nur_Fadiyah.avif"
-    },
-    {
-      "id": 26,
-      "name": "Luthfi Ardhika Akbar",
-      "role": "Divisi PSDM",
-      "badge": "Anggota",
-      "image": "/img/PSDM/Luthfi_Ardhika_Akbar.avif"
-    },
-    {
-      "id": 27,
-      "name": "Bimo Bagas Riyanto",
-      "role": "Divisi DESMED",
-      "badge": "Ketua Divisi",
-      "image": "/img/DESMED/Bimo_Bagas_Riyanto.avif"
-    },
-    {
-      "id": 28,
-      "name": "Rizqi Alif Permana Putra",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Rizqi_Alif_Permana_Putra.avif"
-    },
-    {
-      "id": 29,
-      "name": "Azka Faiq Suharyanto",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Azka_Faiq_Suharyanto.avif"
-    },
-    {
-      "id": 30,
-      "name": "Mahesa Haryo Pamungkas",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Mahesa_Haryo_Pamungkas.avif"
-    },
-    {
-      "id": 31,
-      "name": "Bhakas Adhitya Anugrah Wibawa",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Bhakas_Adhitya_Anugrah_Wibawa.avif"
-    },
-    {
-      "id": 32,
-      "name": "Stefany Artana",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Stefany_Artana.avif"
-    },
-    {
-      "id": 33,
-      "name": "Amrullah Valentino Caesar Putra",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Amrullah_Valentino_Caesar_Putra.avif"
-    },
-    {
-      "id": 34,
-      "name": "Kaisyarani Zahra Adinomo",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Kaisyarani_Zahra_Adinomo.avif"
-    },
-    {
-      "id": 35,
-      "name": "Putri Amelia",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Putri_Amelia.avif"
-    },
-    {
-      "id": 36,
-      "name": "Rahmat Saidi Amrullah",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Rahmat_Saidi_Amrullah.avif"
-    },
-    {
-      "id": 37,
-      "name": "Laura Janisa Azahra",
-      "role": "Divisi DESMED",
-      "badge": "Anggota",
-      "image": "/img/DESMED/Laura_Janisa_Azahra.avif"
-    },
-    {
-      "id": 38,
-      "name": "Erlangga Daffa",
-      "role": "Divisi RISTEK",
-      "badge": "Ketua Divisi",
-      "image": "/img/RISTEK/Erlangga_Daffa.avif"
-    },
-    {
-      "id": 39,
-      "name": "Rizal Nururrahman",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Rizal_Nururrahman.avif"
-    },
-    {
-      "id": 40,
-      "name": "Muhammad Reza Al Fatah",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Muhammad_Reza_Al_Fatah.avif"
-    },
-    {
-      "id": 41,
-      "name": "Barito Surya Ramadhani",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Barito_Surya_Ramadhani.avif"
-    },
-    {
-      "id": 42,
-      "name": "Muhammad Raihan Zuffar Musyaffa",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Muhammad_Raihan_Zuffar_Musyaffa.avif"
-    },
-    {
-      "id": 43,
-      "name": "Restu Afrizal",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Restu_Afrizal.avif"
-    },
-    {
-      "id": 44,
-      "name": "Husein Yarid Zidane",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Husein_Yarid_Zidane.avif"
-    },
-    {
-      "id": 45,
-      "name": "Nathanael Aurick Adventius Putra Hermawan",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Nathanael_Aurick_Adventius_Putra_Hermawan.avif"
-    },
-    {
-      "id": 46,
-      "name": "Aqilah Zahra Nadia",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Aqilah_Zahra_Nadia.avif"
-    },
-    {
-      "id": 47,
-      "name": "Muhammad Nurul Arsy",
-      "role": "Divisi RISTEK",
-      "badge": "Anggota",
-      "image": "/img/RISTEK/Muhammad_Nurul_Arsy.avif"
-    },
-    {
-      "id": 48,
       "name": "Bimo Saputro",
       "role": "Divisi RISTEK",
-      "badge": "Anggota",
+      "badge": "Ketua Divisi",
       "image": "/img/RISTEK/Bimo_Saputro.avif"
     },
     {
-      "id": 49,
-      "name": "Muhammad Latief Alamin",
+      "id": 26,
+      "name": "Jericho Rayhan Maulana",
       "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/RISTEK/Muhammad_Latief_Alamin.avif"
+      "image": "/img/RISTEK/Jericho_Rayhan_Maulana.avif"
     },
     {
-      "id": 50,
-      "name": "Raihan Nur Daffa",
+      "id": 27,
+      "name": "Muhammad Ikram",
       "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/RISTEK/Raihan_Nur_Daffa.avif"
+      "image": "/img/RISTEK/Muhammad_Ikram.avif"
     },
     {
-      "id": 51,
-      "name": "Intan Puspitasari",
-      "role": "Divisi SOSMAS",
-      "badge": "Ketua Divisi",
-      "image": "/img/SOSMAS/Intan_Puspitasari.avif"
-    },
-    {
-      "id": 52,
-      "name": "Rio Ichsan Wahdana",
-      "role": "Divisi SOSMAS",
+      "id": 28,
+      "name": "Bagas Indra Lesmana",
+      "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/SOSMAS/Rio_Ichsan_Wahdana.avif"
+      "image": "/img/RISTEK/Bagas_Indra_Lesmana.avif"
     },
     {
-      "id": 53,
-      "name": "Khansa A’afiyah Hutomo",
-      "role": "Divisi SOSMAS",
+      "id": 29,
+      "name": "Naufal Makhlufi Hernanto",
+      "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/SOSMAS/Khansa_Aafiyah_Hutomo.avif"
+      "image": "/img/RISTEK/Naufal_Makhlufi_Hernanto.avif"
     },
     {
-      "id": 54,
-      "name": "Feni Prastyani",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Feni_Prastyani.avif"
-    },
-    {
-      "id": 55,
-      "name": "Nur Ghazali Santoso",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Nur_Ghazali_Santoso.avif"
-    },
-    {
-      "id": 56,
-      "name": "Muhammad Reza Taufiq",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Muhammad_Reza_Taufiq.avif"
-    },
-    {
-      "id": 57,
-      "name": "Gibran Mishbah Habibillah",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Gibran_Mishbah_Habibillah.avif"
-    },
-    {
-      "id": 58,
-      "name": "Dessi Adelia Safira",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Dessi_Adelia_Safira.avif"
-    },
-    {
-      "id": 59,
-      "name": "Faras Artika Nahbur",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Faras_Artika_Nahbur.avif"
-    },
-    {
-      "id": 60,
-      "name": "Nadya Billa Pradani",
-      "role": "Divisi SOSMAS",
-      "badge": "Anggota",
-      "image": "/img/SOSMAS/Nadya_Billa_Pradani.avif"
-    },
-    {
-      "id": 61,
+      "id": 30,
       "name": "Vicky Ardiansyah",
-      "role": "Divisi SOSMAS",
+      "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/SOSMAS/Vicky_Ardiansyah.avif"
+      "image": "/img/RISTEK/Vicky_Ardiansyah.avif"
     },
     {
-      "id": 62,
-      "name": "Della Ulvanti",
-      "role": "Divisi SOSMAS",
+      "id": 31,
+      "name": "Muhammad Rizky Hibatullah",
+      "role": "Divisi RISTEK",
       "badge": "Anggota",
-      "image": "/img/SOSMAS/Della_Ulvanti.avif"
+      "image": "/img/RISTEK/Muhammad_Rizky_Hibatullah.avif"
+    },
+    {
+      "id": 32,
+      "name": "Muhammad Iqbal Nazrudin",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Iqbal_Nazrudin.avif"
+    },
+    {
+      "id": 33,
+      "name": "Ryno Julian Santoso",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Ryno_Julian_Santoso.avif"
+    },
+    {
+      "id": 34,
+      "name": "Aknaf Saputra",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Aknaf_Saputra.avif"
+    },
+    {
+      "id": 35,
+      "name": "Muhammad Nauval Aqillah Khatami",
+      "role": "Divisi RISTEK",
+      "badge": "Anggota",
+      "image": "/img/RISTEK/Muhammad_Nauval_Aqillah_Khatami.avif"
+    },
+    {
+      "id": 36,
+      "name": "Muhammad Reinzy Aditya",
+      "role": "Divisi Humas",
+      "badge": "Ketua Divisi",
+      "image": "/img/HUMAS/Muhammad_Reinzy_Aditya.avif"
+    },
+    {
+      "id": 37,
+      "name": "Muhammad Daffa Aravi",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Muhammad_Daffa_Aravi.avif"
+    },
+    {
+      "id": 38,
+      "name": "Farhan Aditya",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Farhan_Aditya.avif"
+    },
+    {
+      "id": 39,
+      "name": "Adil Saleh Makarim",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Adil_Saleh_Makarim.avif"
+    },
+    {
+      "id": 40,
+      "name": "Firaz Rafi Nibras",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Firaz_Rafi_Nibras.avif"
+    },
+    {
+      "id": 41,
+      "name": "Muhammad avrizal",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Muhammad_avrizal.avif"
+    },
+    {
+      "id": 42,
+      "name": "Ahmad Indra Permana",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Ahmad_Indra_Permana.avif"
+    },
+    {
+      "id": 43,
+      "name": "Adrian Faiz Risky",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Adrian_Faiz_Risky.avif"
+    },
+    {
+      "id": 44,
+      "name": "Raehan Arya Munandar",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Raehan_Arya_Munandar.avif"
+    },
+    {
+      "id": 45,
+      "name": "Muhammad Fauzan Rachmadan",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Muhammad_Fauzan_Rachmadan.avif"
+    },
+    {
+      "id": 46,
+      "name": "Fajar Ramadhan",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Fajar_Ramadhan.avif"
+    },
+    {
+      "id": 47,
+      "name": "Yosua Vitto komuna",
+      "role": "Divisi Humas",
+      "badge": "Anggota",
+      "image": "/img/HUMAS/Yosua_Vitto_komuna.avif"
     }
   ]
 }

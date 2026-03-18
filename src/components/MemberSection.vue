@@ -18,7 +18,7 @@ export default {
   <section class="bg-main-1 pt-20" id="team">
     <!-- Konten teks tetap di dalam container -->
     <div class="relative mx-auto w-full max-w-6xl px-6 pt-6">
-      <h2 class="mb-3 text-center text-3xl font-bold text-white">
+      <h2 class="mb-3 text-center text-3xl font-semibold text-white">
         Temui tim kami yang terbaik
       </h2>
       <p class="mb-14 text-center text-gray-300">
